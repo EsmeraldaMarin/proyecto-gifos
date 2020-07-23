@@ -1,0 +1,47 @@
+footer {
+    padding: 50px 156px;
+    border-bottom: 5px solid $azul;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: $bp-1) and (max-width: $bp-2) {
+        padding: 50px 50px;
+    }
+    @media (max-width: $bp-1) {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+    }
+    div {
+        @media (max-width: $bp-1) {
+            text-align: center;
+        }
+        span {
+            margin-right: 15px;
+            @media (max-width: $bp-1) {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        a {
+            margin-right: 20px;
+            color: $gris;
+            @media (max-width: $bp-1) {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            &:hover {
+                color: $azul;
+            }
+            i {
+                font-size: 1.1em;
+            }
+        }
+    }
+    .copyright {
+        @media (max-width: $bp-1) {
+            margin-top: 45px;
+        }
+    }
+}

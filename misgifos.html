@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>GIFOS</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="img/logo_temporal.svg" alt="logo"></a>
+        <!--Falta el menu hamburguesa-->
+        <nav>
+            <ul>
+                <li><a href="">MODO NOCTURNO</a></li>
+                <li><a href="favoritos.html">FAVORITOS</a></li>
+                <li><a href="misgifos.html" id="selected">MIS GIFOS</a></li>
+                <li><a href="creargifo.html" class="nuevo_gifo"><img src="img/button-crear-gifo.svg"
+                            alt="boton-creargifo"></a></li>
+                <!--Cambiar img por logo font awesome-->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="titulo_misgifos">
+            <img src="img/icon-mis-gifos.svg" alt="logo_misgifos">
+            <h1>Mis GIFOS</h1>
+        </div>
+        <div class="misgifos_con_resultados" id="misgifos_con_resultados">
+            <div class="flex_misgifs">
+
+            </div>
+            <button>VER MÁS</button>
+        </div>
+        <div id="misgifos_sin_resultados" class="misgifos_sin_resultados">
+            <img src="img/icon-mis-gifos-sin-contenido.svg" alt="icono_misgifos_sin_contenido">
+            <span>¡Animate a crear tu primer GIFO!</span>
+        </div>
+        <section class="trending_gifos">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos GIFOS de nuestra comunidad</p>
+            <!--Carrusel CAMBIAR FLECHAS-->
+            <div>
+                <a href=""><i class="fas fa-chevron-left"></i></a>
+                <img src="https://via.placeholder.com/357x275" alt="">
+                <img src="https://via.placeholder.com/357x275" alt="">
+                <img src="https://via.placeholder.com/357x275" alt="">
+                <a href=""><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div>
+            <span>Compartir en:</span>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+        <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

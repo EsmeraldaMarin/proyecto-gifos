@@ -1,0 +1,102 @@
+header {
+    height: 90px;
+    padding: 0 156px;
+    border-top: 5px solid $azul;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    z-index: 1000;
+    @media (min-width: $bp-1) and (max-width: $bp-2) {
+        padding: 0 50px;
+    }
+    @media (max-width: $bp-1) {
+        padding: 0 22px;
+    }
+    a.logo {
+        img {
+            width: 68px;
+            @media (max-width: $bp-1) {
+                width: 48px;
+            }
+        }
+    }
+    form {
+        //poner display none hasta que el usuario haga scroll
+        position: relative;
+        width: 335px;
+        height: 50px;
+        input {
+            display: inline-block;
+            width: 335px;
+            height: 50px;
+            padding-left: 55px;
+            border: 1px solid $azul;
+            border-radius: 27px;
+            -webkit-border-radius: 27px;
+            -moz-border-radius: 27px;
+            -ms-border-radius: 27px;
+            -o-border-radius: 27px;
+            &:focus {
+                outline: none;
+            }
+        }
+        label {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            img {
+                width: 20px;
+            }
+        }
+        @media (max-width: $bp-1) {
+            display: none;
+        }
+    }
+    nav {
+        /*borrar el display none*/
+        @media (max-width: $bp-1) {
+            display: none;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                margin: 0 23px;
+                a {
+                    font-weight: bold;
+                    color: $azul;
+                    &:hover {
+                        border-bottom: 2px solid $celeste;
+                    }
+                    &:active {
+                        color: $gris;
+                        border-bottom: 0px;
+                    }
+                }
+                .nuevo_gifo {
+                    width: 54px;
+                    height: 54px;
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid $azul;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    &:hover {
+                        border-bottom: 1px solid $azul;
+                        background-color: $azul;
+                    }
+                    &:active {
+                        border: 1px solid $gris;
+                        background-color: $gris;
+                    }
+                }
+            }
+        }
+    }
+}

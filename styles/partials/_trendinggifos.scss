@@ -1,0 +1,55 @@
+.trending_gifos {
+    padding: 65px 0 180px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f5f8;
+    text-align: center;
+    @media (max-width: $bp-1) {
+        padding-bottom: 80px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        color: $azul;
+        font-size: 1.7em;
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 50px;
+        @media (max-width: $bp-1) {
+            padding: 0 60px;
+        }
+    }
+    div {
+        display: flex;
+        align-items: center;
+        @media (max-width: $bp-1) {
+            /*sacar overflow y widht*/
+            width: 100%;
+            overflow: hidden;
+        }
+        a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $azul;
+            font-size: 1.5em;
+            color: $azul;
+            &:hover {
+                background-color: $azul;
+                color: #fff;
+            }
+            @media (max-width: $bp-1) {
+                display: none;
+            }
+        }
+        img {
+            margin: 0px 30px;
+            @media (max-width: $bp-1) {
+                margin: 0 20px;
+            }
+        }
+    }
+}

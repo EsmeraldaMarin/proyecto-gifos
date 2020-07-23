@@ -1,0 +1,68 @@
+main {
+    .titulo_favoritos {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 30px;
+        }
+        h1 {
+            color: $azul;
+        }
+    }
+
+    //CAMBIAR DISPLAY NONE POR DISPLAY FLEX EN FAV C/RESULTADOS CUANDO PONGAN UN GIF EN FAV
+
+    .favoritos_con_resultados{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        .flex_gifs {
+            margin: 40px 156px 80px 156px;
+            width: 1130px;
+            height: 660px;
+            border: 2px solid $azul;
+        }
+        button {
+            width: 125px;
+            height: 50px;
+            margin-bottom: 80px;
+            border: 1px solid $azul;
+            border-radius: 25px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            -ms-border-radius: 25px;
+            -o-border-radius: 25px;
+            font-size: 13px;
+            font-family: $fuente;
+            font-weight: bold;
+            background-color: #fff;
+            color: $azul;
+            &:hover{
+                background-color: $azul;
+                color:#fff;
+            }
+            
+        }
+    }
+    .favoritos_sin_resultados{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img{
+            width: 150px;
+            margin-top: 110px;
+            margin-bottom: 25px;
+        }
+        span{
+            width: 427px;
+            margin-bottom: 140px;
+            color: $celeste;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    }
+}

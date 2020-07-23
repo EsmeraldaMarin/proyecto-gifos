@@ -1,0 +1,82 @@
+main {
+    .section_buscador {
+        margin: 75px 0 100px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+        @media (max-width: $bp-1) {
+            margin-top: 5px;
+            margin-bottom: 50px;
+        }
+        h1 {
+            width: 16em;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: $azul;
+            @media (max-width: $bp-1) {
+                width: 100%;
+                padding: 0px 45px;
+                font-size: 1.9em;
+            }
+            span {
+                color: $celeste;
+            }
+        }
+        div.formulario {
+            img.personas {
+                margin-bottom: -5px;
+                @media (max-width: $bp-1) {
+                    width: 285px;
+                }
+            }
+            form {
+                position: relative;
+                width: 550px;
+                height: 50px;
+                @media (max-width: $bp-1){
+                    width: 335px;
+                }
+                input {
+                    display: inline-block;
+                    width: 550px;
+                    height: 50px;
+                    padding-left: 54px;
+                    border: 1px solid $azul;
+                    border-radius: 27px;
+                    -webkit-border-radius: 27px;
+                    -moz-border-radius: 27px;
+                    -ms-border-radius: 27px;
+                    -o-border-radius: 27px;
+                    @media (max-width: $bp-1) {
+                        width: 335px;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                label {
+                    position: absolute;
+                    top: 15px;
+                    right: 20px;
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+        article.trending {
+            margin-top: 70px;
+            color: $azul;
+            @media (max-width: $bp-1) {
+                padding: 0 65px;
+                margin-top: 30px;
+            }
+            h3 {
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
