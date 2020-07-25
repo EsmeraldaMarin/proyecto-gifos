@@ -17,6 +17,11 @@ a {
   text-decoration: none;
 }
 
+body {
+  border-top: 5px solid #572ee5;
+  border-bottom: 5px solid #572ee5;
+}
+
 header #selected {
   color: #9cafc3;
   border-bottom: 0;
@@ -29,10 +34,51 @@ header #selected_a {
   cursor: text;
 }
 
+body.nocturno {
+  border-color: #222326;
+  background-color: #2f3236;
+}
+body.nocturno header {
+  background-color: #2f3236;
+}
+body.nocturno main h1, body.nocturno main h2, body.nocturno h3, body.nocturno p, body.nocturno span, body.nocturno i, body.nocturno a {
+  color: #fff;
+}
+body.nocturno main a {
+  border-color: #fff;
+}
+body.nocturno main a:hover {
+  background-color: #fff;
+}
+body.nocturno main a:hover i {
+  color: #222326;
+}
+body.nocturno header nav ul li a.nuevo_gifo {
+  border-color: #fff;
+}
+body.nocturno header nav ul li a.nuevo_gifo:hover {
+  background-color: #fff;
+}
+body.nocturno header nav ul li a.nuevo_gifo:hover i {
+  color: #222326;
+}
+body.nocturno .trending_gifos {
+  background-color: #222326;
+}
+body.nocturno div.formulario form.formularios input {
+  border-color: #fff;
+  color: #fff;
+}
+body.nocturno .diurno {
+  display: none;
+}
+body.nocturno .nocturno {
+  display: block;
+}
+
 header {
-  height: 90px;
+  height: 100px;
   padding: 0 156px;
-  border-top: 5px solid #572ee5;
   position: sticky;
   top: 0;
   display: flex;
@@ -75,6 +121,7 @@ header form input {
   -moz-border-radius: 27px;
   -ms-border-radius: 27px;
   -o-border-radius: 27px;
+  background-color: transparent;
 }
 header form input:focus {
   outline: none;
@@ -106,6 +153,7 @@ header nav ul {
 }
 header nav ul li {
   margin: 0 23px;
+  text-align: center;
 }
 header nav ul li a {
   font-weight: bold;
@@ -138,6 +186,20 @@ header nav ul li .nuevo_gifo:active {
   border: 1px solid #9cafc3;
   background-color: #9cafc3;
 }
+header nav ul li:nth-child(4) a {
+  display: block;
+  min-width: 86px;
+}
+header nav ul li:nth-child(2) a, header nav ul li:first-child a {
+  display: block;
+  min-width: 130px;
+}
+@media (max-width: 1024px) {
+  header nav ul li {
+    font-size: 0.7em;
+    margin: 0 13px;
+  }
+}
 
 .trending_gifos {
   padding: 65px 0 180px 0;
@@ -154,9 +216,9 @@ header nav ul li .nuevo_gifo:active {
 }
 .trending_gifos h2 {
   margin-bottom: 15px;
-  color: #572ee5;
   font-size: 1.7em;
   font-weight: bold;
+  color: #572ee5;
 }
 .trending_gifos p {
   margin-bottom: 50px;
@@ -183,7 +245,7 @@ header nav ul li .nuevo_gifo:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #572ee5;
+  border: 2px solid #572ee5;
   font-size: 1.5em;
   color: #572ee5;
 }
@@ -264,6 +326,7 @@ main .section_buscador div.formulario form input {
   -moz-border-radius: 27px;
   -ms-border-radius: 27px;
   -o-border-radius: 27px;
+  background-color: transparent;
 }
 @media (max-width: 768px) {
   main .section_buscador div.formulario form input {
@@ -358,6 +421,11 @@ main .favoritos_sin_resultados span {
   font-weight: bold;
   font-size: 1.4em;
 }
+@media (max-width: 1024px) {
+  main .favoritos_sin_resultados span {
+    width: 100%;
+  }
+}
 
 main .titulo_misgifos {
   width: 100%;
@@ -421,10 +489,14 @@ main .misgifos_sin_resultados span {
   font-weight: bold;
   font-size: 1.4em;
 }
+@media (max-width: 1024px) {
+  main .misgifos_sin_resultados span {
+    width: 100%;
+  }
+}
 
 footer {
   padding: 50px 156px;
-  border-bottom: 5px solid #572ee5;
   display: flex;
   justify-content: space-between;
 }

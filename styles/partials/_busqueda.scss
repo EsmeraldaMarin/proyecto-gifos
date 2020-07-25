@@ -49,6 +49,7 @@ main {
                     -moz-border-radius: 27px;
                     -ms-border-radius: 27px;
                     -o-border-radius: 27px;
+                    background-color: transparent;
                     @media (max-width: $bp-1) {
                         width: 335px;
                     }

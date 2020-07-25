@@ -1,7 +1,6 @@
 header {
-    height: 90px;
+    height: 100px;
     padding: 0 156px;
-    border-top: 5px solid $azul;
     position: sticky;
     top: 0;
     display: flex;
@@ -39,6 +38,7 @@ header {
             -moz-border-radius: 27px;
             -ms-border-radius: 27px;
             -o-border-radius: 27px;
+            background-color: transparent;
             &:focus {
                 outline: none;
             }
@@ -65,6 +65,7 @@ header {
             align-items: center;
             li {
                 margin: 0 23px;
+                text-align: center;
                 a {
                     font-weight: bold;
                     color: $azul;
@@ -95,6 +96,22 @@ header {
                         border: 1px solid $gris;
                         background-color: $gris;
                     }
+                }
+                &:nth-child(4) {
+                    a {
+                        display: block;
+                        min-width: 86px;
+                    }
+                }
+                &:nth-child(2), &:first-child {
+                    a {
+                        display: block;
+                        min-width: 130px;
+                    }
+                }
+                @media (max-width: $bp-2) {
+                    font-size: 0.7em;
+                    margin: 0 13px;
                 }
             }
         }

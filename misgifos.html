@@ -11,17 +11,29 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo"><img src="img/logo_temporal.svg" alt="logo"></a>
+        <a href="index.html" class="logo diurno"><img src="img/logo-desktop.svg" alt="logo"></a>
+        <a href="index.html" class="logo nocturno"><img src="img/logo-desktop-modo-noc.svg" alt="logo"></a>
         <!--Falta el menu hamburguesa-->
+        <div class="formulario">
+            <form action="" class="formularios">
+                <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
+                <label for="buscador_header">
+                    <img src="img/icon-search.svg" alt="icono_search" class="search diurno">
+                    <img src="img/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                </label>
+            </form>
+        </div>
         <nav>
             <ul>
-                <li><a href="">MODO NOCTURNO</a></li>
+                <li class="diurno"><a href="">MODO NOCTURNO</a></li>
+                <li class="nocturno"><a href="">MODO DIURNO</a></li>
                 <li><a href="favoritos.html">FAVORITOS</a></li>
                 <li><a href="misgifos.html" id="selected">MIS GIFOS</a></li>
-                <li><a href="creargifo.html" class="nuevo_gifo"><img src="img/button-crear-gifo.svg"
-                            alt="boton-creargifo"></a></li>
-                <!--Cambiar img por logo font awesome-->
-            </ul>
+                <li>
+                    <a href="creargifo.html" class="nuevo_gifo">
+                        <img src="img/button-crear-gifo.svg" alt="boton-creargifo">
+                    </a>
+                </li>            </ul>
         </nav>
     </header>
 
@@ -65,7 +77,7 @@
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

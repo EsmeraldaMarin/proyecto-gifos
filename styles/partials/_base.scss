@@ -11,6 +11,10 @@ li {
 a {
     text-decoration: none;
 }
+body{
+    border-top: 5px solid $azul;
+    border-bottom: 5px solid $azul;
+}
 header {
     #selected {
         color: $gris;
@@ -24,3 +28,48 @@ header {
         cursor: text;
     }
 }
+
+body.nocturno{
+    border-color: #222326;
+    background-color: #2f3236;
+    header{
+        background-color: #2f3236;
+    }
+    main h1, main h2, h3, p, span, i, a{
+        color: #fff;
+    }
+    main a{
+        border-color: #fff;
+        &:hover{
+            background-color: #fff;
+            i{
+                color: #222326;
+            }
+        }
+    }
+    
+    header nav ul li a.nuevo_gifo{
+        border-color: #fff;
+        &:hover{
+            background-color: #fff;
+            i{
+                color: #222326;
+            }
+        }
+    }
+    .trending_gifos{
+        background-color: #222326;
+    }
+    & div.formulario form.formularios input{
+        border-color: #fff;
+        color: #fff;
+    }
+    .diurno{
+        display: none;
+    }
+    .nocturno{
+        display: block;
+    }
+}
+
+

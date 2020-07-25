@@ -10,9 +10,9 @@
     }
     h2 {
         margin-bottom: 15px;
-        color: $azul;
         font-size: 1.7em;
         font-weight: bold;
+        color: $azul;
     }
     p {
         margin-bottom: 50px;
@@ -34,7 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid $azul;
+            border: 2px solid $azul;
             font-size: 1.5em;
             color: $azul;
             &:hover {
