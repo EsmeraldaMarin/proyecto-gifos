@@ -28,8 +28,13 @@ header {
         cursor: text;
     }
 }
-
-body.nocturno{
+.diurno{
+    display: block;
+}
+.nocturno{
+    display: none;
+}
+body.body_nocturno{
     border-color: #222326;
     background-color: #2f3236;
     header{
@@ -70,6 +75,13 @@ body.nocturno{
     .nocturno{
         display: block;
     }
+    ul.ul_creargifos{
+        li.contador_pasos{
+            border-color: $celeste;
+            color: $celeste;
+        }
+    }
+
 }
 
 
