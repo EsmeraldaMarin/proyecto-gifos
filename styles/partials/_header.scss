@@ -96,13 +96,13 @@ header {
                         background-color: $gris;
                     }
                 }
-                &:nth-child(4) {
+                &:nth-child(3) {
                     a {
                         display: block;
                         min-width: 86px;
                     }
                 }
-                &:nth-child(2), &:first-child {
+                &:first-child {
                     a {
                         display: block;
                         min-width: 130px;

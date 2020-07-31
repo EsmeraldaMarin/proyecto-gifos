@@ -1,6 +1,13 @@
 const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 
-/*
-let body = document.querySelector("body");
+let modoNocturno = document.getElementById("modos");
 
-body.className = "body_nocturno";*/
+modoNocturno.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    let body = document.querySelector("body");
+    body.classList.toggle("body_nocturno");
+
+    modoNocturno.textContent="MODO DIURNO";
+})
+

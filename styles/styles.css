@@ -34,60 +34,6 @@ header #selected_a {
   cursor: text;
 }
 
-.diurno {
-  display: block;
-}
-
-.nocturno {
-  display: none;
-}
-
-body.body_nocturno {
-  border-color: #222326;
-  background-color: #2f3236;
-}
-body.body_nocturno header {
-  background-color: #2f3236;
-}
-body.body_nocturno main h1, body.body_nocturno main h2, body.body_nocturno h3, body.body_nocturno p, body.body_nocturno span, body.body_nocturno i, body.body_nocturno a {
-  color: #fff;
-}
-body.body_nocturno main a {
-  border-color: #fff;
-}
-body.body_nocturno main a:hover {
-  background-color: #fff;
-}
-body.body_nocturno main a:hover i {
-  color: #222326;
-}
-body.body_nocturno header nav ul li a.nuevo_gifo {
-  border-color: #fff;
-}
-body.body_nocturno header nav ul li a.nuevo_gifo:hover {
-  background-color: #fff;
-}
-body.body_nocturno header nav ul li a.nuevo_gifo:hover i {
-  color: #222326;
-}
-body.body_nocturno .trending_gifos {
-  background-color: #222326;
-}
-body.body_nocturno div.formulario form.formularios input {
-  border-color: #fff;
-  color: #fff;
-}
-body.body_nocturno .diurno {
-  display: none;
-}
-body.body_nocturno .nocturno {
-  display: block;
-}
-body.body_nocturno ul.ul_creargifos li.contador_pasos {
-  border-color: #50e3c2;
-  color: #50e3c2;
-}
-
 header {
   height: 100px;
   position: sticky;
@@ -197,11 +143,11 @@ header nav ul li .nuevo_gifo:active {
   border: 1px solid #9cafc3;
   background-color: #9cafc3;
 }
-header nav ul li:nth-child(4) a {
+header nav ul li:nth-child(3) a {
   display: block;
   min-width: 86px;
 }
-header nav ul li:nth-child(2) a, header nav ul li:first-child a {
+header nav ul li:first-child a {
   display: block;
   min-width: 130px;
 }
@@ -766,6 +712,60 @@ footer div a i {
   footer .copyright {
     margin-top: 45px;
   }
+}
+
+.diurno {
+  display: block;
+}
+
+.nocturno {
+  display: none;
+}
+
+body.body_nocturno {
+  border-color: #222326;
+  background-color: #2f3236;
+}
+body.body_nocturno header {
+  background-color: #2f3236;
+}
+body.body_nocturno main h1, body.body_nocturno main h2, body.body_nocturno h3, body.body_nocturno p, body.body_nocturno span, body.body_nocturno i, body.body_nocturno a {
+  color: #fff;
+}
+body.body_nocturno main a {
+  border-color: #fff;
+}
+body.body_nocturno main a:hover {
+  background-color: #fff;
+}
+body.body_nocturno main a:hover i {
+  color: #222326;
+}
+body.body_nocturno header nav ul li a.nuevo_gifo {
+  border-color: #fff;
+}
+body.body_nocturno header nav ul li a.nuevo_gifo:hover {
+  background-color: #fff;
+}
+body.body_nocturno header nav ul li a.nuevo_gifo:hover i {
+  color: #222326;
+}
+body.body_nocturno .trending_gifos {
+  background-color: #222326;
+}
+body.body_nocturno div.formulario form.formularios input {
+  border-color: #fff;
+  color: #fff;
+}
+body.body_nocturno .diurno {
+  display: none;
+}
+body.body_nocturno .nocturno {
+  display: block;
+}
+body.body_nocturno ul.ul_creargifos li.contador_pasos {
+  border-color: #50e3c2;
+  color: #50e3c2;
 }
 
 /*# sourceMappingURL=styles.css.map */
