@@ -96,13 +96,13 @@ header {
                         background-color: $gris;
                     }
                 }
-                &:nth-child(3) {
+                &:nth-child(4) {
                     a {
                         display: block;
                         min-width: 86px;
                     }
                 }
-                &:first-child {
+                &:first-child, &:nth-child(2) {
                     a {
                         display: block;
                         min-width: 130px;
@@ -111,6 +111,36 @@ header {
                 @media (max-width: $bp-2) {
                     font-size: 0.7em;
                     margin: 0 13px;
+                }
+            }
+            .modos{
+                font-weight: bold;
+                color: $azul;
+                &:hover {
+                    border-bottom: 2px solid $celeste;
+                }
+                &:active {
+                    color: $gris;
+                    border-bottom: 0px;
+                }
+                @media (max-width: $bp-2) {
+                    font-size: 0.7em;
+                    margin: 0 13px;
+                }
+                
+            }
+            .m_noc{
+                display: block;
+            }
+            .m_di{
+                display: none;
+            }
+            .modo_noc{
+                &:first-child{
+                    display: none;
+                }
+                &:last-child{
+                    display: block;
                 }
             }
         }

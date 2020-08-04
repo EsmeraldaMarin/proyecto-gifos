@@ -11,27 +11,28 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo diurno"><img src="img/logo-desktop.svg" alt="logo"></a>
-        <a href="index.html" class="logo nocturno"><img src="img/logo-desktop-modo-noc.svg" alt="logo"></a>
+        <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
+        <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
 
         <!--Falta el menu hamburguesa-->
         <div class="formulario">
             <form action="" class="formularios">
                 <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
                 <label for="buscador_header">
-                    <img src="img/icon-search.svg" alt="icono_search" class="search diurno">
-                    <img src="img/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                    <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
+                    <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
                 </label>
             </form>
         </div>
         <nav>
             <ul>
-                <li><a href="" id="modos">MODO NOCTURNO</a></li>
-                <li><a href="favoritos.html" id="selected">FAVORITOS</a></li>
+                <li class="modos m_noc">MODO NOCTURNO</li>
+                <li class="modos m_di">MODO DIURNO</li>
+                <li><a href="favoritos.html"id="selected">FAVORITOS</a></li>
                 <li><a href="misgifos.html">MIS GIFOS</a></li>
                 <li>
                     <a href="creargifo.html" class="nuevo_gifo">
-                        <img src="img/button-crear-gifo.svg" alt="boton-creargifo">
+                        <img src="assets/button-crear-gifo.svg" alt="boton-creargifo">
                     </a>
                 </li>
             </ul>
@@ -39,7 +40,7 @@
     </header>
     <main>
         <div class="titulo_favoritos">
-            <img src="img/icon-favoritos.svg" alt="logo_corazon_favorito">
+            <img src="assets/icon-favoritos.svg" alt="logo_corazon_favorito">
             <h1>Favoritos</h1>
         </div>
         <div class="favoritos_con_resultados" id="favoritos_con_resultados">
@@ -50,7 +51,7 @@
         </div>
         <div id="favoritos_sin_resultados" class="favoritos_sin_resultados">
             <!--Cambiar img de busqueda sin resultados por la de favoritos sin resultado-->
-            <img src="img/icon-mis-gifos-sin-contenido.svg" alt="icono_favoritos_sin_contenido">
+            <img src="assets/icon-fav-sin-contenido.svg" alt="icono_favoritos_sin_contenido">
             <span>"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"</span>
         </div>
         <section class="trending_gifos">
@@ -69,9 +70,9 @@
     <footer>
         <div>
             <span>Compartir en:</span>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
         </div>
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>

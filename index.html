@@ -11,27 +11,28 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo diurno"><img src="img/logo-desktop.svg" alt="logo"></a>
-        <a href="index.html" class="logo nocturno"><img src="img/logo-desktop-modo-noc.svg" alt="logo"></a>
+        <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
+        <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
 
         <!--Falta el menu hamburguesa-->
         <div class="formulario">
             <form action="" class="formularios">
                 <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
                 <label for="buscador_header">
-                    <img src="img/icon-search.svg" alt="icono_search" class="search diurno">
-                    <img src="img/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                    <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
+                    <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
                 </label>
             </form>
         </div>
         <nav>
             <ul>
-                <li><a href="" id="modos">MODO NOCTURNO</a></li>
+                <li class="modos m_noc">MODO NOCTURNO</li>
+                <li class="modos m_di">MODO DIURNO</li>
                 <li><a href="favoritos.html">FAVORITOS</a></li>
                 <li><a href="misgifos.html">MIS GIFOS</a></li>
                 <li>
                     <a href="creargifo.html" class="nuevo_gifo">
-                        <img src="img/button-crear-gifo.svg" alt="boton-creargifo">
+                        <img src="assets/button-crear-gifo.svg" alt="boton-creargifo">
                     </a>
                 </li>
             </ul>
@@ -44,12 +45,12 @@
                 <span>GIFOS</span>
             </h1>
             <div class="formulario">
-                <img src="img/ilustra_header.svg" alt="personas-saludando" class="personas">
+                <img src="assets/ilustra_header.svg" alt="personas-saludando" class="personas">
                 <form action="" class="formularios">
                     <input type="search" id="buscador" placeholder="Busca GIFOS y más">
                     <label for="buscador">
-                        <img src="img/icon-search.svg" alt="icono_search" class="search diurno">
-                        <img src="img/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                        <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
+                        <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
                     </label>
                 </form>
             </div>
@@ -75,9 +76,9 @@
     <footer>
         <div>
             <span>Compartir en:</span>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
         </div>
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>

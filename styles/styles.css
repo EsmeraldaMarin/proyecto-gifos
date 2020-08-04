@@ -143,11 +143,11 @@ header nav ul li .nuevo_gifo:active {
   border: 1px solid #9cafc3;
   background-color: #9cafc3;
 }
-header nav ul li:nth-child(3) a {
+header nav ul li:nth-child(4) a {
   display: block;
   min-width: 86px;
 }
-header nav ul li:first-child a {
+header nav ul li:first-child a, header nav ul li:nth-child(2) a {
   display: block;
   min-width: 130px;
 }
@@ -156,6 +156,35 @@ header nav ul li:first-child a {
     font-size: 0.7em;
     margin: 0 13px;
   }
+}
+header nav ul .modos {
+  font-weight: bold;
+  color: #572ee5;
+}
+header nav ul .modos:hover {
+  border-bottom: 2px solid #50e3c2;
+}
+header nav ul .modos:active {
+  color: #9cafc3;
+  border-bottom: 0px;
+}
+@media (max-width: 1024px) {
+  header nav ul .modos {
+    font-size: 0.7em;
+    margin: 0 13px;
+  }
+}
+header nav ul .m_noc {
+  display: block;
+}
+header nav ul .m_di {
+  display: none;
+}
+header nav ul .modo_noc:first-child {
+  display: none;
+}
+header nav ul .modo_noc:last-child {
+  display: block;
 }
 
 .trending_gifos {
