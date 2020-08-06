@@ -9,6 +9,19 @@ body.body_nocturno{
     background-color: #2f3236;
     header{
         background-color: #2f3236;
+        nav{
+            ul{
+                li{
+                    &:first-child{
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                        color: #fff;
+                    }
+                }
+            }
+        }
     }
     main h1, main h2, h3, p, span, i, a{
         color: #fff;
@@ -49,6 +62,13 @@ body.body_nocturno{
         li.contador_pasos{
             border-color: $celeste;
             color: $celeste;
+        }
+    }
+    footer{
+        i{
+            &:hover{
+                color: $azul;
+            }
         }
     }
 

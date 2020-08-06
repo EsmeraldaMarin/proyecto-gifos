@@ -147,9 +147,15 @@ header nav ul li:nth-child(4) a {
   display: block;
   min-width: 86px;
 }
-header nav ul li:first-child a, header nav ul li:nth-child(2) a {
-  display: block;
+header nav ul li:first-child, header nav ul li:nth-child(2) {
   min-width: 130px;
+  cursor: pointer;
+}
+header nav ul li:first-child {
+  display: block;
+}
+header nav ul li:nth-child(2) {
+  display: none;
 }
 @media (max-width: 1024px) {
   header nav ul li {
@@ -173,18 +179,6 @@ header nav ul .modos:active {
     font-size: 0.7em;
     margin: 0 13px;
   }
-}
-header nav ul .m_noc {
-  display: block;
-}
-header nav ul .m_di {
-  display: none;
-}
-header nav ul .modo_noc:first-child {
-  display: none;
-}
-header nav ul .modo_noc:last-child {
-  display: block;
 }
 
 .trending_gifos {
@@ -758,6 +752,13 @@ body.body_nocturno {
 body.body_nocturno header {
   background-color: #2f3236;
 }
+body.body_nocturno header nav ul li:first-child {
+  display: none;
+}
+body.body_nocturno header nav ul li:nth-child(2) {
+  display: block;
+  color: #fff;
+}
 body.body_nocturno main h1, body.body_nocturno main h2, body.body_nocturno h3, body.body_nocturno p, body.body_nocturno span, body.body_nocturno i, body.body_nocturno a {
   color: #fff;
 }
@@ -795,6 +796,9 @@ body.body_nocturno .nocturno {
 body.body_nocturno ul.ul_creargifos li.contador_pasos {
   border-color: #50e3c2;
   color: #50e3c2;
+}
+body.body_nocturno footer i:hover {
+  color: #572ee5;
 }
 
 /*# sourceMappingURL=styles.css.map */

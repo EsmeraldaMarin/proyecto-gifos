@@ -102,18 +102,23 @@ header {
                         min-width: 86px;
                     }
                 }
-                &:first-child, &:nth-child(2) {
-                    a {
-                        display: block;
-                        min-width: 130px;
-                    }
+                &:first-child,
+                &:nth-child(2) {
+                    min-width: 130px;
+                    cursor: pointer;
+                }
+                &:first-child {
+                    display: block;
+                }
+                &:nth-child(2) {
+                    display: none;
                 }
                 @media (max-width: $bp-2) {
                     font-size: 0.7em;
                     margin: 0 13px;
                 }
             }
-            .modos{
+            .modos {
                 font-weight: bold;
                 color: $azul;
                 &:hover {
@@ -126,21 +131,6 @@ header {
                 @media (max-width: $bp-2) {
                     font-size: 0.7em;
                     margin: 0 13px;
-                }
-                
-            }
-            .m_noc{
-                display: block;
-            }
-            .m_di{
-                display: none;
-            }
-            .modo_noc{
-                &:first-child{
-                    display: none;
-                }
-                &:last-child{
-                    display: block;
                 }
             }
         }
