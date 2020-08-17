@@ -12,6 +12,8 @@ header {
     }
     @media (max-width: $bp-1) {
         padding: 0 22px;
+        justify-content: space-between;
+
     }
     a.logo {
         img {
@@ -54,11 +56,22 @@ header {
             display: none;
         }
     }
-    nav {
-        /*borrar el display none*/
+    .iconosMenu{
+        display: none;
         @media (max-width: $bp-1) {
-            display: none;
+            display: block;
+            i{
+                color: $azul;
+                display: none;
+                font-size: 1.2em;
+                &.activo{
+                    display: block;
+                }
+            }
         }
+    }
+
+    nav {
         ul {
             display: flex;
             align-items: center;
@@ -131,6 +144,56 @@ header {
                 @media (max-width: $bp-2) {
                     font-size: 0.7em;
                     margin: 0 13px;
+                }
+            }
+        }
+        @media (max-width: $bp-1) {
+            &.defaultMenu{
+                display: none;
+            }
+            display: block;
+            width: 100%;
+            height: 75vh;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            ul {
+                height: 100%;
+                flex-direction: column;
+                background-color: rgba($color: #572ee5, $alpha: 0.9);
+                li {
+                    width: 100%;
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    a {
+                        color: #fff;
+                    }
+                    &:last-child {
+                        display: none;
+                    }
+                    &:after {
+                        content: "";
+                        width: 40px;
+                        height: 2px;
+                        margin-top: 10px;
+
+                        background-color: #fff;
+                        display: block;
+                    }
+                    &:first-child{
+                        width: 100%;
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .modos {
+                    color: #fff;
                 }
             }
         }

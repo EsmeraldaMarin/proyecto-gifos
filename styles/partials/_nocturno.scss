@@ -1,77 +1,110 @@
-.diurno{
+.diurno {
     display: block;
 }
-.nocturno{
+.nocturno {
     display: none;
 }
-body.body_nocturno{
+body.body_nocturno {
     border-color: #222326;
     background-color: #2f3236;
-    header{
+    header {
         background-color: #2f3236;
-        nav{
-            ul{
-                li{
-                    &:first-child{
+        .iconosMenu{
+            @media (max-width: $bp-1) {
+                i{
+                    color: #fff;
+                }
+            }
+        }
+        nav {
+            ul {
+                @media (max-width: $bp-1) {
+                    background-color: #000;
+                }
+                li {
+                    &:first-child {
                         display: none;
+                        &::after {
+                            display: none;
+                        }
                     }
-                    &:nth-child(2){
+                    &:nth-child(2) {
                         display: block;
                         color: #fff;
+                        @media (max-width: $bp-1) {
+                            width: 100%;
+                            height: 60px;
+                            margin-top: 50px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            &:after {
+                                content: "";
+                                width: 40px;
+                                height: 2px;
+                                margin-top: 10px;
+                                display: block;
+                                background-color: #fff;
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    main h1, main h2, h3, p, span, i, a{
+    main h1,
+    main h2,
+    h3,
+    p,
+    span,
+    i,
+    a {
         color: #fff;
     }
-    main a{
+    main a {
         border-color: #fff;
-        &:hover{
+        &:hover {
             background-color: #fff;
-            i{
+            i {
                 color: #222326;
             }
         }
     }
-    
-    header nav ul li a.nuevo_gifo{
+
+    header nav ul li a.nuevo_gifo {
         border-color: #fff;
-        &:hover{
+        &:hover {
             background-color: #fff;
-            i{
+            i {
                 color: #222326;
             }
         }
     }
-    .trending_gifos{
+    .trending_gifos {
         background-color: #222326;
     }
-    & div.formulario form.formularios input{
+    & div.formulario form.formularios input {
         border-color: #fff;
         color: #fff;
     }
-    .diurno{
+    .diurno {
         display: none;
     }
-    .nocturno{
+    .nocturno {
         display: block;
     }
-    ul.ul_creargifos{
-        li.contador_pasos{
+    ul.ul_creargifos {
+        li.contador_pasos {
             border-color: $celeste;
             color: $celeste;
         }
     }
-    footer{
-        i{
-            &:hover{
+    footer {
+        i {
+            &:hover {
                 color: $azul;
             }
         }
     }
-
 }
-
-
