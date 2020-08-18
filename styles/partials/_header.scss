@@ -90,19 +90,23 @@ header {
                     }
                 }
                 .nuevo_gifo {
+                    display: inline-block;
                     width: 54px;
                     height: 54px;
-                    display: flex;
-                    justify-content: center;
                     border: 1px solid $azul;
                     border-radius: 50%;
                     -webkit-border-radius: 50%;
                     -moz-border-radius: 50%;
                     -ms-border-radius: 50%;
                     -o-border-radius: 50%;
+                    text-align: center;
+                    line-height: 50px;
+                    font-size: 2em;
+                    font-weight: lighter;
                     &:hover {
                         border-bottom: 1px solid $azul;
                         background-color: $azul;
+                        color: #fff;
                     }
                     &:active {
                         border: 1px solid $gris;
