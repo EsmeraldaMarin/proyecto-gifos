@@ -277,7 +277,7 @@ header nav ul .modos:active {
 }
 
 .trending_gifos {
-  padding: 65px 0 180px 0;
+  padding: 65px 90px 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -308,20 +308,22 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos div {
+.trending_gifos #gifsCtn {
   display: flex;
   align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
-  .trending_gifos div {
+  .trending_gifos #gifsCtn {
     /*sacar overflow y widht*/
     width: 100%;
     overflow: hidden;
   }
 }
 
-.trending_gifos div a {
+.trending_gifos #gifsCtn a {
   width: 40px;
   height: 40px;
   display: flex;
@@ -332,23 +334,32 @@ header nav ul .modos:active {
   color: #572ee5;
 }
 
-.trending_gifos div a:hover {
+.trending_gifos #gifsCtn a:hover {
   background-color: #572ee5;
   color: #fff;
 }
 
 @media (max-width: 768px) {
-  .trending_gifos div a {
+  .trending_gifos #gifsCtn a {
     display: none;
   }
 }
 
-.trending_gifos div img {
-  margin: 0px 30px;
+.trending_gifos #gifsCtn #gifsTrending {
+  display: flex;
+  width: 90%;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.trending_gifos #gifsCtn #gifsTrending img {
+  width: 370px;
+  height: 275px;
+  margin: 0px 15px;
 }
 
 @media (max-width: 768px) {
-  .trending_gifos div img {
+  .trending_gifos #gifsCtn #gifsTrending img {
     margin: 0 20px;
   }
 }
@@ -1018,6 +1029,22 @@ body.body_nocturno header nav ul li a.nuevo_gifo:hover i {
 
 body.body_nocturno .trending_gifos {
   background-color: #222326;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn a {
+  border-color: #fff;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn a i {
+  color: #fff;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn a:hover {
+  background-color: #fff;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn a:hover i {
+  color: #222326;
 }
 
 body.body_nocturno div.formulario form.formularios input {

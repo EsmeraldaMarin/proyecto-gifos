@@ -1,5 +1,5 @@
 .trending_gifos {
-    padding: 65px 0 180px 0;
+    padding: 65px 90px 180px ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,9 +20,11 @@
             padding: 0 60px;
         }
     }
-    div {
+    #gifsCtn {
         display: flex;
         align-items: center;
+        width: 100%;
+        overflow: hidden;
         @media (max-width: $bp-1) {
             /*sacar overflow y widht*/
             width: 100%;
@@ -45,10 +47,18 @@
                 display: none;
             }
         }
-        img {
-            margin: 0px 30px;
-            @media (max-width: $bp-1) {
-                margin: 0 20px;
+        #gifsTrending{
+            display: flex;
+            width: 90%;
+            overflow: hidden;
+            margin: 0 10px;
+            img {
+                width:370px;
+                height: 275px;
+                margin: 0px 15px;
+                @media (max-width: $bp-1) {
+                    margin: 0 20px;
+                }
             }
         }
     }

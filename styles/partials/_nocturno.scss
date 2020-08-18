@@ -88,6 +88,21 @@ body.body_nocturno {
     }
     .trending_gifos {
         background-color: #222326;
+        #gifsCtn{
+            a{
+                border-color: #fff;
+                i{
+                    color: #fff;
+                    
+                }
+                &:hover{
+                    background-color: #fff;
+                    i{
+                        color: #222326;
+                    }
+                }
+            }
+        }
     }
     & div.formulario form.formularios input {
         border-color: #fff;
