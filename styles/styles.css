@@ -288,7 +288,7 @@ header nav ul .modos:active {
 
 @media (max-width: 768px) {
   .trending_gifos {
-    padding-bottom: 80px;
+    padding: 65px 0 80px;
   }
 }
 
@@ -318,9 +318,8 @@ header nav ul .modos:active {
 
 @media (max-width: 768px) {
   .trending_gifos #gifsCtn {
-    /*sacar overflow y widht*/
     width: 100%;
-    overflow: hidden;
+    justify-content: center;
   }
 }
 
@@ -353,6 +352,13 @@ header nav ul .modos:active {
   margin: 0 10px;
 }
 
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 .trending_gifos #gifsCtn #gifsTrending img {
   width: 370px;
   height: 275px;
@@ -361,7 +367,9 @@ header nav ul .modos:active {
 
 @media (max-width: 768px) {
   .trending_gifos #gifsCtn #gifsTrending img {
-    margin: 0 20px;
+    width: 243px;
+    height: 187px;
+    margin: 0 10px;
   }
 }
 
@@ -548,6 +556,7 @@ main .favoritos_sin_resultados span {
 @media (max-width: 1024px) {
   main .favoritos_sin_resultados span {
     width: 100%;
+    padding: 0px 10px;
   }
 }
 

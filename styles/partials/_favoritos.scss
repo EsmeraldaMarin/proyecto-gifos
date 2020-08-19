@@ -65,6 +65,7 @@ main {
             font-size: 1.4em;
             @media (max-width: $bp-2) {
                 width: 100%;
+                padding: 0px 10px;
             }
         }
     }

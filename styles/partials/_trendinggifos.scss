@@ -6,7 +6,7 @@
     background-color: #f3f5f8;
     text-align: center;
     @media (max-width: $bp-1) {
-        padding-bottom: 80px;
+        padding: 65px 0 80px;
     }
     h2 {
         margin-bottom: 15px;
@@ -26,9 +26,8 @@
         width: 100%;
         overflow: hidden;
         @media (max-width: $bp-1) {
-            /*sacar overflow y widht*/
             width: 100%;
-            overflow: hidden;
+            justify-content: center;
         }
         button {
             width: 40px;
@@ -52,12 +51,18 @@
             width: 90%;
             overflow: hidden;
             margin: 0 10px;
+            @media (max-width: $bp-1) {
+                width: 100%;
+                justify-content: space-between;
+            }
             img {
                 width:370px;
                 height: 275px;
                 margin: 0px 15px;
                 @media (max-width: $bp-1) {
-                    margin: 0 20px;
+                    width:243px;
+                    height: 187px;
+                    margin: 0 10px;
                 }
             }
         }
