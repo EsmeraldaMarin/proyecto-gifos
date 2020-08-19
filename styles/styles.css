@@ -7,6 +7,7 @@
   border: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  outline: none;
 }
 
 li {
@@ -323,7 +324,7 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn a {
+.trending_gifos #gifsCtn button {
   width: 40px;
   height: 40px;
   display: flex;
@@ -334,13 +335,13 @@ header nav ul .modos:active {
   color: #572ee5;
 }
 
-.trending_gifos #gifsCtn a:hover {
+.trending_gifos #gifsCtn button:hover {
   background-color: #572ee5;
   color: #fff;
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn a {
+  .trending_gifos #gifsCtn button {
     display: none;
   }
 }
@@ -1031,19 +1032,20 @@ body.body_nocturno .trending_gifos {
   background-color: #222326;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn a {
+body.body_nocturno .trending_gifos #gifsCtn button {
+  background-color: transparent;
   border-color: #fff;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn a i {
+body.body_nocturno .trending_gifos #gifsCtn button i {
   color: #fff;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn a:hover {
+body.body_nocturno .trending_gifos #gifsCtn button:hover {
   background-color: #fff;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn a:hover i {
+body.body_nocturno .trending_gifos #gifsCtn button:hover i {
   color: #222326;
 }
 

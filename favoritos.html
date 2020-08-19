@@ -14,7 +14,7 @@
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
 
-        
+
         <div class="formulario">
             <form action="" class="formularios">
                 <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
@@ -62,12 +62,10 @@
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
             <!--Carrusel CAMBIAR FLECHAS-->
-            <div>
-                <a href=""><i class="fas fa-chevron-left"></i></a>
-                <img src="https://via.placeholder.com/357x275" alt="">
-                <img src="https://via.placeholder.com/357x275" alt="">
-                <img src="https://via.placeholder.com/357x275" alt="">
-                <a href=""><i class="fas fa-chevron-right"></i></a>
+            <div id="gifsCtn">
+                <button id="btnLeft" onclick="show(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div id="gifsTrending"></div>
+                <button id="btnRight" onclick="show(+1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>

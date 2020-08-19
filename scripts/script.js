@@ -40,46 +40,54 @@ cruz.addEventListener("click", () => {
 //Giphy Trendings
 
 let gifsCtn = document.getElementById("gifsTrending");
+let limit = 28;
 const giphys = [];
 
-async function showGifs() {
-    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKeyGiphy}&limit=30`;
+function showGifs() {
+    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKeyGiphy}&limit=${limit}`;
     fetch(url)
         .then(resp => resp.json())
         .then(content => {
+            console.log(content)
             for (let i = 0; i <= 26; i++) {
 
                 let urlImg = content.data[i].images.downsized.url;;
                 giphys.push(urlImg);
-                createImg(giphys)
+                // createImg(giphys);
+
+                let gifCreated = document.createElement("img");
+                gifCreated.src = giphys[i];
+                gifsCtn.appendChild(gifCreated);
+
+
             }
         })
         .catch(err => console.log(err))
 }
 showGifs()
 
-function createImg(g) {
-    if (g.length === 27) {
-        for (let i = 0; i <= 2; i++) {
-            let gifCreated = document.createElement("img");
-            gifCreated.src = g[i];
-            gifsCtn.appendChild(gifCreated);
-        }
-    }
-}
 
-//Carrusel Trending
+
+//CARRUSEL TRENDING
 
 let btnLeft = document.getElementById("btnLeft");
 let btnRight = document.getElementById("btnRight");
 
-btnRight.addEventListener("click", swipeRight);
-function swipeRight(e) {
 
-    e.preventDefault()
+let index = 0;
+
+window.show = function (increase) {
+
     let imgs = document.querySelectorAll("#gifsTrending img");
-    console.log(imgs)
 
+    index = index + (increase * 3);
+
+    index = Math.min(
+        Math.max(index, 0),
+        imgs.length - 1
+    );
+
+    imgs[index].scrollIntoView({ behavior: 'smooth' });
 }
 
 

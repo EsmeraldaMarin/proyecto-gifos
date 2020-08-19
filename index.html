@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>GIFOS</title>
 </head>
 
@@ -68,9 +69,9 @@
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
             <!--Carrusel CAMBIAR FLECHAS-->
             <div id="gifsCtn">
-                <a href="" id="btnLeft"><i class="fas fa-chevron-left"></i></a>
+                <button id="btnLeft" onclick="show(-1)"><i class="fas fa-chevron-left"></i></button>
                 <div id="gifsTrending"></div>
-                <a href="" id="btnRight"><i class="fas fa-chevron-right"></i></a>
+                <button id="btnRight" onclick="show(+1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>
