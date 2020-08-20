@@ -35,7 +35,7 @@ main {
                 position: relative;
                 width: 550px;
                 height: 50px;
-                @media (max-width: $bp-1){
+                @media (max-width: $bp-1) {
                     width: 335px;
                 }
                 input {
@@ -53,14 +53,32 @@ main {
                     @media (max-width: $bp-1) {
                         width: 335px;
                     }
-                    &:focus{
+                    &:focus {
                         outline: none;
+                        ~ label {
+                            left: 0px;
+                            right: auto;
+                        }
                     }
+                    
+                }
+                input[type="search" i]::-webkit-search-cancel-button{
+                    display: none;
                 }
                 label {
                     position: absolute;
-                    top: 15px;
-                    right: 20px;
+                    top: 0px;
+                    right: 0px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 50px;
+                    &:active {
+                        left: 0px;
+                        right: auto;
+                    }
                     img {
                         width: 20px;
                     }

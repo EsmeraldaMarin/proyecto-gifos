@@ -36,6 +36,37 @@ header #selected_a {
   cursor: text;
 }
 
+#searchResults {
+  margin: 50px 0;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  #searchResults {
+    width: 100%;
+  }
+}
+
+#searchResults .gifCard {
+  margin: 15px 15px;
+  min-width: 260px;
+  max-width: 260px;
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  #searchResults .gifCard {
+    margin: 10px 10px;
+    min-width: 156px;
+    max-width: 156px;
+    height: 120px;
+  }
+}
+
 header {
   height: 100px;
   position: sticky;
@@ -71,6 +102,7 @@ header a.logo img {
 }
 
 header form {
+  display: none;
   position: relative;
   width: 335px;
   height: 50px;
@@ -360,14 +392,14 @@ header nav ul .modos:active {
 }
 
 .trending_gifos #gifsCtn #gifsTrending img {
-  width: 370px;
+  min-width: 370px;
   height: 275px;
   margin: 0px 15px;
 }
 
 @media (max-width: 768px) {
   .trending_gifos #gifsCtn #gifsTrending img {
-    width: 243px;
+    min-width: 243px;
     height: 187px;
     margin: 0 10px;
   }
@@ -454,10 +486,30 @@ main .section_buscador div.formulario form input:focus {
   outline: none;
 }
 
+main .section_buscador div.formulario form input:focus ~ label {
+  left: 0px;
+  right: auto;
+}
+
+main .section_buscador div.formulario form input[type="search" i]::-webkit-search-cancel-button {
+  display: none;
+}
+
 main .section_buscador div.formulario form label {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px;
+}
+
+main .section_buscador div.formulario form label:active {
+  left: 0px;
+  right: auto;
 }
 
 main .section_buscador div.formulario form label img {

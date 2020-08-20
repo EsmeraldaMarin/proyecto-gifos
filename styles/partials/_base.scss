@@ -12,7 +12,7 @@ li {
 a {
     text-decoration: none;
 }
-body{
+body {
     border-top: 5px solid $azul;
     border-bottom: 5px solid $azul;
 }
@@ -27,5 +27,28 @@ header {
         border: 1px solid $gris;
         color: #fff;
         cursor: text;
+    }
+}
+#searchResults {
+    margin: 50px 0;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (max-width: $bp-1) {
+        width: 100%;
+    }
+    .gifCard {
+        margin: 15px 15px;
+        min-width: 260px;
+        max-width: 260px;
+        height: 200px;
+        @media (max-width: $bp-1) {
+            margin: 10px 10px;
+            min-width: 156px;
+            max-width: 156px;
+            height: 120px;
+        }
     }
 }

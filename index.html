@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
     <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>GIFOS</title>
 </head>
 
@@ -16,7 +15,7 @@
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
 
         <div class="formulario">
-            <form action="" class="formularios">
+            <form  class="formularios"  id="buscadorHeader">
                 <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
                 <label for="buscador_header">
                     <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
@@ -50,14 +49,16 @@
             </h1>
             <div class="formulario">
                 <img src="assets/ilustra_header.svg" alt="personas-saludando" class="personas">
-                <form action="" class="formularios">
-                    <input type="search" id="buscador" placeholder="Busca GIFOS y más">
+                <form  class="formularios">
+                    <input type="search" id="buscador" placeholder="Busca GIFOS y más" autocomplete="off">
                     <label for="buscador">
-                        <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
+                        <img src="assets/icon-search.svg" alt="icono_search" class="search diurno" id="searchbtn">
                         <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
                     </label>
+                    <ul id="autocompleteCtn"></ul>
                 </form>
             </div>
+            <div id="searchResults"></div>
             <article class="trending">
                 <h3>Trending:</h3>
                 <p>Reaction, Entertainment, Sports, Stickers, Artists</p>
@@ -69,9 +70,9 @@
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
             <!--Carrusel CAMBIAR FLECHAS-->
             <div id="gifsCtn">
-                <button id="btnLeft" onclick="show(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button id="btnLeft"><i class="fas fa-chevron-left"></i></button>
                 <div id="gifsTrending"></div>
-                <button id="btnRight" onclick="show(+1)"><i class="fas fa-chevron-right"></i></button>
+                <button id="btnRight"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>
