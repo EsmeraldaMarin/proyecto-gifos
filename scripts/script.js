@@ -52,7 +52,6 @@ function showGifs() {
 
                 let urlImg = content.data[i].images.downsized.url;
                 giphys.push(urlImg);
-                // createImg(giphys);
 
                 let gifCreated = document.createElement("img");
                 gifCreated.src = giphys[i];
@@ -72,8 +71,8 @@ let btnLeft = document.getElementById("btnLeft");
 let btnRight = document.getElementById("btnRight");
 
 
-btnLeft.addEventListener("click", ()=>show(-3));
-btnRight.addEventListener("click", ()=>show(+3));
+btnLeft.addEventListener("click", () => show(-3));
+btnRight.addEventListener("click", () => show(+3));
 let index = 0;
 
 function show(increase) {
@@ -87,13 +86,20 @@ function show(increase) {
         imgs.length - 1
     );
 
-    imgs[index].scrollIntoView({ 
+    let arr = imgs.length
+
+    btnRight.classList.remove("inactive");
+
+    if (arr == index + 1) {
+        btnRight.classList.add("inactive")
+    }
+
+    imgs[index].scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
         inline: 'start'
     });
 }
-
 
 //SEARCH GIFOS
 
@@ -146,7 +152,7 @@ function createCtnGifs(arrayGifs) {
 //AUTOCOMPLETAR
 
 
- let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
+let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
 let ulAutocomplete = document.getElementById("autocompleteCtn")
 
 function autocomplete() {
@@ -164,22 +170,21 @@ function autocomplete() {
         })
 
 }
-inputSearch.addEventListener("keyup", autocomplete); 
+inputSearch.addEventListener("keyup", autocomplete);
 
 
-//Scroll top
+//SCROLL TOP
 
-let buscadorHeader = document.getElementById("buscadorHeader")
+let header = document.querySelector("header")
 
 window.addEventListener("scroll", myFunction)
 
 function myFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      buscadorHeader.style.display = "block"
-  }else{
-    buscadorHeader.style.display = "none"
-
-  }
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        header.className = "onScroll"
+    } else {
+        header.classList.remove("onScroll")
+    }
 }
 
 

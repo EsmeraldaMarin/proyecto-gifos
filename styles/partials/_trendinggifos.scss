@@ -46,6 +46,15 @@
                 display: none;
             }
         }
+        .inactive{
+            color: #fff;
+            background-color: $gris;
+            border-color: $gris;
+            cursor: default;
+            &:hover {
+                background-color: $gris;
+            }
+        }
         #gifsTrending{
             display: flex;
             width: 90%;

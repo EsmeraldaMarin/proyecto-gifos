@@ -13,7 +13,6 @@ header {
     @media (max-width: $bp-1) {
         padding: 0 22px;
         justify-content: space-between;
-
     }
     a.logo {
         img {
@@ -56,15 +55,15 @@ header {
             display: none;
         }
     }
-    .iconosMenu{
+    .iconosMenu {
         display: none;
         @media (max-width: $bp-1) {
             display: block;
-            i{
+            i {
                 color: $azul;
                 display: none;
                 font-size: 1.2em;
-                &.activo{
+                &.activo {
                     display: block;
                 }
             }
@@ -152,7 +151,7 @@ header {
             }
         }
         @media (max-width: $bp-1) {
-            &.defaultMenu{
+            &.defaultMenu {
                 display: none;
             }
             display: block;
@@ -187,7 +186,7 @@ header {
                         background-color: #fff;
                         display: block;
                     }
-                    &:first-child{
+                    &:first-child {
                         width: 100%;
                         margin-top: 50px;
                         display: flex;
@@ -201,5 +200,12 @@ header {
                 }
             }
         }
+    }
+}
+.onScroll {
+    box-shadow: 0 2px 10px 1px rgba(156, 175, 195, 0.55);
+
+    form {
+        display: block;
     }
 }
