@@ -67,6 +67,10 @@ header #selected_a {
   }
 }
 
+.removeElement {
+  display: none;
+}
+
 header {
   height: 100px;
   position: sticky;
@@ -503,11 +507,25 @@ main .section_buscador div.formulario form input {
 
 main .section_buscador div.formulario form input:focus {
   outline: none;
+  position: relative;
 }
 
 main .section_buscador div.formulario form input:focus ~ label {
   left: 0px;
   right: auto;
+}
+
+main .section_buscador div.formulario form input:focus ~ i {
+  opacity: 1;
+}
+
+main .section_buscador div.formulario form input.autocompleteActive {
+  border-radius: 25px 25px 0 0;
+  border-width: 1px 1px 0 1px;
+  -webkit-border-radius: 25px 25px 0 0;
+  -moz-border-radius: 25px 25px 0 0;
+  -ms-border-radius: 25px 25px 0 0;
+  -o-border-radius: 25px 25px 0 0;
 }
 
 main .section_buscador div.formulario form input[type="search" i]::-webkit-search-cancel-button {
@@ -533,6 +551,52 @@ main .section_buscador div.formulario form label:active {
 
 main .section_buscador div.formulario form label img {
   width: 20px;
+}
+
+main .section_buscador div.formulario form i {
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: #572ee5;
+  opacity: 0;
+}
+
+main .section_buscador .ulActive {
+  width: 550px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #572ee5;
+  border-radius: 0 0 25px 25px;
+  -webkit-border-radius: 0 0 25px 25px;
+  -moz-border-radius: 0 0 25px 25px;
+  -ms-border-radius: 0 0 25px 25px;
+  -o-border-radius: 0 0 25px 25px;
+  overflow: hidden;
+}
+
+main .section_buscador .ulActive li {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+main .section_buscador .ulActive li:hover {
+  background-color: #eee;
+}
+
+main .section_buscador .ulActive li::before {
+  content: url(../../assets/icon-search.svg);
+  width: 16px;
+  margin: 0 25px;
 }
 
 main .section_buscador article.trending {
