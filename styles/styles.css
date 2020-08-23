@@ -140,12 +140,6 @@ header form label img {
   width: 20px;
 }
 
-@media (max-width: 768px) {
-  header form {
-    display: none;
-  }
-}
-
 header .iconosMenu {
   display: none;
 }
@@ -159,8 +153,14 @@ header .iconosMenu {
     display: none;
     font-size: 1.2em;
   }
-  header .iconosMenu i.activo {
+  header .iconosMenu i#bars {
     display: block;
+  }
+  header .iconosMenu.menuActivo i {
+    display: block;
+  }
+  header .iconosMenu.menuActivo i#bars {
+    display: none;
   }
 }
 
@@ -319,6 +319,12 @@ header nav ul .modos:active {
 
 .onScroll form {
   display: block;
+}
+
+@media (max-width: 768px) {
+  .onScroll form {
+    display: none;
+  }
 }
 
 .trending_gifos {

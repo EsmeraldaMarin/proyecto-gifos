@@ -51,20 +51,26 @@ header {
                 width: 20px;
             }
         }
-        @media (max-width: $bp-1) {
-            display: none;
-        }
     }
     .iconosMenu {
         display: none;
         @media (max-width: $bp-1) {
             display: block;
-            i {
+            i{
                 color: $azul;
                 display: none;
                 font-size: 1.2em;
-                &.activo {
+                &#bars{
                     display: block;
+                }
+                
+            }
+            &.menuActivo{
+                i{
+                    display: block;
+                    &#bars{
+                        display: none;
+                    }
                 }
             }
         }
@@ -207,5 +213,8 @@ header {
 
     form {
         display: block;
+        @media (max-width: $bp-1) {
+            display: none;
+        }
     }
 }

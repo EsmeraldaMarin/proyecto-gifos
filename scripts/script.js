@@ -22,10 +22,20 @@ buttonModoD.addEventListener("click", modoNocturno);
 
 //MENU HAMBURGUESA
 
-let bars = document.getElementById("bars");
-let cruz = document.getElementById("cruz");
+
+
+//let bars = document.getElementById("bars");
+//let cruz = document.getElementById("cruz");
+let menuHamburguesa = document.querySelector("div.iconosMenu")
 let nav = document.querySelector("header nav");
 
+menuHamburguesa.addEventListener("click", ()=>{
+    menuHamburguesa.classList.toggle("menuActivo");
+    nav.classList.toggle("defaultMenu")
+
+})
+
+/*
 bars.addEventListener("click", () => {
     nav.classList.remove("defaultMenu")
     bars.classList.remove("activo");
@@ -36,7 +46,7 @@ cruz.addEventListener("click", () => {
     cruz.classList.remove("activo");
     bars.classList.add("activo");
 })
-
+*/
 //Giphy Trendings
 
 let gifsCtnTrending = document.getElementById("gifsTrending");
