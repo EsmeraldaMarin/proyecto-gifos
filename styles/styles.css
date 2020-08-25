@@ -71,6 +71,10 @@ header #selected_a {
   display: none;
 }
 
+div.gifHover {
+  position: relative;
+}
+
 header {
   height: 100px;
   position: sticky;
@@ -422,6 +426,7 @@ header nav ul .modos:active {
 
 .trending_gifos #gifsCtn #gifsTrending img {
   min-width: 370px;
+  max-width: 370px;
   height: 275px;
   margin: 0px 15px;
 }
@@ -429,6 +434,7 @@ header nav ul .modos:active {
 @media (max-width: 768px) {
   .trending_gifos #gifsCtn #gifsTrending img {
     min-width: 243px;
+    max-width: 243px;
     height: 187px;
     margin: 0 10px;
   }

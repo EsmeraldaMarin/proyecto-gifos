@@ -22,10 +22,6 @@ buttonModoD.addEventListener("click", modoNocturno);
 
 //MENU HAMBURGUESA
 
-
-
-//let bars = document.getElementById("bars");
-//let cruz = document.getElementById("cruz");
 let menuHamburguesa = document.querySelector("div.iconosMenu")
 let nav = document.querySelector("header nav");
 
@@ -35,18 +31,6 @@ menuHamburguesa.addEventListener("click", ()=>{
 
 })
 
-/*
-bars.addEventListener("click", () => {
-    nav.classList.remove("defaultMenu")
-    bars.classList.remove("activo");
-    cruz.classList.add("activo");
-})
-cruz.addEventListener("click", () => {
-    nav.classList.add("defaultMenu")
-    cruz.classList.remove("activo");
-    bars.classList.add("activo");
-})
-*/
 //Giphy Trendings
 
 let gifsCtnTrending = document.getElementById("gifsTrending");
@@ -63,16 +47,20 @@ function showGifs() {
                 let urlImg = content.data[i].images.downsized.url;
                 giphys.push(urlImg);
 
+                let gifCardCtn = document.createElement("div");
                 let gifCreated = document.createElement("img");
                 gifCreated.src = giphys[i];
-                gifsCtnTrending.appendChild(gifCreated);
-
+                gifCreated.className = "gifcard";
+                gifCardCtn.appendChild(gifCreated)
+                gifsCtnTrending.appendChild(gifCardCtn);
             }
+            getInfoCards(content.data)
+
+
         })
         .catch(err => console.log(err))
 }
 showGifs()
-
 
 
 //CARRUSEL TRENDING
@@ -123,7 +111,5 @@ function myFunction() {
         header.classList.remove("onScroll")
     }
 }
-
-
 
 
