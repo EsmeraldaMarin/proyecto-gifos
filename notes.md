@@ -22,7 +22,6 @@
 #### (Segun orden recomendado)
 
 * Cards de cada gif ( JS , **CSS** );
-* Terminar de maquetar, dar estilos y funcionalidades a Crear Gifo ( **JS , CSS** );
 * Trendings linkeables
 * Hacer funcionalidad de agregar a favoritos ( **JS** );
 * Hacer funcionalidad de VER MAS ( **JS**, HTML , CSS );

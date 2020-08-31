@@ -71,10 +71,12 @@ header #selected_a {
   display: none;
 }
 
-div.gifHover {
-  position: relative;
-}
-
+/* 
+div.gifHover{
+    position: relative;
+    img.gifHover{
+    }
+} */
 header {
   height: 100px;
   position: sticky;
@@ -185,6 +187,12 @@ header nav ul li a {
 
 header nav ul li a:hover {
   border-bottom: 2px solid #50e3c2;
+}
+
+@media (max-width: 1024px) {
+  header nav ul li a:hover {
+    border-bottom: 0px solid #50e3c2;
+  }
 }
 
 header nav ul li a:active {
@@ -786,6 +794,7 @@ main .misgifos_sin_resultados span {
 }
 
 .main_creargifo {
+  margin-bottom: 100px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -804,26 +813,32 @@ main .misgifos_sin_resultados span {
   align-items: center;
 }
 
-.main_creargifo .contenedor_video .texto_1 h2 {
+.main_creargifo .contenedor_video article h2 {
   font-size: 1.7em;
   color: #572ee5;
 }
 
-.main_creargifo .contenedor_video .texto_1 h2 span:first-child {
+.main_creargifo .contenedor_video article h2 span:first-child {
   display: block;
 }
 
-.main_creargifo .contenedor_video .texto_1 h2 span:last-child {
+.main_creargifo .contenedor_video article h2 span:last-child {
   color: #50e3c2;
 }
 
-.main_creargifo .contenedor_video .texto_1 p {
+.main_creargifo .contenedor_video article p {
   margin-top: 10px;
 }
 
-.main_creargifo .contenedor_video .texto_1 p span:first-child {
-  margin-bottom: 20px;
+.main_creargifo .contenedor_video article p span:first-child {
+  margin-bottom: 15px;
   display: block;
+}
+
+.main_creargifo .contenedor_video video {
+  position: absolute;
+  width: 480px;
+  height: 320px;
 }
 
 .main_creargifo .contenedor_video .marcos {
@@ -946,6 +961,14 @@ main .misgifos_sin_resultados span {
   -o-border-radius: 2px;
 }
 
+.main_creargifo div.contenedor_contador_pasos div#aditionaltext {
+  position: absolute;
+  right: 60px;
+  top: 40%;
+  color: #572ee5;
+  font-weight: bold;
+}
+
 .main_creargifo div.contenedor_contador_pasos .pelicula {
   position: absolute;
   right: -160px;
@@ -953,6 +976,7 @@ main .misgifos_sin_resultados span {
 }
 
 .main_creargifo button {
+  display: none;
   cursor: pointer;
   margin-top: 20px;
   width: 130px;
@@ -972,6 +996,10 @@ main .misgifos_sin_resultados span {
 .main_creargifo button:hover {
   background-color: #572ee5;
   color: #fff;
+}
+
+.main_creargifo button.activo {
+  display: block;
 }
 
 @keyframes parpadeo {

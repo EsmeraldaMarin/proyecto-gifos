@@ -14,7 +14,7 @@
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
 
-        
+
         <div class="formulario">
             <form action="" class="formularios">
                 <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
@@ -44,7 +44,7 @@
     </header>
     <main class="main_creargifo">
         <div class="contenedor_video">
-            <article class="texto_1">
+            <article class="paso_1" id="contenedorVideo">
                 <h2>
                     <span>Aquí podrás </span>
                     <span>crear tus propios </span>
@@ -55,6 +55,7 @@
                     <span>(Solo necesitas una cámara para grabar un video)</span>
                 </p>
             </article>
+            <video></video>
             <div class="marcos m1"></div>
             <div class="marcos m2"></div>
             <div class="marcos m3"></div>
@@ -78,11 +79,16 @@
                 <li class="contador_pasos">2</li>
                 <li class="contador_pasos">3</li>
             </ul>
+            <div id="aditionaltext"></div>
             <img src="assets/pelicula.svg" alt="icono-pelicula" class="pelicula diurno">
             <img src="assets/pelicula-modo-noc.svg" alt="icono-pelicula" class="pelicula nocturno">
         </div>
         <!--separador con after-->
-        <button>COMENZAR</button>
+        <button id="comenzar" class="activo">COMENZAR</button>
+        <button id="grabar">GRABAR</button>
+        <button id="finalizar">FINALIZAR</button>
+        <button id="subir">SUBIR</button>
+
     </main>
     <footer>
         <div>
@@ -94,7 +100,10 @@
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/misGifos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.1/RecordRTC.min.js"
+        integrity="sha512-JdnCTTJRivaH4nStpZnsHO5Fm6TmgWHwwyPfhTPMgHGOz4GRzynCnm1T28C7Ees55ERL+t+gqg/DQro9oROd0w=="
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

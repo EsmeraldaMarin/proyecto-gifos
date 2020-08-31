@@ -88,6 +88,11 @@ header {
                     color: $azul;
                     &:hover {
                         border-bottom: 2px solid $celeste;
+                        @media (max-width: $bp-2) {
+                            border-bottom: 0px solid $celeste;
+
+                        }
+
                     }
                     &:active {
                         color: $gris;

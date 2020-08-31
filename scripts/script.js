@@ -54,7 +54,7 @@ function showGifs() {
                 gifCardCtn.appendChild(gifCreated)
                 gifsCtnTrending.appendChild(gifCardCtn);
             }
-            getInfoCards(content.data)
+            //getInfoCards(content.data)
 
 
         })
