@@ -14,10 +14,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: $bp-2) {
+            margin: 50px 0 0;
+            width: 95%;
+            height: 200px;
+        }
         article {
             h2 {
                 font-size: 1.7em;
                 color: $azul;
+                @media (max-width: $bp-2) {
+                    font-size: 1.2em;
+                }
                 span {
                     &:first-child {
                         display: block;
@@ -32,6 +40,12 @@
                 span:first-child {
                     margin-bottom: 15px;
                     display: block;
+                    @media (max-width: $bp-2) {
+                        margin-bottom: 5px;
+                    }
+                }
+                @media (max-width: $bp-2) {
+                    font-size: 0.8em;
                 }
             }
         }
@@ -39,6 +53,10 @@
             position: absolute;
             width: 480px;
             height: 320px;
+            @media (max-width: $bp-2) {
+                width: 256px;
+                height: 150px;
+            }
         }
         .marcos {
             width: 25px;
@@ -50,30 +68,49 @@
             left: 25px;
             border-left: 1px solid $celeste;
             border-top: 1px solid $celeste;
+            @media (max-width: $bp-2) {
+                top: 10px;
+                left: 10px;
+            }
         }
         .m2 {
             top: 25px;
             right: 25px;
             border-right: 1px solid $celeste;
             border-top: 1px solid $celeste;
+            @media (max-width: $bp-2) {
+                top: 10px;
+                right: 10px;
+            }
         }
         .m3 {
             bottom: 25px;
             left: 25px;
             border-left: 1px solid $celeste;
             border-bottom: 1px solid $celeste;
+            @media (max-width: $bp-2) {
+                bottom: 10px;
+                left: 10px;
+            }
         }
         .m4 {
             bottom: 25px;
             right: 25px;
             border-right: 1px solid $celeste;
             border-bottom: 1px solid $celeste;
+            @media (max-width: $bp-2) {
+                bottom: 10px;
+                right: 10px;
+            }
         }
         .imagenes_creargifos {
             height: 161px;
             width: 225px;
             position: absolute;
             left: -225px;
+            @media (max-width: $bp-2) {
+                display: none;
+            }
             img {
                 position: absolute;
             }
@@ -143,19 +180,34 @@
             -moz-border-radius: 2px;
             -ms-border-radius: 2px;
             -o-border-radius: 2px;
+            @media (max-width: $bp-2) {
+                width: 300px;
+                height: 4px;
+            }
         }
-        div#aditionaltext{
+        div#aditionaltext {
             position: absolute;
             right: 60px;
             top: 40%;
             color: $azul;
             font-weight: bold;
-            
+            &:hover {
+                border-bottom: 2px solid $celeste;
+            }
+            @media (max-width: $bp-2) {
+                position: relative;
+                top: inherit;
+                right: inherit;
+                margin-top: 20px;
+            }
         }
         .pelicula {
             position: absolute;
             right: -160px;
             top: -10px;
+            @media (max-width: $bp-2) {
+                display: none;
+            }
         }
     }
     button {

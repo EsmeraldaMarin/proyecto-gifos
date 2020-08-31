@@ -24,6 +24,9 @@ function getStreamAndRecord() {
         }
     })
         .then(function (stream) {
+
+            ctnVideo.innerHTML = ""
+
             video.srcObject = stream;
             video.play()
 

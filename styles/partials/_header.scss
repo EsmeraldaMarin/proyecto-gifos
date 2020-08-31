@@ -184,9 +184,12 @@ header {
                     justify-content: center;
                     a {
                         color: #fff;
+                        &.nuevo_gifo{
+                            border-color: #fff;
+                        }
                     }
                     &:last-child {
-                        display: none;
+                        border-color: #fff;
                     }
                     &:after {
                         content: "";
