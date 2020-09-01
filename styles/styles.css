@@ -435,7 +435,8 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending img {
+.trending_gifos #gifsCtn #gifsTrending > div {
+  position: relative;
   min-width: 370px;
   max-width: 370px;
   height: 275px;
@@ -443,12 +444,95 @@ header nav ul .modos:active {
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending img {
+  .trending_gifos #gifsCtn #gifsTrending > div {
     min-width: 243px;
     max-width: 243px;
     height: 187px;
     margin: 0 10px;
   }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div > img {
+  min-width: 370px;
+  max-width: 370px;
+  height: 275px;
+  margin: 0px 15px;
+}
+
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending > div > img {
+    min-width: 243px;
+    max-width: 243px;
+    height: 187px;
+    margin: 0 10px;
+  }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo {
+  padding: 15px 15px 50px 15px;
+  position: absolute;
+  top: 0;
+  width: 370px;
+  height: 275px;
+  margin: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(87, 46, 229, 0.6);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo {
+    width: 243px;
+    height: 187px;
+    margin: 0 10px;
+  }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo:hover {
+  opacity: 1;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div {
+  width: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a img {
+  width: 18px;
+  height: 18px;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span {
+  display: block;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span:last-child {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 main .section_buscador {

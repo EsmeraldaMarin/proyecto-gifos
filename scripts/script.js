@@ -13,6 +13,8 @@ function showGifs() {
         .then(content => {
             for (let i = 0; i <= limitTGifos - 1; i++) {
 
+                //create gifs and ctn
+
                 let urlImg = content.data[i].images.downsized.url;
                 giphys.push(urlImg);
 
@@ -22,11 +24,40 @@ function showGifs() {
                 gifCreated.className = "gifcard";
                 gifCardCtn.appendChild(gifCreated)
                 gifsCtnTrending.appendChild(gifCardCtn);
+
+                //create info gifs card
+
+                let gifInfoCard = document.createElement("div");
+                gifInfoCard.innerHTML = `
+                        <div> 
+                            <a class= "favorito_btn"><img src= "../assets/icon-fav-hover.svg"></a>
+                            <a href= "${content.data[i].images.downsized.url}" download><img src= "../assets/icon-download.svg"></a>
+                            <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
+                        </div>
+                        <div> 
+                            <span>${content.data[i].username}</span>
+                            <span>${content.data[i].title}</span>
+                        </div>
+                    `
+                gifInfoCard.className = "gifCardInfo";
+                gifCreated.before(gifInfoCard);
+
+                //add favorite function
+
+                let btnFav = document.getElementsByClassName("favorito_btn");
+                btnFav[i].addEventListener("click", ()=>{
+                    btnFav[i].classList.toggle("cardBtnActive");
+                    gifFav = `gif${i}`;
+                    gifFavInfo = content.data;
+                    localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
+                    console.log(localStorage.getItem(gifFav))
+                })
+
+
+
             }
-            //getInfoCards(content.data)
-
-
         })
+
         .catch(err => console.log(err))
 }
 showGifs()
@@ -80,5 +111,8 @@ function myFunction() {
         header.classList.remove("onScroll")
     }
 }
+
+
+
 
 

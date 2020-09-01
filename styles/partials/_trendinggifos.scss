@@ -1,5 +1,5 @@
 .trending_gifos {
-    padding: 65px 90px 180px ;
+    padding: 65px 90px 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@
                 display: none;
             }
         }
-        .inactive{
+        .inactive {
             color: #fff;
             background-color: $gris;
             border-color: $gris;
@@ -55,7 +55,7 @@
                 background-color: $gris;
             }
         }
-        #gifsTrending{
+        #gifsTrending {
             display: flex;
             width: 90%;
             overflow: hidden;
@@ -64,16 +64,89 @@
                 width: 100%;
                 justify-content: space-between;
             }
-            img {
-                min-width:370px;
-                max-width:370px;
+            > div {
+                position: relative;
+                min-width: 370px;
+                max-width: 370px;
                 height: 275px;
                 margin: 0px 15px;
                 @media (max-width: $bp-1) {
-                    min-width:243px;
-                    max-width:243px;
+                    min-width: 243px;
+                    max-width: 243px;
                     height: 187px;
                     margin: 0 10px;
+                }
+                > img {
+                    min-width: 370px;
+                    max-width: 370px;
+                    height: 275px;
+                    margin: 0px 15px;
+                    @media (max-width: $bp-1) {
+                        min-width: 243px;
+                        max-width: 243px;
+                        height: 187px;
+                        margin: 0 10px;
+                    }
+                }
+                .gifCardInfo {
+                    padding: 15px 15px 50px 15px;
+                    position: absolute;
+                    top: 0;
+                    width: 370px;
+                    height: 275px;
+                    margin: 0px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    background-color: rgba($color: $azul, $alpha: 0.6);
+                    opacity: 0;
+                    @media (max-width: $bp-1) {
+                        width: 243px;
+                        height: 187px;
+                        margin: 0 10px;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                    div {
+                        width: 100%;
+                        color: #fff;
+                        text-align: left;
+                        &:first-child {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            a {
+                                width: 32px;
+                                height: 32px;
+                                margin: 0px 5px;
+                                border-radius: 6px;
+                                -webkit-border-radius: 6px;
+                                -moz-border-radius: 6px;
+                                -ms-border-radius: 6px;
+                                -o-border-radius: 6px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: rgba($color: #fff, $alpha: 0.7);
+
+
+                                img {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            span {
+                                display: block;
+                                &:last-child {
+                                    margin-top: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
