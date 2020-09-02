@@ -261,6 +261,12 @@ header nav ul .modos:hover {
   border-bottom: 2px solid #50e3c2;
 }
 
+@media (max-width: 1024px) {
+  header nav ul .modos:hover {
+    border-bottom: 0px solid #50e3c2;
+  }
+}
+
 header nav ul .modos:active {
   color: #9cafc3;
   border-bottom: 0px;

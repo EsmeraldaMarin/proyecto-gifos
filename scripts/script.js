@@ -28,13 +28,14 @@ function showGifs() {
                 //create info gifs card
 
                 let gifInfoCard = document.createElement("div");
+                let gifToDownload= content.data[i].images.original.mp4;
                 gifInfoCard.innerHTML = `
                         <div> 
                             <a class= "favorito_btn">
                             <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
                             <img src= "../assets/icon-fav-active.svg">
                             </a>
-                            <a href= "${content.data[i].images.downsized.url}" download><img src= "../assets/icon-download.svg"></a>
+                            <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
                             <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
                         </div>
                         <div> 
@@ -82,13 +83,13 @@ let btnLeft = document.getElementById("btnLeft");
 let btnRight = document.getElementById("btnRight");
 
 
-btnLeft.addEventListener("click", () => show(-6));
-btnRight.addEventListener("click", () => show(+6));
+btnLeft.addEventListener("click", () => show(-3));
+btnRight.addEventListener("click", () => show(+3));
 let index = 0;
 
 function show(increase) {
 
-    let imgs = document.querySelectorAll("#gifsTrending img");
+    let imgs = document.querySelectorAll("#gifsTrending>div");
 
     index = index + increase;
 

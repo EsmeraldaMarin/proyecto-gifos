@@ -56,19 +56,18 @@ header {
         display: none;
         @media (max-width: $bp-1) {
             display: block;
-            i{
+            i {
                 color: $azul;
                 display: none;
                 font-size: 1.2em;
-                &#bars{
+                &#bars {
                     display: block;
                 }
-                
             }
-            &.menuActivo{
-                i{
+            &.menuActivo {
+                i {
                     display: block;
-                    &#bars{
+                    &#bars {
                         display: none;
                     }
                 }
@@ -90,9 +89,7 @@ header {
                         border-bottom: 2px solid $celeste;
                         @media (max-width: $bp-2) {
                             border-bottom: 0px solid $celeste;
-
                         }
-
                     }
                     &:active {
                         color: $gris;
@@ -150,6 +147,10 @@ header {
                 color: $azul;
                 &:hover {
                     border-bottom: 2px solid $celeste;
+                    @media (max-width: $bp-2) {
+                        border-bottom: 0px solid $celeste;
+
+                    }
                 }
                 &:active {
                     color: $gris;
@@ -184,7 +185,7 @@ header {
                     justify-content: center;
                     a {
                         color: #fff;
-                        &.nuevo_gifo{
+                        &.nuevo_gifo {
                             border-color: #fff;
                         }
                     }
