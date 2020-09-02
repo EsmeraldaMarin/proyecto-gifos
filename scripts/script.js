@@ -30,7 +30,10 @@ function showGifs() {
                 let gifInfoCard = document.createElement("div");
                 gifInfoCard.innerHTML = `
                         <div> 
-                            <a class= "favorito_btn"><img src= "../assets/icon-fav-hover.svg"></a>
+                            <a class= "favorito_btn">
+                            <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
+                            <img src= "../assets/icon-fav-active.svg">
+                            </a>
                             <a href= "${content.data[i].images.downsized.url}" download><img src= "../assets/icon-download.svg"></a>
                             <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
                         </div>
@@ -48,9 +51,19 @@ function showGifs() {
                 btnFav[i].addEventListener("click", ()=>{
                     btnFav[i].classList.toggle("cardBtnActive");
                     gifFav = `gif${i}`;
-                    gifFavInfo = content.data;
+                    gifFavInfo = content.data[i];
                     localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
                     console.log(localStorage.getItem(gifFav))
+
+                    let imgChildren = document.querySelectorAll(".favorito_btn img");
+                    console.log(imgChildren)
+                    for(let i = 0; i <= imgChildren.length -1; i++){
+                        imgChildren[i].classList.toggle("fav_active")
+                    }
+
+                    btnFav[i].addEventListener("click", ()=>{
+                        localStorage.removeItem(gifFav)
+                    })
                 })
 
 
@@ -69,8 +82,8 @@ let btnLeft = document.getElementById("btnLeft");
 let btnRight = document.getElementById("btnRight");
 
 
-btnLeft.addEventListener("click", () => show(-3));
-btnRight.addEventListener("click", () => show(+3));
+btnLeft.addEventListener("click", () => show(-6));
+btnRight.addEventListener("click", () => show(+6));
 let index = 0;
 
 function show(increase) {

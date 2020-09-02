@@ -521,9 +521,21 @@ header nav ul .modos:active {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a:hover {
+  background-color: white;
+}
+
 .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a img {
   width: 18px;
   height: 18px;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn img {
+  display: none;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn img.fav_active {
+  display: block;
 }
 
 .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span {
