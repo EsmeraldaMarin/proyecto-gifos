@@ -42,8 +42,7 @@ function createGiphysCards() {
         let gifInfoCard = document.createElement("div");
         gifInfoCard.innerHTML = `
                         <div> 
-                            <a class= "favorito_btn">
-                            <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
+                            <a>
                             <img src= "../assets/icon-fav-active.svg">
                             </a>
                             <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
@@ -56,13 +55,13 @@ function createGiphysCards() {
                     `
         gifInfoCard.className = "gifCardInfo";
         gifCreated.before(gifInfoCard);
-
-        if(giphysGrid.length >= 12){
-            btnVerMas.style.display = "block";
-            btnVerMas.addEventListener("click", ()=>{
-                
-            })
-        }
     }
 
 }
+
+
+/* let deleteFav = document.querySelectorAll(".gifCardInfo div a")
+
+deleteFav[i].addEventListener("click", (e) => {
+    gifCardCtn.remove()
+}) */

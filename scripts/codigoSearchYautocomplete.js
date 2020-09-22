@@ -2,6 +2,7 @@
 //SEARCH GIFOS
 
 let inputSearch = document.getElementById("buscador");//corregir esto
+//Cambiar clase en evento scroll
 let btnSearch = document.getElementById("searchbtn"); //corregir esto
 let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
@@ -10,13 +11,17 @@ let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&lim
 btnSearch.addEventListener("click", searchGif);
 inputSearch.addEventListener("keyup", (event) => {
 
-    if (event.which == 13 || event.keyCode == 13) {
+    console.log("Entre a la funcion")
+
+    if (event.key == "Enter") {
 
         event.preventDefault();
+        console.log("aprete el enter")
+
         searchGif(event);
         return false;
 
-    }
+    } 
 })
 
 function searchGif(e) {
@@ -53,7 +58,11 @@ function createCtnGifs(arrayGifs) {
 let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
 let formularioCtn = document.querySelector("div.formulario");
 
-function autocomplete() {
+inputSearch.addEventListener("keyup", autocomplete);
+
+function autocomplete(e) {
+    e.preventDefault()
+
 
     ulAutocomplete = document.createElement("ul");
     searchResultCtn.before(ulAutocomplete);
@@ -75,11 +84,10 @@ function autocomplete() {
         .catch(err => console.log(err));
 
 }
-inputSearch.addEventListener("keyup", autocomplete);
 
 
 //AGREGAR BOTON CLOSE
-let btnClose = document.querySelector("form.formularios i")
+let btnClose = document.querySelector(".formularios i")
 btnClose.addEventListener("click", () => {
     inputSearch.value = "";
     ulAutocomplete.classList.add("removeElement")

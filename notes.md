@@ -3,17 +3,17 @@
 ## CONSULTAS
 
 * Agregar y quitar de favoritos
-* Maximizar gifo
+* Maximizar gifo (position absolute)
 
 
 ## POR HACER 
 ### (Segun orden recomendado)
 
 * Que aparezcan de a doce gifs en mis favoritos
-* Trendings linkeables
+* Trendings linkeables (ENDPOINT GIPHY)
 * Hacer funcionalidad de agregar a favoritos ( **JS** );
 * Hacer la funcionalidad de descargar cada Gif
-    * Usar endpoint para descargar Gifo
+    * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
 
 

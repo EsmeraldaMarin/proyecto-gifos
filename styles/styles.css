@@ -611,19 +611,19 @@ main .section_buscador div.formulario img.personas {
   }
 }
 
-main .section_buscador div.formulario form {
+main .section_buscador div.formulario div {
   position: relative;
   width: 550px;
   height: 50px;
 }
 
 @media (max-width: 768px) {
-  main .section_buscador div.formulario form {
+  main .section_buscador div.formulario div {
     width: 335px;
   }
 }
 
-main .section_buscador div.formulario form input {
+main .section_buscador div.formulario div input {
   display: inline-block;
   width: 550px;
   height: 50px;
@@ -638,26 +638,26 @@ main .section_buscador div.formulario form input {
 }
 
 @media (max-width: 768px) {
-  main .section_buscador div.formulario form input {
+  main .section_buscador div.formulario div input {
     width: 335px;
   }
 }
 
-main .section_buscador div.formulario form input:focus {
+main .section_buscador div.formulario div input:focus {
   outline: none;
   position: relative;
 }
 
-main .section_buscador div.formulario form input:focus ~ label {
+main .section_buscador div.formulario div input:focus ~ label {
   left: 0px;
   right: auto;
 }
 
-main .section_buscador div.formulario form input:focus ~ i {
+main .section_buscador div.formulario div input:focus ~ i {
   opacity: 1;
 }
 
-main .section_buscador div.formulario form input.autocompleteActive {
+main .section_buscador div.formulario div input.autocompleteActive {
   border-radius: 25px 25px 0 0;
   border-width: 1px 1px 0 1px;
   -webkit-border-radius: 25px 25px 0 0;
@@ -666,11 +666,11 @@ main .section_buscador div.formulario form input.autocompleteActive {
   -o-border-radius: 25px 25px 0 0;
 }
 
-main .section_buscador div.formulario form input[type="search" i]::-webkit-search-cancel-button {
+main .section_buscador div.formulario div input[type="search" i]::-webkit-search-cancel-button {
   display: none;
 }
 
-main .section_buscador div.formulario form label {
+main .section_buscador div.formulario div label {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -682,16 +682,16 @@ main .section_buscador div.formulario form label {
   width: 50px;
 }
 
-main .section_buscador div.formulario form label:active {
+main .section_buscador div.formulario div label:active {
   left: 0px;
   right: auto;
 }
 
-main .section_buscador div.formulario form label img {
+main .section_buscador div.formulario div label img {
   width: 20px;
 }
 
-main .section_buscador div.formulario form i {
+main .section_buscador div.formulario div i {
   height: 100%;
   width: 50px;
   position: absolute;
@@ -781,11 +781,10 @@ main .favoritos_con_resultados {
 main .favoritos_con_resultados .flex_gifs {
   margin: 50px 0;
   width: 80%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
