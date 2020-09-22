@@ -25,6 +25,7 @@
         align-items: center;
         width: 100%;
         overflow: hidden;
+        position: relative;
         @media (max-width: $bp-1) {
             width: 100%;
             justify-content: center;
@@ -43,7 +44,20 @@
                 color: #fff;
             }
             @media (max-width: $bp-1) {
-                display: none;
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                opacity: 0;
+                z-index: 200;
+                &#btnRight{
+                    right: 0;
+                }
+                &#btnLeft{
+                    left: 0;
+                }
+                i{
+                    display: none;
+                }
             }
         }
         .inactive {

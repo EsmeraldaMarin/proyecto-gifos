@@ -9,6 +9,7 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
+* Carrusel de celular con botones invisibles / investigar scrollX
 * Que aparezcan de a doce gifs en mis favoritos
 * Trendings linkeables (ENDPOINT GIPHY)
 * Hacer funcionalidad de agregar a favoritos ( **JS** );

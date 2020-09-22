@@ -389,6 +389,7 @@ header nav ul .modos:active {
   align-items: center;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -416,6 +417,19 @@ header nav ul .modos:active {
 
 @media (max-width: 768px) {
   .trending_gifos #gifsCtn button {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    z-index: 200;
+  }
+  .trending_gifos #gifsCtn button#btnRight {
+    right: 0;
+  }
+  .trending_gifos #gifsCtn button#btnLeft {
+    left: 0;
+  }
+  .trending_gifos #gifsCtn button i {
     display: none;
   }
 }
