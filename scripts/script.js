@@ -3,7 +3,7 @@ const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 //Giphy Trendings
 
 let gifsCtnTrending = document.getElementById("gifsTrending");
-let limitTGifos = 28;
+let limitTGifos = 5;
 const giphys = [];
 let favGifos = [];
 
@@ -141,6 +141,15 @@ window.ondblclick = () => {
             console.log(giphysGrid);
         }
     )
+    //quitar el Favoritos sin contenido
+    let favoritosSinRtados = document.getElementById("favoritos_sin_resultados");
+    console.log(giphysGrid.length)
+    if (giphysGrid.length != 0) {
+
+        favoritosSinRtados.style.display = "none"
+
+    }
+
     createGiphysCards()
 };
 
@@ -156,6 +165,8 @@ function addToFavorite() {
     console.log(giphysGrid);
     createGiphysCards()
 }
+
+
 
 
 
