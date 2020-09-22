@@ -17,7 +17,7 @@ header {
     a.logo {
         img {
             width: 68px;
-            @media (max-width: $bp-1) {
+            @media (max-width: $bp-2) {
                 width: 48px;
             }
         }
@@ -119,6 +119,11 @@ header {
                         border: 1px solid $gris;
                         background-color: $gris;
                     }
+                    @media (max-width: $bp-2) {
+                        width: 48px;
+                        height: 48px;
+                        line-height: 46px;
+                    }
                 }
                 &:nth-child(4) {
                     a {
@@ -191,13 +196,15 @@ header {
                     }
                     &:last-child {
                         border-color: #fff;
+                        &::after{
+                            display: none;
+                        }
                     }
-                    &:after {
+                    &::after {
                         content: "";
                         width: 40px;
                         height: 2px;
                         margin-top: 10px;
-
                         background-color: #fff;
                         display: block;
                     }

@@ -137,18 +137,28 @@
                                     height: 18px;
                                 }
                                 &.favorito_btn {
-                                    img {
+                                    img:first-child {
+                                        display: block;
+                                    }
+                                    img:last-child {
                                         display: none;
-                                        &.fav_active {
+                                    }
+                                    &.cardBtnActive{
+                                        img:first-child {
+                                            display: none;
+                                        }
+                                        img:last-child {
                                             display: block;
                                         }
                                     }
                                 }
+                                
                             }
                         }
                         &:last-child {
                             span {
                                 display: block;
+                                font-size: 16px;
                                 &:last-child {
                                     margin-top: 10px;
                                     font-weight: bold;

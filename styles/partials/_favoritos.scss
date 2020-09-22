@@ -16,16 +16,118 @@ main {
     //CAMBIAR DISPLAY NONE POR DISPLAY FLEX EN FAV C/RESULTADOS CUANDO PONGAN UN GIF EN FAV
 
     .favoritos_con_resultados{
+        width: 100%;
         display: none;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         .flex_gifs {
-            margin: 40px 156px 80px 156px;
-            width: 1130px;
-            height: 660px;
-            border: 2px solid $azul;
+            margin: 50px 0;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            align-items: center;
+            justify-content: flex-start;
+            @media (max-width: $bp-1) {
+                width: 100%;
+            }
+            > div{
+                position: relative;
+                min-width: 260px;
+                max-width: 260px;
+                height: 200px;
+                margin: 15px;
+                @media (max-width: $bp-1) {
+                    min-width: 156px;
+                    max-width: 156px;
+                    height: 120px;
+                    margin: 10px;
+                }
+                .gifcard{
+                    @extend %cardsGif;
+                }
+
+                .gifCardInfo {
+                    padding: 15px 15px 20px 15px;
+                    position: absolute;
+                    top: 0;
+                    width: 260px;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    background-color: rgba($color: $azul, $alpha: 0.6);
+                    opacity: 0;
+                    @media (max-width: $bp-1) {
+                        width: 156px;
+                        height: 120px;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                    div {
+                        width: 100%;
+                        color: #fff;
+                        text-align: left;
+                        &:first-child {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            a {
+                                width: 32px;
+                                height: 32px;
+                                margin: 0px 5px;
+                                border-radius: 6px;
+                                -webkit-border-radius: 6px;
+                                -moz-border-radius: 6px;
+                                -ms-border-radius: 6px;
+                                -o-border-radius: 6px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: rgba($color: #fff, $alpha: 0.7);
+                                &:hover {
+                                    background-color: rgba($color: #fff, $alpha: 1);
+                                }
+                                img {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                                &.favorito_btn {
+                                    img:first-child {
+                                        display: block;
+                                    }
+                                    img:last-child {
+                                        display: none;
+                                    }
+                                    &.cardBtnActive{
+                                        img:first-child {
+                                            display: none;
+                                        }
+                                        img:last-child {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        &:last-child {
+                            span {
+                                display: block;
+                                &:last-child {
+                                    margin-top: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         button {
+            display: none;
             width: 125px;
             height: 50px;
             margin-bottom: 80px;

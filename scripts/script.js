@@ -5,6 +5,7 @@ const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 let gifsCtnTrending = document.getElementById("gifsTrending");
 let limitTGifos = 28;
 const giphys = [];
+let favGifos = [];
 
 function showGifs() {
     let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKeyGiphy}&limit=${limitTGifos}`;
@@ -28,7 +29,7 @@ function showGifs() {
                 //create info gifs card
 
                 let gifInfoCard = document.createElement("div");
-                let gifToDownload= content.data[i].images.original.mp4;
+                let gifToDownload = content.data[i].images.original.mp4;
                 gifInfoCard.innerHTML = `
                         <div> 
                             <a class= "favorito_btn">
@@ -49,26 +50,19 @@ function showGifs() {
                 //add favorite function
 
                 let btnFav = document.getElementsByClassName("favorito_btn");
-                btnFav[i].addEventListener("click", ()=>{
-                    btnFav[i].classList.toggle("cardBtnActive");
+
+                btnFav[i].addEventListener("click", () => {
+
                     gifFav = `gif${i}`;
                     gifFavInfo = content.data[i];
                     localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
-                    console.log(localStorage.getItem(gifFav))
+                    //console.log(localStorage.getItem(gifFav))
 
-                    let imgChildren = document.querySelectorAll(".favorito_btn img");
-                    console.log(imgChildren)
-                    for(let i = 0; i <= imgChildren.length -1; i++){
-                        imgChildren[i].classList.toggle("fav_active")
-                    }
+                    favGifos.push(gifFav)
 
-                    btnFav[i].addEventListener("click", ()=>{
-                        localStorage.removeItem(gifFav)
-                    })
+                    favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos))
+                    btnFav[i].classList.add("cardBtnActive");
                 })
-
-
-
             }
         })
 
@@ -126,7 +120,42 @@ function myFunction() {
     }
 }
 
+//add to favorite
 
+let giphysGrid = []
+
+window.ondblclick = () => {
+    let favoriteOnStorage = localStorage.getItem("gifos")
+    let favoriteOnStorage2 = JSON.parse(favoriteOnStorage)
+    console.log("pagina cargada")
+    favoriteOnStorage2.forEach(
+        element => {
+
+            //corregir para que no solo aparezca el ultimo
+            console.log(element)
+
+            let giphyFav = localStorage.getItem(element);
+            let giphyJson = JSON.parse(giphyFav);
+
+            giphysGrid.push(giphyJson);
+            console.log(giphysGrid);
+        }
+    )
+    createGiphysCards()
+};
+
+function addToFavorite() {
+    let num = favGifos.length - 1
+    let favorite = favGifos[num];
+    console.log(favorite)
+
+    let giphyFav = localStorage.getItem(favorite)
+    let giphyJson = JSON.parse(giphyFav);
+
+    giphysGrid.push(giphyJson);
+    console.log(giphysGrid);
+    createGiphysCards()
+}
 
 
 

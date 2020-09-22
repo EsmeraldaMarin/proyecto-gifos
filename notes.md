@@ -9,9 +9,9 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
+* Que aparezcan de a doce gifs en mis favoritos
 * Trendings linkeables
 * Hacer funcionalidad de agregar a favoritos ( **JS** );
-* Hacer funcionalidad de VER MAS ( **JS**, HTML , CSS );
 * Hacer la funcionalidad de descargar cada Gif
     * Usar endpoint para descargar Gifo
 * Agregar section cuando no aparezca algun resultado en la busqueda

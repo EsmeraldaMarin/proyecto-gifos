@@ -153,4 +153,10 @@ main {
             }
         }
     }
+    #searchResults {
+        @extend %cardsCtn;
+        .gifCard {
+            @extend %cardsGif;
+        }
+    }
 }

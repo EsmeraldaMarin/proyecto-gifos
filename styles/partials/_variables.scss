@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-$fuente: 'Montserrat', sans-serif;
+$fuente: "Montserrat", sans-serif;
 
 /*colores*/
 $azul: #572ee5;
@@ -10,3 +10,28 @@ $gris: #9cafc3;
 /*Breakpoints*/
 $bp-1: 768px;
 $bp-2: 1024px;
+
+/*extends*/
+
+%cardsCtn {
+    margin: 50px 0;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (max-width: $bp-1) {
+        width: 100%;
+    }
+}
+
+%cardsGif {
+    min-width: 260px;
+    max-width: 260px;
+    height: 200px;
+    @media (max-width: $bp-1) {
+        min-width: 156px;
+        max-width: 156px;
+        height: 120px;
+    }
+}

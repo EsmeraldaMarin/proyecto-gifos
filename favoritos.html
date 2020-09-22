@@ -9,7 +9,7 @@
     <title>GIFOS</title>
 </head>
 
-<body>
+<body id="bodyFav">
     <header>
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
@@ -48,9 +48,7 @@
             <h1>Favoritos</h1>
         </div>
         <div class="favoritos_con_resultados" id="favoritos_con_resultados">
-            <div class="flex_gifs">
-
-            </div>
+            <div class="flex_gifs" id = "flex_gifs" ></div>
             <button>VER MÁS</button>
         </div>
         <div id="favoritos_sin_resultados" class="favoritos_sin_resultados">
@@ -79,8 +77,10 @@
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>
 
-    <script src="scripts/script.js"></script>
     <script src="scripts/themesAndMenu.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/addFavoriteGif.js"></script>
+
 
 </body>
 
