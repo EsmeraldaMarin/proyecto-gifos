@@ -86,28 +86,61 @@ body.body_nocturno {
             }
         }
     }
+    .section_buscador{
+        .ulActive{
+            border-color: #fff;
+            li{
+                color: #fff;
+                &:hover{
+                    background-color: #5b6169;
+                }
+                &::before{
+                    content:  url(../../assets/icon-search-mod-noc.svg);
+                }
+            }
+        }
+    }
     .trending_gifos {
         background-color: #222326;
         #gifsCtn{
             button{
                 background-color: transparent;
                 border-color: #fff;
-                i{
-                    color: #fff;
+                svg{
+                    fill: #fff;
                     
                 }
                 &:hover{
                     background-color: #fff;
-                    i{
-                        color: #222326;
+                    svg{
+                        fill: #222326;
                     }
+                }
+            }
+            .inactive {
+                background-color: $gris;
+                border-color: $gris;
+                cursor: default;
+                &:hover {
+                    background-color: $gris;
+                    svg{
+                        fill: #fff;
+                    }
+                }
+                svg{
+                    fill: #fff;
                 }
             }
         }
     }
-    & div.formulario form.formularios input {
+    & div.formulario div.formularios input {
         border-color: #fff;
         color: #fff;
+    }
+    div.formularios{
+        svg.closeSearch{
+            fill: #fff;
+        }
     }
     .diurno {
         display: none;

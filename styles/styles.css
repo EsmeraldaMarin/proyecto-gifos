@@ -104,14 +104,14 @@ header a.logo img {
   }
 }
 
-header form {
+header .formularios {
   display: none;
   position: relative;
   width: 335px;
   height: 50px;
 }
 
-header form input {
+header .formularios input {
   display: inline-block;
   width: 335px;
   height: 50px;
@@ -125,17 +125,17 @@ header form input {
   background-color: transparent;
 }
 
-header form input:focus {
+header .formularios input:focus {
   outline: none;
 }
 
-header form label {
+header .formularios label {
   position: absolute;
   top: 15px;
   right: 20px;
 }
 
-header form label img {
+header .formularios label img {
   width: 20px;
 }
 
@@ -147,18 +147,18 @@ header .iconosMenu {
   header .iconosMenu {
     display: block;
   }
-  header .iconosMenu i {
+  header .iconosMenu img {
     color: #572ee5;
     display: none;
     font-size: 1.2em;
   }
-  header .iconosMenu i#bars {
+  header .iconosMenu img#bars {
     display: block;
   }
-  header .iconosMenu.menuActivo i {
+  header .iconosMenu.menuActivo img {
     display: block;
   }
-  header .iconosMenu.menuActivo i#bars {
+  header .iconosMenu.menuActivo img#bars {
     display: none;
   }
 }
@@ -222,9 +222,9 @@ header nav ul li .nuevo_gifo:active {
 
 @media (max-width: 1024px) {
   header nav ul li .nuevo_gifo {
-    width: 48px;
-    height: 48px;
-    line-height: 46px;
+    width: 32px;
+    height: 32px;
+    line-height: 31px;
   }
 }
 
@@ -342,12 +342,12 @@ header nav ul .modos:active {
   box-shadow: 0 2px 10px 1px rgba(156, 175, 195, 0.55);
 }
 
-.onScroll form {
+.onScroll div.formularios {
   display: block;
 }
 
 @media (max-width: 768px) {
-  .onScroll form {
+  .onScroll div.formularios {
     display: none;
   }
 }
@@ -406,13 +406,22 @@ header nav ul .modos:active {
   justify-content: center;
   align-items: center;
   border: 2px solid #572ee5;
-  font-size: 1.5em;
-  color: #572ee5;
+}
+
+.trending_gifos #gifsCtn button svg {
+  height: 100%;
+  width: 100%;
+  fill: #572ee5;
+  margin-top: 20px;
+  margin-left: 13px;
 }
 
 .trending_gifos #gifsCtn button:hover {
   background-color: #572ee5;
-  color: #fff;
+}
+
+.trending_gifos #gifsCtn button:hover svg {
+  fill: #fff;
 }
 
 @media (max-width: 768px) {
@@ -429,13 +438,12 @@ header nav ul .modos:active {
   .trending_gifos #gifsCtn button#btnLeft {
     left: 0;
   }
-  .trending_gifos #gifsCtn button i {
+  .trending_gifos #gifsCtn button img {
     display: none;
   }
 }
 
 .trending_gifos #gifsCtn .inactive {
-  color: #fff;
   background-color: #9cafc3;
   border-color: #9cafc3;
   cursor: default;
@@ -443,6 +451,10 @@ header nav ul .modos:active {
 
 .trending_gifos #gifsCtn .inactive:hover {
   background-color: #9cafc3;
+}
+
+.trending_gifos #gifsCtn .inactive svg {
+  fill: #fff;
 }
 
 .trending_gifos #gifsCtn #gifsTrending {
@@ -667,7 +679,7 @@ main .section_buscador div.formulario div input:focus ~ label {
   right: auto;
 }
 
-main .section_buscador div.formulario div input:focus ~ i {
+main .section_buscador div.formulario div input:focus ~ svg {
   opacity: 1;
 }
 
@@ -705,19 +717,18 @@ main .section_buscador div.formulario div label img {
   width: 20px;
 }
 
-main .section_buscador div.formulario div i {
-  height: 100%;
-  width: 50px;
+main .section_buscador div.formulario div > svg {
+  height: 15px;
+  width: 30px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 35%;
+  right: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 1.3em;
-  color: #572ee5;
   opacity: 0;
+  fill: #572ee5;
 }
 
 main .section_buscador .ulActive {
@@ -766,6 +777,10 @@ main .section_buscador article.trending {
 main .section_buscador article.trending h3 {
   font-size: 1em;
   margin-bottom: 5px;
+}
+
+main #searchResults .gifCard {
+  margin: 10px;
 }
 
 main .titulo_favoritos {
@@ -1550,6 +1565,22 @@ body.body_nocturno header nav ul li a.nuevo_gifo:hover i {
   color: #222326;
 }
 
+body.body_nocturno .section_buscador .ulActive {
+  border-color: #fff;
+}
+
+body.body_nocturno .section_buscador .ulActive li {
+  color: #fff;
+}
+
+body.body_nocturno .section_buscador .ulActive li:hover {
+  background-color: #5b6169;
+}
+
+body.body_nocturno .section_buscador .ulActive li::before {
+  content: url(../../assets/icon-search-mod-noc.svg);
+}
+
 body.body_nocturno .trending_gifos {
   background-color: #222326;
 }
@@ -1559,21 +1590,43 @@ body.body_nocturno .trending_gifos #gifsCtn button {
   border-color: #fff;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn button i {
-  color: #fff;
+body.body_nocturno .trending_gifos #gifsCtn button svg {
+  fill: #fff;
 }
 
 body.body_nocturno .trending_gifos #gifsCtn button:hover {
   background-color: #fff;
 }
 
-body.body_nocturno .trending_gifos #gifsCtn button:hover i {
-  color: #222326;
+body.body_nocturno .trending_gifos #gifsCtn button:hover svg {
+  fill: #222326;
 }
 
-body.body_nocturno div.formulario form.formularios input {
+body.body_nocturno .trending_gifos #gifsCtn .inactive {
+  background-color: #9cafc3;
+  border-color: #9cafc3;
+  cursor: default;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn .inactive:hover {
+  background-color: #9cafc3;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn .inactive:hover svg {
+  fill: #fff;
+}
+
+body.body_nocturno .trending_gifos #gifsCtn .inactive svg {
+  fill: #fff;
+}
+
+body.body_nocturno div.formulario div.formularios input {
   border-color: #fff;
   color: #fff;
+}
+
+body.body_nocturno div.formularios svg.closeSearch {
+  fill: #fff;
 }
 
 body.body_nocturno .diurno {

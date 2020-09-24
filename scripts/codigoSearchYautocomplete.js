@@ -57,24 +57,26 @@ function createCtnGifs(arrayGifs) {
 
 let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
 let formularioCtn = document.querySelector("div.formulario");
+let ulAutocomplete = document.createElement("ul");
+
 
 inputSearch.addEventListener("keyup", autocomplete);
 
 function autocomplete(e) {
     e.preventDefault()
 
-
-    ulAutocomplete = document.createElement("ul");
     searchResultCtn.before(ulAutocomplete);
     inputSearch.classList.add("autocompleteActive");//corregir con el otro input
 
     ulAutocomplete.className = "ulActive"
     let busqueda = inputSearch.value;
     urlAutocomplete = urlAutocomplete.concat(busqueda);
+
     fetch(urlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
             console.log(content);
+            console.log(content.data.length)
             for (let i = 0; i < content.data.length; i++) {
                 let liTags = document.createElement("li");
                 liTags.textContent = content.data[i].name;
@@ -87,9 +89,11 @@ function autocomplete(e) {
 
 
 //AGREGAR BOTON CLOSE
-let btnClose = document.querySelector(".formularios i")
+let btnClose = document.querySelector(".formularios svg")
 btnClose.addEventListener("click", () => {
     inputSearch.value = "";
-    ulAutocomplete.classList.add("removeElement")
+    ulAutocomplete.classList.add("removeElement");
+    inputSearch.classList.remove("autocompleteActive");
+
 })
 

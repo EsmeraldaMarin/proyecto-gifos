@@ -3,7 +3,7 @@ const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 //Giphy Trendings
 
 let gifsCtnTrending = document.getElementById("gifsTrending");
-let limitTGifos = 5;
+let limitTGifos = 28;
 const giphys = [];
 let favGifos = [];
 

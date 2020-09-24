@@ -37,12 +37,20 @@
             justify-content: center;
             align-items: center;
             border: 2px solid $azul;
-            font-size: 1.5em;
-            color: $azul;
+            svg{
+                height: 100%;
+                width: 100%;
+                fill: $azul;
+                margin-top: 20px;
+                margin-left: 13px;
+            }
             &:hover {
                 background-color: $azul;
-                color: #fff;
+                svg{
+                    fill: #fff;
+                }
             }
+            
             @media (max-width: $bp-1) {
                 position: absolute;
                 width: 50%;
@@ -55,18 +63,20 @@
                 &#btnLeft{
                     left: 0;
                 }
-                i{
+                img{
                     display: none;
                 }
             }
         }
         .inactive {
-            color: #fff;
             background-color: $gris;
             border-color: $gris;
             cursor: default;
             &:hover {
                 background-color: $gris;
+            }
+            svg{
+                fill: #fff;
             }
         }
         #gifsTrending {

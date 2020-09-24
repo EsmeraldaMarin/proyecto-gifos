@@ -9,7 +9,8 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Carrusel de celular con botones invisibles / investigar scrollX
+* Duplicar html del index a todas las otras paginas segun corresponda
+* Investigar scrollX para carrusel
 * Que aparezcan de a doce gifs en mis favoritos
 * Trendings linkeables (ENDPOINT GIPHY)
 * Hacer funcionalidad de agregar a favoritos ( **JS** );
@@ -37,13 +38,19 @@
     * Cards de cada gif ( JS , **CSS** );
 
 * HTML
-    * Maquetado completo de: index, favoritos, mis gifos
+    * Maquetado completo de: index, favoritos, mis gifos, crear gifo
 
 * CSS
     * Estilos en index,
     * Mis Gifos
     * Favoritos
-    * Crear Gifo (falta)
+    * Crear Gifo
+
+## HECHO EN ESTE COMMIT ##
+
+* Correccion del autocompletar (todavia falta corregir una funcion de busqueda);
+* Correcion de imagenes por svg, faltan redes sociales;
+* Correccion de estilos generales
 
 
 

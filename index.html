@@ -13,16 +13,16 @@
     <header>
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
-        <form class="formularios" id="buscadorHeader">
+        <div class="formularios" id="buscadorHeader">
             <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
             <label for="buscador_header">
                 <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
                 <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
             </label>
-        </form>
+        </div>
         <div class="iconosMenu">
-            <i class="fas fa-bars" id="bars"></i>
-            <i class="fas fa-times" id="cruz"></i>
+            <img src="assets/burger.svg" alt="menu hamburguesa" id="bars">
+            <img src="assets/close.svg" alt="close menu" id="cruz">
         </div>
         <nav class="defaultMenu">
             <ul>
@@ -52,7 +52,9 @@
                         <img src="assets/icon-search.svg" alt="icono_search" class="search diurno" id="searchbtn">
                         <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
                     </label>
-                    <i class="fas fa-times"></i>
+                    <svg role="img" class="closeSearch">
+                        <use href="assets/close.svg#path3">
+                    </svg>
                 </div>
             </div>
             <div id="searchResults"></div>
@@ -67,9 +69,17 @@
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
             <!--Carrusel CAMBIAR FLECHAS-->
             <div id="gifsCtn">
-                <button id="btnLeft"><i class="fas fa-chevron-left"></i></button>
+                <button id="btnLeft">
+                    <svg role="img" class="btnLeft">
+                        <use href="assets/button-left.svg#path-1">
+                    </svg>
+                </button>
                 <div id="gifsTrending"></div>
-                <button id="btnRight"><i class="fas fa-chevron-right"></i></button>
+                <button id="btnRight">
+                    <svg role="img" class="btnRight">
+                        <use href="assets/button-right.svg#path2">
+                    </svg>
+                </button>
             </div>
         </section>
     </main>
