@@ -9,7 +9,7 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Duplicar html del index a todas las otras paginas segun corresponda
+* Cards para gifs de busqueda
 * Investigar scrollX para carrusel
 * Que aparezcan de a doce gifs en mis favoritos
 * Trendings linkeables (ENDPOINT GIPHY)
@@ -17,12 +17,13 @@
 * Hacer la funcionalidad de descargar cada Gif
     * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
+* Duplicar html del index a todas las otras paginas segun corresponda
+
 
 
 ### (Con mayor grado de dificultad)
 
 * Flechas left and right inactive
-* Tags de autocompletar
 * Maximizar cada gifo seleccionado
 * Subir gifo creado a Giphy
 * Agregar gifo creado en la seccion mis gifos
@@ -36,6 +37,8 @@
     * Cambio de estilos en header con scroll top
     * Menu hamburguesa
     * Cards de cada gif ( JS , **CSS** );
+    * Tags de autocompletar
+
 
 * HTML
     * Maquetado completo de: index, favoritos, mis gifos, crear gifo
@@ -48,9 +51,8 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Correccion del autocompletar (todavia falta corregir una funcion de busqueda);
-* Correcion de imagenes por svg, faltan redes sociales;
-* Correccion de estilos generales
+* Nueva correccion del autocompletar (todavia falta corregir una funcion de busqueda);
+* Correccion de la seccion de resultados de la busqueda
 
 
 

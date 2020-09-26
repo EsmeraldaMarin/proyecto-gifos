@@ -11,24 +11,23 @@ let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&lim
 btnSearch.addEventListener("click", searchGif);
 inputSearch.addEventListener("keyup", (event) => {
 
-    console.log("Entre a la funcion")
-
     if (event.key == "Enter") {
 
         event.preventDefault();
-        console.log("aprete el enter")
-
         searchGif(event);
         return false;
 
-    } 
+    }
 })
 
 function searchGif(e) {
 
+    while(searchResultCtn.firstChild){
+        searchResultCtn.removeChild(searchResultCtn.firstChild)
+    }
     let busqueda = inputSearch.value;
-    urlSearch = `${urlSearch}&q=${busqueda}`;
-    fetch(urlSearch)
+    let newUrlSearch = `${urlSearch}&q=${busqueda}`;
+    fetch(newUrlSearch)
         .then(resp => resp.json())
         .then(content => {
             createCtnGifs(content.data);
@@ -59,28 +58,49 @@ let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKe
 let formularioCtn = document.querySelector("div.formulario");
 let ulAutocomplete = document.createElement("ul");
 
+let liArray = [];
+for (let i = 0; i <= 3; i++) {
+    let liTags = document.createElement("li");
+    liArray.push(liTags)
+}
+
 
 inputSearch.addEventListener("keyup", autocomplete);
 
 function autocomplete(e) {
     e.preventDefault()
 
+    if (e.key == "Backspace") {
+
+        ulAutocomplete.remove();
+        inputSearch.classList.remove("autocompleteActive");
+
+        return false;
+
+    }
+    inputSearch.value.trim()
+
     searchResultCtn.before(ulAutocomplete);
     inputSearch.classList.add("autocompleteActive");//corregir con el otro input
 
     ulAutocomplete.className = "ulActive"
-    let busqueda = inputSearch.value;
-    urlAutocomplete = urlAutocomplete.concat(busqueda);
 
-    fetch(urlAutocomplete)
+    let busqueda = inputSearch.value
+
+
+    let newUrlAutocomplete = urlAutocomplete + busqueda;
+
+    fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
-            console.log(content);
-            console.log(content.data.length)
-            for (let i = 0; i < content.data.length; i++) {
-                let liTags = document.createElement("li");
-                liTags.textContent = content.data[i].name;
-                ulAutocomplete.appendChild(liTags);
+            for (let i = 0; i < liArray.length; i++) {
+
+                if (content.data[i] == undefined) {
+                    return false
+                }
+
+                liArray[i].textContent = content.data[i].name;
+                ulAutocomplete.appendChild(liArray[i]);
             }
         })
         .catch(err => console.log(err));
