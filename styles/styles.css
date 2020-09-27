@@ -628,7 +628,7 @@ main .section_buscador h1 span {
 }
 
 main .section_buscador div.formulario img.personas {
-  margin-bottom: -5px;
+  margin-bottom: -4px;
 }
 
 @media (max-width: 768px) {
@@ -1644,5 +1644,145 @@ body.body_nocturno ul.ul_creargifos li.contador_pasos {
 
 body.body_nocturno footer i:hover {
   color: #572ee5;
+}
+
+body {
+  position: relative;
+}
+
+.ctnMax {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 8000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctnMax > div {
+  position: relative;
+  min-width: 695px;
+  max-width: 695px;
+  height: 385px;
+}
+
+@media (max-width: 768px) {
+  .ctnMax > div {
+    min-width: 243px;
+    max-width: 243px;
+    height: 187px;
+  }
+}
+
+.ctnMax > div > img {
+  min-width: 695px;
+  max-width: 695px;
+  height: 385px;
+}
+
+@media (max-width: 768px) {
+  .ctnMax > div > img {
+    min-width: 243px;
+    max-width: 243px;
+    height: 187px;
+  }
+}
+
+.ctnMax > div .gifCardInfo {
+  position: absolute;
+  bottom: -80px;
+  width: 695px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .ctnMax > div .gifCardInfo {
+    width: 243px;
+    height: 187px;
+  }
+}
+
+.ctnMax > div .gifCardInfo div {
+  color: #000;
+  text-align: left;
+}
+
+.ctnMax > div .gifCardInfo div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border: 1px solid #572ee5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:hover {
+  background-color: #eee;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a img {
+  width: 18px;
+  height: 18px;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+  display: block;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+  display: none;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+  display: none;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+  display: block;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:last-child {
+  display: none;
+}
+
+.ctnMax > div .gifCardInfo div:last-child span {
+  display: block;
+  font-size: 16px;
+}
+
+.ctnMax > div .gifCardInfo div:last-child span:last-child {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.ctnMax > div::after {
+  content: "x";
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  padding: 3px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #572ee5;
+  font-family: monospace;
 }
 /*# sourceMappingURL=styles.css.map */

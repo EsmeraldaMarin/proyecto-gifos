@@ -51,8 +51,11 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Nueva correccion del autocompletar (todavia falta corregir una funcion de busqueda);
-* Correccion de la seccion de resultados de la busqueda
+* Max gifo (sin terminar)
+
+# CAMBIAR
+
+* After de close max gifo por un div
 
 
 

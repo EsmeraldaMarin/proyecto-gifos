@@ -63,6 +63,14 @@ function showGifs() {
                     favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos))
                     btnFav[i].classList.add("cardBtnActive");
                 })
+
+                //MAXIMIZAR FUNCION
+
+                let btnMax = document.getElementsByClassName("max_btn");
+                btnMax[i].addEventListener("click", ()=>{
+                    maxFuncion(i)
+                })
+
             }
         })
 
@@ -70,6 +78,27 @@ function showGifs() {
 }
 showGifs()
 
+
+//Funcion maximizar
+
+function maxFuncion(i){
+    let ctnGifsMax = document.querySelectorAll("#gifsTrending>div");
+    let gifMax = ctnGifsMax[i].cloneNode(true);
+    let newCtn = document.createElement("div")
+
+    newCtn.classList.add("ctnMax")
+    gifMax.classList.add("gifMaximized")
+    newCtn.appendChild(gifMax)
+    document.body.insertBefore(newCtn, header)
+
+    let closeMax = document.querySelector(".ctnMax>div ::after")
+    closeMax.addEventListener("click", ()=>{
+        document.body.removeChild(newCtn)
+    })
+
+
+    console.log(ctnGifsMax)
+}
 
 //CARRUSEL TRENDING
 

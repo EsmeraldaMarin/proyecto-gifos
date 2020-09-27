@@ -15,17 +15,22 @@ inputSearch.addEventListener("keyup", (event) => {
 
         event.preventDefault();
         searchGif(event);
-        return false;
 
     }
 })
 
 function searchGif(e) {
 
+    //eliminar resultados de la busqueda anterior
+
     while(searchResultCtn.firstChild){
         searchResultCtn.removeChild(searchResultCtn.firstChild)
     }
+
+    //nueva busqueda
+
     let busqueda = inputSearch.value;
+    console.log(busqueda)
     let newUrlSearch = `${urlSearch}&q=${busqueda}`;
     fetch(newUrlSearch)
         .then(resp => resp.json())
@@ -75,7 +80,7 @@ function autocomplete(e) {
         ulAutocomplete.remove();
         inputSearch.classList.remove("autocompleteActive");
 
-        return false;
+        return;
 
     }
     inputSearch.value.trim()
@@ -87,25 +92,32 @@ function autocomplete(e) {
 
     let busqueda = inputSearch.value
 
-
     let newUrlAutocomplete = urlAutocomplete + busqueda;
 
     fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
-            for (let i = 0; i < liArray.length; i++) {
-
-                if (content.data[i] == undefined) {
-                    return false
-                }
+            for (let i = 0; i <= liArray.length -1; i++) {
 
                 liArray[i].textContent = content.data[i].name;
                 ulAutocomplete.appendChild(liArray[i]);
+
+                //evento al seleccionar una opcion del autocompletar
+
+                liArray[i].addEventListener("click", ()=>{
+
+                    console.log(liArray.length)
+                    inputSearch.value = liArray[i].textContent;
+                    console.log(liArray[i])
+                    searchGif()
+                })
             }
+
         })
         .catch(err => console.log(err));
 
 }
+
 
 
 //AGREGAR BOTON CLOSE

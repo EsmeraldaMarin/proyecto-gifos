@@ -1,0 +1,120 @@
+body {
+    position: relative;
+}
+.ctnMax {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 8000;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+        position: relative;
+        min-width: 695px;
+        max-width: 695px;
+        height: 385px;
+        @media (max-width: $bp-1) {
+            min-width: 243px;
+            max-width: 243px;
+            height: 187px;
+        }
+        > img {
+            min-width: 695px;
+            max-width: 695px;
+            height: 385px;
+            @media (max-width: $bp-1) {
+                min-width: 243px;
+                max-width: 243px;
+                height: 187px;
+            }
+        }
+        .gifCardInfo {
+            position: absolute;
+            bottom: -80px;
+            width: 695px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+
+            @media (max-width: $bp-1) {
+                width: 243px;
+                height: 187px;
+            }
+            div {
+                color: #000;
+                text-align: left;
+                &:first-child {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    a {
+                        width: 32px;
+                        height: 32px;
+                        margin: 0px 5px;
+                        border-radius: 6px;
+                        -webkit-border-radius: 6px;
+                        -moz-border-radius: 6px;
+                        -ms-border-radius: 6px;
+                        -o-border-radius: 6px;
+                        border: 1px solid $azul;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba($color: #fff, $alpha: 0.7);
+                        &:hover{
+                            background-color: #eee;
+                        }
+                        img {
+                            width: 18px;
+                            height: 18px;
+                        }
+                        &.favorito_btn {
+                            img:first-child {
+                                display: block;
+                            }
+                            img:last-child {
+                                display: none;
+                            }
+                            &.cardBtnActive {
+                                img:first-child {
+                                    display: none;
+                                }
+                                img:last-child {
+                                    display: block;
+                                }
+                            }
+                        }
+                        &:last-child{
+                            display: none;
+                        }
+                    }
+                }
+                &:last-child {
+                    span {
+                        display: block;
+                        font-size: 16px;
+                        &:last-child {
+                            margin-top: 10px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        &::after{
+            content: "x";
+            position: absolute;
+            top: -100px;
+            right: -80px;
+            padding: 3px;
+            font-size: 25px;
+            font-weight: bold;
+            color: $azul;
+            font-family: monospace;
+        }
+    }
+}
