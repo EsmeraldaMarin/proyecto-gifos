@@ -2,9 +2,6 @@
 
 ## CONSULTAS
 
-* Agregar y quitar de favoritos
-* Maximizar gifo (position absolute)
-
 
 ## POR HACER 
 ### (Segun orden recomendado)
@@ -51,7 +48,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Max gifo (sin terminar)
+* Autocompletar terminado
 
 # CAMBIAR
 

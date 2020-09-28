@@ -19,11 +19,11 @@ inputSearch.addEventListener("keyup", (event) => {
     }
 })
 
-function searchGif(e) {
+function searchGif() {
 
     //eliminar resultados de la busqueda anterior
 
-    while(searchResultCtn.firstChild){
+    while (searchResultCtn.firstChild) {
         searchResultCtn.removeChild(searchResultCtn.firstChild)
     }
 
@@ -97,20 +97,11 @@ function autocomplete(e) {
     fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
-            for (let i = 0; i <= liArray.length -1; i++) {
+            for (let i = 0; i <= liArray.length - 1; i++) {
 
                 liArray[i].textContent = content.data[i].name;
                 ulAutocomplete.appendChild(liArray[i]);
 
-                //evento al seleccionar una opcion del autocompletar
-
-                liArray[i].addEventListener("click", ()=>{
-
-                    console.log(liArray.length)
-                    inputSearch.value = liArray[i].textContent;
-                    console.log(liArray[i])
-                    searchGif()
-                })
             }
 
         })
@@ -118,7 +109,16 @@ function autocomplete(e) {
 
 }
 
+//evento al seleccionar una opcion del autocompletar
 
+
+ulAutocomplete.addEventListener("click", (e) => {
+
+    inputSearch.value = e.target.textContent
+    ulAutocomplete.remove();
+    inputSearch.classList.remove("autocompleteActive");
+    searchGif()
+})
 
 //AGREGAR BOTON CLOSE
 let btnClose = document.querySelector(".formularios svg")
