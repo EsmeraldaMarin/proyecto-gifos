@@ -65,7 +65,7 @@ body {
                         justify-content: center;
                         align-items: center;
                         background-color: rgba($color: #fff, $alpha: 0.7);
-                        &:hover{
+                        &:hover {
                             background-color: #eee;
                         }
                         img {
@@ -88,8 +88,22 @@ body {
                                 }
                             }
                         }
-                        &:last-child{
-                            display: none;
+                        &:last-child {
+                            &.btnMaxActive {
+                                position: absolute;
+                                top: -500px;
+                                right: -150px;
+                                border: 0px solid transparent;
+                                img{
+                                    display: none;
+                                }
+                                &::after{
+                                    content: url(../../assets/close.svg);
+                                }
+                                &:hover{
+                                    background-color: transparent;
+                                }
+                            }
                         }
                     }
                 }
@@ -104,17 +118,6 @@ body {
                     }
                 }
             }
-        }
-        &::after{
-            content: "x";
-            position: absolute;
-            top: -100px;
-            right: -80px;
-            padding: 3px;
-            font-size: 25px;
-            font-weight: bold;
-            color: $azul;
-            font-family: monospace;
         }
     }
 }

@@ -16,6 +16,10 @@ body.body_nocturno {
                 }
             }
         }
+        .formularios input{
+            border-color: #fff;
+            color: #fff;
+        }
         nav {
             ul {
                 @media (max-width: $bp-1) {
@@ -101,7 +105,7 @@ body.body_nocturno {
         }
     }
     .trending_gifos {
-        background-color: #222326;
+        background-color: #2f3236;
         #gifsCtn{
             button{
                 background-color: transparent;
@@ -140,6 +144,18 @@ body.body_nocturno {
     div.formularios{
         svg.closeSearch{
             fill: #fff;
+        }
+    }
+    .ctnMax{
+        background-color: #222326;
+        > div .gifCardInfo div:first-child a {
+            background-color: transparent;
+            &:hover{
+                background-color: #5b6169;
+            }
+            &:last-child:hover{
+                background-color: transparent;
+            }
         }
     }
     .diurno {

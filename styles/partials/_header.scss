@@ -42,6 +42,10 @@ header {
             &:focus {
                 outline: none;
             }
+            
+        }
+        input[type="search" i]::-webkit-search-cancel-button {
+            display: none;
         }
         label {
             position: absolute;

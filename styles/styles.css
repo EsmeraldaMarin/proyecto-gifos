@@ -129,6 +129,10 @@ header .formularios input:focus {
   outline: none;
 }
 
+header .formularios input[type="search" i]::-webkit-search-cancel-button {
+  display: none;
+}
+
 header .formularios label {
   position: absolute;
   top: 15px;
@@ -1488,6 +1492,11 @@ body.body_nocturno header {
   }
 }
 
+body.body_nocturno header .formularios input {
+  border-color: #fff;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   body.body_nocturno header nav ul {
     background-color: #000;
@@ -1582,7 +1591,7 @@ body.body_nocturno .section_buscador .ulActive li::before {
 }
 
 body.body_nocturno .trending_gifos {
-  background-color: #222326;
+  background-color: #2f3236;
 }
 
 body.body_nocturno .trending_gifos #gifsCtn button {
@@ -1627,6 +1636,22 @@ body.body_nocturno div.formulario div.formularios input {
 
 body.body_nocturno div.formularios svg.closeSearch {
   fill: #fff;
+}
+
+body.body_nocturno .ctnMax {
+  background-color: #222326;
+}
+
+body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a {
+  background-color: transparent;
+}
+
+body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:hover {
+  background-color: #5b6169;
+}
+
+body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:last-child:hover {
+  background-color: transparent;
 }
 
 body.body_nocturno .diurno {
@@ -1760,8 +1785,23 @@ body {
   display: block;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a:last-child {
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
+  position: absolute;
+  top: -500px;
+  right: -150px;
+  border: 0px solid transparent;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive img {
   display: none;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive::after {
+  content: url(../../assets/close.svg);
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover {
+  background-color: transparent;
 }
 
 .ctnMax > div .gifCardInfo div:last-child span {
@@ -1772,17 +1812,5 @@ body {
 .ctnMax > div .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
-}
-
-.ctnMax > div::after {
-  content: "x";
-  position: absolute;
-  top: -100px;
-  right: -80px;
-  padding: 3px;
-  font-size: 25px;
-  font-weight: bold;
-  color: #572ee5;
-  font-family: monospace;
 }
 /*# sourceMappingURL=styles.css.map */

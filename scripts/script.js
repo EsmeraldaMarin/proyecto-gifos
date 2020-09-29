@@ -26,48 +26,23 @@ function showGifs() {
                 gifCardCtn.appendChild(gifCreated)
                 gifsCtnTrending.appendChild(gifCardCtn);
 
-                //create info gifs card
-
-                let gifInfoCard = document.createElement("div");
-                let gifToDownload = content.data[i].images.original.mp4;
-                gifInfoCard.innerHTML = `
-                        <div> 
-                            <a class= "favorito_btn">
-                            <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
-                            <img src= "../assets/icon-fav-active.svg">
-                            </a>
-                            <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
-                            <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
-                        </div>
-                        <div> 
-                            <span>${content.data[i].username}</span>
-                            <span>${content.data[i].title}</span>
-                        </div>
-                    `
-                gifInfoCard.className = "gifCardInfo";
-                gifCreated.before(gifInfoCard);
+                createInfoCards(gifCreated, content.data[i])
 
                 //add favorite function
 
                 let btnFav = document.getElementsByClassName("favorito_btn");
 
                 btnFav[i].addEventListener("click", () => {
-
-                    gifFav = `gif${i}`;
-                    gifFavInfo = content.data[i];
-                    localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
-                    //console.log(localStorage.getItem(gifFav))
-
-                    favGifos.push(gifFav)
-
-                    favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos))
-                    btnFav[i].classList.add("cardBtnActive");
+                    addFavoriteGif(i, content.data, btnFav[i])
                 })
+
 
                 //MAXIMIZAR FUNCION
 
                 let btnMax = document.getElementsByClassName("max_btn");
-                btnMax[i].addEventListener("click", ()=>{
+                btnMax[i].addEventListener("click", () => {
+
+                    btnMax[i].classList.add("btnMaxActive")
                     maxFuncion(i)
                 })
 
@@ -78,10 +53,49 @@ function showGifs() {
 }
 showGifs()
 
+//Create info cards
+
+function createInfoCards(gifCreated, info) {
+
+    let gifInfoCard = document.createElement("div");
+    let gifToDownload = info.images.original.mp4;
+    gifInfoCard.innerHTML = `
+                            <div> 
+                                <a class= "favorito_btn">
+                                <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
+                                <img src= "../assets/icon-fav-active.svg">
+                                </a>
+                                <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
+                                <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
+                            </div>
+                            <div> 
+                                <span>${info.username}</span>
+                                <span>${info.title}</span>
+                            </div>
+                        `
+    gifInfoCard.className = "gifCardInfo";
+    gifCreated.before(gifInfoCard);
+}
+
+//Funcion agregar a favorito
+
+function addFavoriteGif(i, info, btn) {
+
+    gifFav = `gif${i}`;
+    gifFavInfo = info[i];
+    localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
+    //console.log(localStorage.getItem(gifFav))
+
+    favGifos.push(gifFav)
+
+    favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos))
+    btn.classList.add("cardBtnActive");
+
+}
 
 //Funcion maximizar
 
-function maxFuncion(i){
+function maxFuncion(i) {
     let ctnGifsMax = document.querySelectorAll("#gifsTrending>div");
     let gifMax = ctnGifsMax[i].cloneNode(true);
     let newCtn = document.createElement("div")
@@ -91,13 +105,13 @@ function maxFuncion(i){
     newCtn.appendChild(gifMax)
     document.body.insertBefore(newCtn, header)
 
-    let closeMax = document.querySelector(".ctnMax>div ::after")
-    closeMax.addEventListener("click", ()=>{
+    let closeMax = document.querySelector(".btnMaxActive")
+    closeMax.addEventListener("click", () => {
+
+        closeMax.classList.remove("btnMaxActive")
         document.body.removeChild(newCtn)
     })
 
-
-    console.log(ctnGifsMax)
 }
 
 //CARRUSEL TRENDING

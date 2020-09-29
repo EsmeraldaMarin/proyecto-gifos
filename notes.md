@@ -48,11 +48,11 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Autocompletar terminado
+* perfeccionado de estilos
+* maximizar acabado
 
-# CAMBIAR
-
-* After de close max gifo por un div
+### hacer
+* add favorite from max
 
 
 
