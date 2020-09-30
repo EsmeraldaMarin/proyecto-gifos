@@ -48,8 +48,9 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* perfeccionado de estilos
-* maximizar acabado
+* agregar a favoritos desde search sin superposicion de gifs
+* agregar funciones al search (max y agg gifo)
+* estilos en gifs de busqueda
 
 ### hacer
 * add favorite from max

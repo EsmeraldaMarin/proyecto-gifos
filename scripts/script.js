@@ -30,7 +30,7 @@ function showGifs() {
 
                 //add favorite function
 
-                let btnFav = document.getElementsByClassName("favorito_btn");
+                let btnFav = document.querySelectorAll("#gifsTrending .favorito_btn");
 
                 btnFav[i].addEventListener("click", () => {
                     addFavoriteGif(i, content.data, btnFav[i])
@@ -39,7 +39,7 @@ function showGifs() {
 
                 //MAXIMIZAR FUNCION
 
-                let btnMax = document.getElementsByClassName("max_btn");
+                let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
 
                     btnMax[i].classList.add("btnMaxActive")
@@ -81,8 +81,8 @@ function createInfoCards(gifCreated, info) {
 
 function addFavoriteGif(i, info, btn) {
 
-    gifFav = `gif${i}`;
     gifFavInfo = info[i];
+    gifFav = gifFavInfo.title;
     localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
     //console.log(localStorage.getItem(gifFav))
 

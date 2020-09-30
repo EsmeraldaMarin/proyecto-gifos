@@ -30,7 +30,6 @@ function searchGif() {
     //nueva busqueda
 
     let busqueda = inputSearch.value;
-    console.log(busqueda)
     let newUrlSearch = `${urlSearch}&q=${busqueda}`;
     fetch(newUrlSearch)
         .then(resp => resp.json())
@@ -47,10 +46,33 @@ function createCtnGifs(arrayGifs) {
 
         let urlImg = arrayGifs[i].images.downsized.url;
 
+        let gifCardCtn = document.createElement("div");
         let gifSearched = document.createElement("img");
         gifSearched.className = "gifCard";
         gifSearched.src = urlImg
-        searchResultCtn.appendChild(gifSearched);
+        gifCardCtn.appendChild(gifSearched)
+        searchResultCtn.appendChild(gifCardCtn);
+
+        //crear info cards
+
+        createInfoCards(gifSearched, arrayGifs[i])
+
+
+        //Agregar a favorito
+
+        let btnFav = document.querySelectorAll("#searchResults .favorito_btn");
+        btnFav[i].addEventListener("click", () => {
+            addFavoriteGif(i, arrayGifs, btnFav[i])
+        })
+
+        //maximizar gifo
+
+        let btnMax = document.querySelectorAll("#searchResults .max_btn");
+        btnMax[i].addEventListener("click", () => {
+
+            btnMax[i].classList.add("btnMaxActive")
+            maxFuncion(i)
+        })
 
 
     }

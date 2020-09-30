@@ -17,14 +17,14 @@ main #searchResults {
   }
 }
 
-main #searchResults .gifCard, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+main #searchResults div .gifCard, main #searchResults div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
   min-width: 260px;
   max-width: 260px;
   height: 200px;
 }
 
 @media (max-width: 768px) {
-  main #searchResults .gifCard, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+  main #searchResults div .gifCard, main #searchResults div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -783,8 +783,96 @@ main .section_buscador article.trending h3 {
   margin-bottom: 5px;
 }
 
-main #searchResults .gifCard {
+main #searchResults div {
+  position: relative;
+}
+
+main #searchResults div .gifCard {
   margin: 10px;
+}
+
+main #searchResults div .gifCardInfo {
+  padding: 15px 15px 20px 15px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(87, 46, 229, 0.6);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  main #searchResults div .gifCardInfo {
+    margin: 0 10px;
+  }
+}
+
+main #searchResults div .gifCardInfo:hover {
+  opacity: 1;
+}
+
+main #searchResults div .gifCardInfo div {
+  width: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+main #searchResults div .gifCardInfo div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+main #searchResults div .gifCardInfo div:first-child a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+main #searchResults div .gifCardInfo div:first-child a:hover {
+  background-color: white;
+}
+
+main #searchResults div .gifCardInfo div:first-child a img {
+  width: 18px;
+  height: 18px;
+}
+
+main #searchResults div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+  display: block;
+}
+
+main #searchResults div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+  display: none;
+}
+
+main #searchResults div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+  display: none;
+}
+
+main #searchResults div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+  display: block;
+}
+
+main #searchResults div .gifCardInfo div:last-child span {
+  display: block;
+  font-size: 16px;
+}
+
+main #searchResults div .gifCardInfo div:last-child span:last-child {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 main .titulo_favoritos {
