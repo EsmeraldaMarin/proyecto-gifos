@@ -42,34 +42,79 @@ header {
             &:focus {
                 outline: none;
             }
-            
+            &.autocompleteActive {
+                border-radius: 25px 25px 0 0;
+                border-width: 1px 1px 0 1px;
+                -webkit-border-radius: 25px 25px 0 0;
+                -moz-border-radius: 25px 25px 0 0;
+                -ms-border-radius: 25px 25px 0 0;
+                -o-border-radius: 25px 25px 0 0;
+                outline: none;
+                position: relative;
+                ~ label {
+                    left: 0px;
+                    right: auto;
+                    svg {
+                        fill: $gris;
+                    }
+                }
+                ~ svg {
+                    opacity: 1;
+                }
+            }
         }
         input[type="search" i]::-webkit-search-cancel-button {
             display: none;
         }
         label {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            img {
-                width: 20px;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50px;
+            &:active {
+                left: 0px;
+                right: auto;
             }
+            svg {
+                fill: $azul;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        > svg {
+            height: 15px;
+            width: 30px;
+            position: absolute;
+            top: 35%;
+            right: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            fill: $azul;
         }
     }
     .iconosMenu {
         display: none;
         @media (max-width: $bp-1) {
             display: block;
-            img {
-                color: $azul;
+            svg {
+                fill: $azul;
                 display: none;
-                font-size: 1.2em;
+                width: 15px;
+                height: 15px;
                 &#bars {
                     display: block;
                 }
             }
             &.menuActivo {
-                img {
+                svg {
                     display: block;
                     &#bars {
                         display: none;
@@ -110,23 +155,31 @@ header {
                     -moz-border-radius: 50%;
                     -ms-border-radius: 50%;
                     -o-border-radius: 50%;
-                    text-align: center;
-                    line-height: 50px;
-                    font-size: 2em;
-                    font-weight: lighter;
+                    line-height: 57px;
+
                     &:hover {
                         border-bottom: 1px solid $azul;
                         background-color: $azul;
-                        color: #fff;
+                        svg {
+                            fill: #fff;
+                        }
                     }
                     &:active {
                         border: 1px solid $gris;
                         background-color: $gris;
                     }
+                    svg {
+                        fill: $azul;
+                        width: 16px;
+                        height: 16px;
+                    }
                     @media (max-width: $bp-2) {
                         width: 32px;
                         height: 32px;
-                        line-height: 31px;
+                        line-height: 36px;
+                        svg {
+                            transform: scale(0.8);
+                        }
                     }
                 }
                 &:nth-child(4) {
@@ -158,7 +211,6 @@ header {
                     border-bottom: 2px solid $celeste;
                     @media (max-width: $bp-2) {
                         border-bottom: 0px solid $celeste;
-
                     }
                 }
                 &:active {
@@ -200,7 +252,7 @@ header {
                     }
                     &:last-child {
                         border-color: #fff;
-                        &::after{
+                        &::after {
                             display: none;
                         }
                     }

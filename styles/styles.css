@@ -2,7 +2,7 @@
 /*colores*/
 /*Breakpoints*/
 /*extends*/
-main #searchResults {
+main #searchResults.searchActive {
   margin: 50px 0;
   width: 80%;
   display: flex;
@@ -12,19 +12,19 @@ main #searchResults {
 }
 
 @media (max-width: 768px) {
-  main #searchResults {
+  main #searchResults.searchActive {
     width: 100%;
   }
 }
 
-main #searchResults div .gifCard, main #searchResults div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+main #searchResults.searchActive div .gifCard, main #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
   min-width: 260px;
   max-width: 260px;
   height: 200px;
 }
 
 @media (max-width: 768px) {
-  main #searchResults div .gifCard, main #searchResults div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+  main #searchResults.searchActive div .gifCard, main #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -62,8 +62,11 @@ header #selected {
 header #selected_a {
   background-color: #9cafc3;
   border: 1px solid #9cafc3;
-  color: #fff;
   cursor: text;
+}
+
+header #selected_a svg {
+  fill: #fff;
 }
 
 .removeElement {
@@ -129,18 +132,69 @@ header .formularios input:focus {
   outline: none;
 }
 
+header .formularios input.autocompleteActive {
+  border-radius: 25px 25px 0 0;
+  border-width: 1px 1px 0 1px;
+  -webkit-border-radius: 25px 25px 0 0;
+  -moz-border-radius: 25px 25px 0 0;
+  -ms-border-radius: 25px 25px 0 0;
+  -o-border-radius: 25px 25px 0 0;
+  outline: none;
+  position: relative;
+}
+
+header .formularios input.autocompleteActive ~ label {
+  left: 0px;
+  right: auto;
+}
+
+header .formularios input.autocompleteActive ~ label svg {
+  fill: #9cafc3;
+}
+
+header .formularios input.autocompleteActive ~ svg {
+  opacity: 1;
+}
+
 header .formularios input[type="search" i]::-webkit-search-cancel-button {
   display: none;
 }
 
 header .formularios label {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px;
 }
 
-header .formularios label img {
+header .formularios label:active {
+  left: 0px;
+  right: auto;
+}
+
+header .formularios label svg {
+  fill: #572ee5;
   width: 20px;
+  height: 20px;
+}
+
+header .formularios > svg {
+  height: 15px;
+  width: 30px;
+  position: absolute;
+  top: 35%;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  fill: #572ee5;
 }
 
 header .iconosMenu {
@@ -151,18 +205,19 @@ header .iconosMenu {
   header .iconosMenu {
     display: block;
   }
-  header .iconosMenu img {
-    color: #572ee5;
+  header .iconosMenu svg {
+    fill: #572ee5;
     display: none;
-    font-size: 1.2em;
+    width: 15px;
+    height: 15px;
   }
-  header .iconosMenu img#bars {
+  header .iconosMenu svg#bars {
     display: block;
   }
-  header .iconosMenu.menuActivo img {
+  header .iconosMenu.menuActivo svg {
     display: block;
   }
-  header .iconosMenu.menuActivo img#bars {
+  header .iconosMenu.menuActivo svg#bars {
     display: none;
   }
 }
@@ -207,16 +262,16 @@ header nav ul li .nuevo_gifo {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  text-align: center;
-  line-height: 50px;
-  font-size: 2em;
-  font-weight: lighter;
+  line-height: 57px;
 }
 
 header nav ul li .nuevo_gifo:hover {
   border-bottom: 1px solid #572ee5;
   background-color: #572ee5;
-  color: #fff;
+}
+
+header nav ul li .nuevo_gifo:hover svg {
+  fill: #fff;
 }
 
 header nav ul li .nuevo_gifo:active {
@@ -224,11 +279,20 @@ header nav ul li .nuevo_gifo:active {
   background-color: #9cafc3;
 }
 
+header nav ul li .nuevo_gifo svg {
+  fill: #572ee5;
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 1024px) {
   header nav ul li .nuevo_gifo {
     width: 32px;
     height: 32px;
-    line-height: 31px;
+    line-height: 36px;
+  }
+  header nav ul li .nuevo_gifo svg {
+    transform: scale(0.8);
   }
 }
 
@@ -673,20 +737,6 @@ main .section_buscador div.formulario div input {
   }
 }
 
-main .section_buscador div.formulario div input:focus {
-  outline: none;
-  position: relative;
-}
-
-main .section_buscador div.formulario div input:focus ~ label {
-  left: 0px;
-  right: auto;
-}
-
-main .section_buscador div.formulario div input:focus ~ svg {
-  opacity: 1;
-}
-
 main .section_buscador div.formulario div input.autocompleteActive {
   border-radius: 25px 25px 0 0;
   border-width: 1px 1px 0 1px;
@@ -694,6 +744,21 @@ main .section_buscador div.formulario div input.autocompleteActive {
   -moz-border-radius: 25px 25px 0 0;
   -ms-border-radius: 25px 25px 0 0;
   -o-border-radius: 25px 25px 0 0;
+  outline: none;
+  position: relative;
+}
+
+main .section_buscador div.formulario div input.autocompleteActive ~ label {
+  left: 0px;
+  right: auto;
+}
+
+main .section_buscador div.formulario div input.autocompleteActive ~ label svg {
+  fill: #9cafc3;
+}
+
+main .section_buscador div.formulario div input.autocompleteActive ~ svg {
+  opacity: 1;
 }
 
 main .section_buscador div.formulario div input[type="search" i]::-webkit-search-cancel-button {
@@ -717,8 +782,10 @@ main .section_buscador div.formulario div label:active {
   right: auto;
 }
 
-main .section_buscador div.formulario div label img {
+main .section_buscador div.formulario div label svg {
+  fill: #572ee5;
   width: 20px;
+  height: 20px;
 }
 
 main .section_buscador div.formulario div > svg {
@@ -746,6 +813,13 @@ main .section_buscador .ulActive {
   -ms-border-radius: 0 0 25px 25px;
   -o-border-radius: 0 0 25px 25px;
   overflow: hidden;
+  color: #9cafc3;
+}
+
+@media (max-width: 768px) {
+  main .section_buscador .ulActive {
+    width: 335px;
+  }
 }
 
 main .section_buscador .ulActive li {
@@ -761,7 +835,7 @@ main .section_buscador .ulActive li:hover {
 }
 
 main .section_buscador .ulActive li::before {
-  content: url(../../assets/icon-search.svg);
+  content: url(../../assets/search-gray.svg);
   width: 16px;
   margin: 0 25px;
 }
@@ -783,15 +857,15 @@ main .section_buscador article.trending h3 {
   margin-bottom: 5px;
 }
 
-main #searchResults div {
+main #searchResults.searchActive div {
   position: relative;
 }
 
-main #searchResults div .gifCard {
+main #searchResults.searchActive div .gifCard {
   margin: 10px;
 }
 
-main #searchResults div .gifCardInfo {
+main #searchResults.searchActive div .gifCardInfo {
   padding: 15px 15px 20px 15px;
   margin: 10px;
   position: absolute;
@@ -804,28 +878,28 @@ main #searchResults div .gifCardInfo {
 }
 
 @media (max-width: 768px) {
-  main #searchResults div .gifCardInfo {
+  main #searchResults.searchActive div .gifCardInfo {
     margin: 0 10px;
   }
 }
 
-main #searchResults div .gifCardInfo:hover {
+main #searchResults.searchActive div .gifCardInfo:hover {
   opacity: 1;
 }
 
-main #searchResults div .gifCardInfo div {
+main #searchResults.searchActive div .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-main #searchResults div .gifCardInfo div:first-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-main #searchResults div .gifCardInfo div:first-child a {
+main #searchResults.searchActive div .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -840,37 +914,37 @@ main #searchResults div .gifCardInfo div:first-child a {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-main #searchResults div .gifCardInfo div:first-child a:hover {
+main #searchResults.searchActive div .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main #searchResults div .gifCardInfo div:first-child a img {
+main #searchResults.searchActive div .gifCardInfo div:first-child a img {
   width: 18px;
   height: 18px;
 }
 
-main #searchResults div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn img:first-child {
   display: block;
 }
 
-main #searchResults div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn img:last-child {
   display: none;
 }
 
-main #searchResults div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
   display: none;
 }
 
-main #searchResults div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
   display: block;
 }
 
-main #searchResults div .gifCardInfo div:last-child span {
+main #searchResults.searchActive div .gifCardInfo div:last-child span {
   display: block;
   font-size: 16px;
 }
 
-main #searchResults div .gifCardInfo div:last-child span:last-child {
+main #searchResults.searchActive div .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
 }
@@ -1514,41 +1588,50 @@ footer {
   }
 }
 
+footer > div {
+  display: flex;
+}
+
 @media (max-width: 768px) {
-  footer div {
+  footer > div {
+    flex-direction: column;
     text-align: center;
   }
 }
 
-footer div span {
+footer > div span {
   margin-right: 15px;
 }
 
 @media (max-width: 768px) {
-  footer div span {
+  footer > div span {
     display: block;
     margin-right: 0;
     margin-bottom: 20px;
   }
 }
 
-footer div a {
+footer > div div a {
   margin-right: 20px;
-  color: #9cafc3;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
 }
 
 @media (max-width: 768px) {
-  footer div a:last-child {
+  footer > div div a:last-child {
     margin-right: 0;
   }
 }
 
-footer div a:hover {
-  color: #572ee5;
+footer > div div a svg {
+  width: 100%;
+  height: 100%;
+  fill: #9cafc3;
 }
 
-footer div a i {
-  font-size: 1.1em;
+footer > div div a svg:hover {
+  fill: #572ee5;
 }
 
 @media (max-width: 768px) {
@@ -1575,8 +1658,8 @@ body.body_nocturno header {
 }
 
 @media (max-width: 768px) {
-  body.body_nocturno header .iconosMenu i {
-    color: #fff;
+  body.body_nocturno header .iconosMenu svg {
+    fill: #fff;
   }
 }
 
@@ -1624,8 +1707,12 @@ body.body_nocturno header nav ul li:nth-child(2) {
   }
 }
 
-body.body_nocturno header nav ul li .nuevo_gifo:hover {
-  color: #222326;
+body.body_nocturno header nav ul li .nuevo_gifo svg {
+  fill: #fff;
+}
+
+body.body_nocturno header nav ul li .nuevo_gifo:hover svg {
+  fill: #222326;
 }
 
 body.body_nocturno main h1,
@@ -1667,15 +1754,11 @@ body.body_nocturno .section_buscador .ulActive {
 }
 
 body.body_nocturno .section_buscador .ulActive li {
-  color: #fff;
+  color: #9cafc3;
 }
 
 body.body_nocturno .section_buscador .ulActive li:hover {
   background-color: #5b6169;
-}
-
-body.body_nocturno .section_buscador .ulActive li::before {
-  content: url(../../assets/icon-search-mod-noc.svg);
 }
 
 body.body_nocturno .trending_gifos {
@@ -1755,8 +1838,8 @@ body.body_nocturno ul.ul_creargifos li.contador_pasos {
   color: #50e3c2;
 }
 
-body.body_nocturno footer i:hover {
-  color: #572ee5;
+body.body_nocturno footer svg:hover {
+  fill: #fff;
 }
 
 body {

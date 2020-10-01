@@ -16,13 +16,21 @@
         <div class="formularios" id="buscadorHeader">
             <input type="search" id="buscador_header" placeholder="Busca GIFOS y más" autocomplete="off">
             <label for="buscador_header">
-                <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
-                <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                <svg role="img" class="closeSearch">
+                    <use href="assets/icon-search.svg#search"  alt="icono_search" id="searchbtn">
+                </svg>
             </label>
+            <svg role="img" class="closeSearch">
+                <use href="assets/close.svg#close-svg">
+            </svg>
         </div>
         <div class="iconosMenu">
-            <img src="assets/burger.svg" alt="menu hamburguesa" id="bars">
-            <img src="assets/close.svg" alt="close menu" id="cruz">
+            <svg role="img" alt="menu hamburguesa" id="bars">
+                <use href="assets/burger.svg#burger-svg">
+            </svg>
+            <svg role="img" alt="close menu" id="cruz">
+                <use href="assets/close.svg#close-svg">
+            </svg>
         </div>
         <nav class="defaultMenu">
             <ul>
@@ -32,7 +40,9 @@
                 <li><a href="misgifos.html">MIS GIFOS</a></li>
                 <li>
                     <a href="creargifo.html" class="nuevo_gifo">
-                        +
+                        <svg role="img" alt="crear gifo">
+                            <use href="assets/button-crear-gifo.svg#crear-gifo">
+                        </svg>
                     </a>
                 </li>
             </ul>
@@ -49,11 +59,12 @@
                 <div class="formularios">
                     <input type="search" id="buscador" placeholder="Busca GIFOS y más" autocomplete="off">
                     <label for="buscador">
-                        <img src="assets/icon-search.svg" alt="icono_search" class="search diurno" id="searchbtn">
-                        <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
+                        <svg role="img" class="closeSearch">
+                            <use href="assets/icon-search.svg#search"  alt="icono_search" id="searchbtn">
+                        </svg>
                     </label>
                     <svg role="img" class="closeSearch">
-                        <use href="assets/close.svg#path3">
+                        <use href="assets/close.svg#close-svg">
                     </svg>
                 </div>
             </div>
@@ -67,7 +78,6 @@
         <section class="trending_gifos">
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
-            <!--Carrusel CAMBIAR FLECHAS-->
             <div id="gifsCtn">
                 <button id="btnLeft">
                     <svg role="img" class="btnLeft">
@@ -86,9 +96,23 @@
     <footer>
         <div>
             <span>Compartir en:</span>
-            <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+            <div>
+                <a href="https://www.facebook.com/" target="blank">
+                    <svg role="img" class="facebook">
+                        <use href="assets/icon_facebook.svg#Clip-facebook">
+                    </svg>
+                </a>
+                <a href="https://www.twitter.com/" target="blank">
+                    <svg role="img" class="twitter">
+                        <use href="assets/icon-twitter.svg#Clip-Twitter">
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" target="blank">
+                    <svg role="img" class="instagram">
+                        <use href="assets/icon_instagram.svg#Clip-instagram">
+                    </svg>
+                </a>
+            </div>
         </div>
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>

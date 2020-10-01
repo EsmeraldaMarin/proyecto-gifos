@@ -11,8 +11,8 @@ body.body_nocturno {
         background-color: #2f3236;
         .iconosMenu{
             @media (max-width: $bp-1) {
-                i{
-                    color: #fff;
+                svg{
+                    fill: #fff;
                 }
             }
         }
@@ -54,8 +54,13 @@ body.body_nocturno {
                         }
                     }
                     .nuevo_gifo{
+                        svg{
+                            fill: #fff;
+                        }
                         &:hover{
-                            color: #222326;
+                            svg{
+                                fill: #222326;
+                            }
                         }
                     }
                 }
@@ -94,12 +99,9 @@ body.body_nocturno {
         .ulActive{
             border-color: #fff;
             li{
-                color: #fff;
+                color: $gris;
                 &:hover{
                     background-color: #5b6169;
-                }
-                &::before{
-                    content:  url(../../assets/icon-search-mod-noc.svg);
                 }
             }
         }
@@ -171,9 +173,10 @@ body.body_nocturno {
         }
     }
     footer {
-        i {
+        svg{
+        
             &:hover {
-                color: $azul;
+                fill: #fff;
             }
         }
     }

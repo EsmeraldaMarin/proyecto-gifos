@@ -24,8 +24,8 @@
             </form>
         </div>
         <div class="iconosMenu">
-            <i class="fas fa-bars activo" id="bars"></i>
-            <i class="fas fa-times" id="cruz"></i>
+            <img src="assets/burger.svg" alt="menu hamburguesa" id="bars">
+            <img src="assets/close.svg" alt="close menu" id="cruz">
         </div>
         <nav class="defaultMenu">
             <ul>
@@ -60,11 +60,18 @@
         <section class="trending_gifos">
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos GIFOS de nuestra comunidad</p>
-            <!--Carrusel CAMBIAR FLECHAS-->
             <div id="gifsCtn">
-                <button id="btnLeft" onclick="show(-1)"><i class="fas fa-chevron-left"></i></button>
+                <button id="btnLeft">
+                    <svg role="img" class="btnLeft">
+                        <use href="assets/button-left.svg#path-1">
+                    </svg>
+                </button>
                 <div id="gifsTrending"></div>
-                <button id="btnRight" onclick="show(+1)"><i class="fas fa-chevron-right"></i></button>
+                <button id="btnRight">
+                    <svg role="img" class="btnRight">
+                        <use href="assets/button-right.svg#path2">
+                    </svg>
+                </button>
             </div>
         </section>
     </main>

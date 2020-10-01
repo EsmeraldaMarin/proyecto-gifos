@@ -53,18 +53,6 @@ main {
                     @media (max-width: $bp-1) {
                         width: 335px;
                     }
-                    &:focus {
-                        outline: none;
-                        position: relative;
-                        ~ label {
-                            left: 0px;
-                            right: auto;
-                        }
-                        ~ svg{
-                            opacity: 1;
-                        }
-                        
-                    }
                     &.autocompleteActive {
                         border-radius: 25px 25px 0 0;
                         border-width: 1px 1px 0 1px;
@@ -72,6 +60,18 @@ main {
                         -moz-border-radius: 25px 25px 0 0;
                         -ms-border-radius: 25px 25px 0 0;
                         -o-border-radius: 25px 25px 0 0;
+                        outline: none;
+                        position: relative;
+                        ~ label {
+                            left: 0px;
+                            right: auto;
+                            svg{
+                                fill: $gris;
+                            }
+                        }
+                        ~ svg{
+                            opacity: 1;
+                        }
                     }
 
                     
@@ -93,8 +93,10 @@ main {
                         left: 0px;
                         right: auto;
                     }
-                    img {
+                    svg {
+                        fill: $azul;
                         width: 20px;
+                        height: 20px;
                     }
                 }
                 >svg{
@@ -123,6 +125,10 @@ main {
             -ms-border-radius: 0 0 25px 25px;
             -o-border-radius: 0 0 25px 25px;
             overflow: hidden;
+            color: $gris;
+            @media (max-width: $bp-1) {
+                width: 335px;
+            }
             li {
                 width: 100%;
                 height: 40px;
@@ -133,9 +139,9 @@ main {
                     background-color: #eee;
                 }
                 &::before{
-                    content: url(../../assets/icon-search.svg);
+                    content: url(../../assets/search-gray.svg);
                     width: 16px;
-                    margin: 0 25px;
+                    margin: 0 25px; 
                 }
             }
         }
@@ -152,7 +158,7 @@ main {
             }
         }
     }
-    #searchResults {
+    #searchResults.searchActive {
         @extend %cardsCtn;
         div{
             position: relative;

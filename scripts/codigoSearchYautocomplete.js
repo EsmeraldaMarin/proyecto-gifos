@@ -1,9 +1,9 @@
 
 //SEARCH GIFOS
 
-let inputSearch = document.getElementById("buscador");//corregir esto
+let inputSearch = document.querySelector(".buscador");//corregir esto
 //Cambiar clase en evento scroll
-let btnSearch = document.getElementById("searchbtn"); //corregir esto
+let btnSearch = document.querySelector(".searchbtn"); //corregir esto
 let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
 let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}`;
@@ -25,6 +25,8 @@ function searchGif() {
 
     while (searchResultCtn.firstChild) {
         searchResultCtn.removeChild(searchResultCtn.firstChild)
+        searchResultCtn.classList.remove("searchActive")
+
     }
 
     //nueva busqueda
@@ -50,6 +52,7 @@ function createCtnGifs(arrayGifs) {
         let gifSearched = document.createElement("img");
         gifSearched.className = "gifCard";
         gifSearched.src = urlImg
+        searchResultCtn.classList.add("searchActive")
         gifCardCtn.appendChild(gifSearched)
         searchResultCtn.appendChild(gifCardCtn);
 
