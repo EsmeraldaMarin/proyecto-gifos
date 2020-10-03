@@ -42,8 +42,7 @@ function showGifs() {
                 let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
 
-                    btnMax[i].classList.add("btnMaxActive")
-                    maxFuncion(i)
+                    maxFuncion(i, btnMax[i], gifsCtnTrending)
                 })
 
             }
@@ -66,7 +65,12 @@ function createInfoCards(gifCreated, info) {
                                 <img src= "../assets/icon-fav-active.svg">
                                 </a>
                                 <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
-                                <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
+                                <a class= "max_btn">
+                                <img src= "../assets/icon-max.svg">
+                                <svg role="img" alt="closeMax">
+                                <use href="assets/close.svg#close-svg">
+                                </svg>
+                                </a>
                             </div>
                             <div> 
                                 <span>${info.username}</span>
@@ -95,8 +99,9 @@ function addFavoriteGif(i, info, btn) {
 
 //Funcion maximizar
 
-function maxFuncion(i) {
-    let ctnGifsMax = document.querySelectorAll("#gifsTrending>div");
+function maxFuncion(i, btnMax, ctn) {
+    let ctnGifsMax = ctn.childNodes;
+    btnMax.classList.add("btnMaxActive")
     let gifMax = ctnGifsMax[i].cloneNode(true);
     let newCtn = document.createElement("div")
 
@@ -120,8 +125,8 @@ let btnLeft = document.getElementById("btnLeft");
 let btnRight = document.getElementById("btnRight");
 
 
-btnLeft.addEventListener("click", () => show(-3));
-btnRight.addEventListener("click", () => show(+3));
+btnLeft.addEventListener("click", () => show(-1));
+btnRight.addEventListener("click", () => show(+1));
 let index = 0;
 
 function show(increase) {

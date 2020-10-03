@@ -147,6 +147,9 @@ body.body_nocturno {
         svg.closeSearch{
             fill: #fff;
         }
+        svg.searchbtn{
+            fill: #fff;
+        }
     }
     .ctnMax{
         background-color: #222326;
@@ -157,6 +160,9 @@ body.body_nocturno {
             }
             &:last-child:hover{
                 background-color: transparent;
+            }
+            &.btnMaxActive svg{
+                fill: #fff;
             }
         }
     }

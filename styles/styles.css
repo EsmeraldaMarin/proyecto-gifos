@@ -650,6 +650,10 @@ header nav ul .modos:active {
   display: block;
 }
 
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg {
+  display: none;
+}
+
 .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span {
   display: block;
   font-size: 16px;
@@ -937,6 +941,10 @@ main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn
 
 main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
   display: block;
+}
+
+main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg {
+  display: none;
 }
 
 main #searchResults.searchActive div .gifCardInfo div:last-child span {
@@ -1809,6 +1817,10 @@ body.body_nocturno div.formularios svg.closeSearch {
   fill: #fff;
 }
 
+body.body_nocturno div.formularios svg.searchbtn {
+  fill: #fff;
+}
+
 body.body_nocturno .ctnMax {
   background-color: #222326;
 }
@@ -1823,6 +1835,10 @@ body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:hover {
 
 body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:last-child:hover {
   background-color: transparent;
+}
+
+body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a.btnMaxActive svg {
+  fill: #fff;
 }
 
 body.body_nocturno .diurno {
@@ -1864,6 +1880,14 @@ body {
   height: 385px;
 }
 
+@media (max-width: 1024px) {
+  .ctnMax > div {
+    min-width: 495px;
+    max-width: 495px;
+    height: 285px;
+  }
+}
+
 @media (max-width: 768px) {
   .ctnMax > div {
     min-width: 243px;
@@ -1876,6 +1900,14 @@ body {
   min-width: 695px;
   max-width: 695px;
   height: 385px;
+}
+
+@media (max-width: 1024px) {
+  .ctnMax > div > img {
+    min-width: 495px;
+    max-width: 495px;
+    height: 285px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1895,6 +1927,14 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  .ctnMax > div .gifCardInfo {
+    bottom: -180px;
+    width: 495px;
+    height: 285px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1967,12 +2007,25 @@ body {
   display: none;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive::after {
-  content: url(../../assets/close.svg);
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive svg {
+  height: 20px;
+  width: 20px;
+  fill: #572ee5;
 }
 
 .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover {
   background-color: transparent;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover svg {
+  fill: #9cafc3;
+}
+
+@media (max-width: 1024px) {
+  .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
+    right: -80px;
+    top: -300px;
+  }
 }
 
 .ctnMax > div .gifCardInfo div:last-child span {

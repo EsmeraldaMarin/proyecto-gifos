@@ -6,11 +6,9 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Cards para gifs de busqueda
 * Investigar scrollX para carrusel
 * Que aparezcan de a doce gifs en mis favoritos
 * Trendings linkeables (ENDPOINT GIPHY)
-* Hacer funcionalidad de agregar a favoritos ( **JS** );
 * Hacer la funcionalidad de descargar cada Gif
     * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
@@ -21,20 +19,22 @@
 ### (Con mayor grado de dificultad)
 
 * Flechas left and right inactive
-* Maximizar cada gifo seleccionado
 * Subir gifo creado a Giphy
 * Agregar gifo creado en la seccion mis gifos
 
 ## HECHO
 
 * JAVASCRIPT
+    * Cards para gifs de busqueda
     * Trending Gifos
     * Carrusel 
     * Modo nocturno
+    * Hacer funcionalidad de agregar a favoritos ( **JS** );
     * Cambio de estilos en header con scroll top
     * Menu hamburguesa
     * Cards de cada gif ( JS , **CSS** );
     * Tags de autocompletar
+    * Maximizar cada gifo seleccionado
 
 
 * HTML
@@ -52,6 +52,10 @@
 
 ### hacer
 * add favorite from max
+* agregar clase a input del header para funcion search
+* hr debajo del input cuando está el ul activo
+* Trendings linkeables (ENDPOINT GIPHY)
+* Hacer la funcionalidad de descargar cada Gif
 
 
 

@@ -1,7 +1,7 @@
 
 //SEARCH GIFOS
 
-let inputSearch = document.querySelector(".buscador");//corregir esto
+let inputSearch = document.querySelector("#buscador");//corregir esto
 //Cambiar clase en evento scroll
 let btnSearch = document.querySelector(".searchbtn"); //corregir esto
 let searchResultCtn = document.getElementById("searchResults")
@@ -73,8 +73,7 @@ function createCtnGifs(arrayGifs) {
         let btnMax = document.querySelectorAll("#searchResults .max_btn");
         btnMax[i].addEventListener("click", () => {
 
-            btnMax[i].classList.add("btnMaxActive")
-            maxFuncion(i)
+            maxFuncion(i, btnMax[i], searchResultCtn)
         })
 
 
