@@ -48,7 +48,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correccion svg
+* Mostrar de a 12 gifs en la seccion de busqueda
 
 ### hacer
 * add favorite from max

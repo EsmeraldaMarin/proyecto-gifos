@@ -9,6 +9,9 @@ body.body_nocturno {
     background-color: #2f3236;
     header {
         background-color: #2f3236;
+        &.onScroll {
+            box-shadow: 0 2px 10px 1px rgba(156, 175, 195, 0.2);
+        }
         .iconosMenu{
             @media (max-width: $bp-1) {
                 svg{

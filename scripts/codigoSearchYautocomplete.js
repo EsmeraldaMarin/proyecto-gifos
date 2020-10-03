@@ -6,33 +6,41 @@ let inputSearch = document.querySelector("#buscador");//corregir esto
 let btnSearch = document.querySelector(".searchbtn"); //corregir esto
 let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
-let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}`;
+let offset = 0;
+let seeMoreBtn = document.getElementById("seeMoreResults")
 
-btnSearch.addEventListener("click", searchGif);
+
+btnSearch.addEventListener("click", newSearch);
 inputSearch.addEventListener("keyup", (event) => {
 
     if (event.key == "Enter") {
 
         event.preventDefault();
-        searchGif(event);
+        newSearch(event);
 
     }
 })
 
-function searchGif() {
+function newSearch() {
 
     //eliminar resultados de la busqueda anterior
 
     while (searchResultCtn.firstChild) {
         searchResultCtn.removeChild(searchResultCtn.firstChild)
         searchResultCtn.classList.remove("searchActive")
-
     }
+    searchGif()
+}
+
+function searchGif() {
+
 
     //nueva busqueda
+    let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}&offset=${offset}`;
 
     let busqueda = inputSearch.value;
     let newUrlSearch = `${urlSearch}&q=${busqueda}`;
+
     fetch(newUrlSearch)
         .then(resp => resp.json())
         .then(content => {
@@ -43,6 +51,8 @@ function searchGif() {
 }
 
 function createCtnGifs(arrayGifs) {
+
+    seeMoreBtn.classList.add("seeMoreActive")
 
     for (let i = 0; i <= limitSGifos - 1; i++) {
 
@@ -79,6 +89,16 @@ function createCtnGifs(arrayGifs) {
 
     }
 }
+
+//SEE MORE GIFOS 
+
+
+seeMoreBtn.addEventListener("click", () => {
+    limitGifos = limitTGifos + 12;
+    offset = offset + 11
+    searchGif(limitTGifos, offset)
+
+})
 
 //AUTOCOMPLETAR
 
@@ -141,7 +161,7 @@ ulAutocomplete.addEventListener("click", (e) => {
     inputSearch.value = e.target.textContent
     ulAutocomplete.remove();
     inputSearch.classList.remove("autocompleteActive");
-    searchGif()
+    newSearch()
 })
 
 //AGREGAR BOTON CLOSE

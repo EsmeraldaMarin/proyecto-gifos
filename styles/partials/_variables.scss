@@ -35,3 +35,28 @@ $bp-2: 1024px;
         height: 120px;
     }
 }
+
+%btnSeeMore{
+    display: none;
+    width: 125px;
+    height: 50px;
+    margin-bottom: 80px;
+    border: 1px solid $azul;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    font-size: 13px;
+    font-family: $fuente;
+    font-weight: bold;
+    background-color: #fff;
+    color: $azul;
+    &:hover{
+        background-color: $azul;
+        color:#fff;
+    }
+    &.seeMoreActive{
+        display: block;
+    }
+}
