@@ -629,28 +629,45 @@ header nav ul .modos:active {
   background-color: white;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a img {
-  width: 18px;
-  height: 18px;
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a svg {
+  height: 17px;
+  width: 17px;
+  fill: #572ee5;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg {
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg:first-child {
+  display: block;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg:last-child {
   display: none;
 }
 
@@ -922,28 +939,45 @@ main #searchResults.searchActive div .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a img {
-  width: 18px;
-  height: 18px;
+main #searchResults.searchActive div .gifCardInfo div:first-child a svg {
+  height: 17px;
+  width: 17px;
+  fill: #572ee5;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg {
+main #searchResults.searchActive div .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
+}
+
+main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:first-child {
+  display: block;
+}
+
+main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:last-child {
   display: none;
 }
 
@@ -1827,6 +1861,7 @@ body.body_nocturno .ctnMax {
 
 body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a {
   background-color: transparent;
+  border-color: #fff;
 }
 
 body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:hover {
@@ -1837,7 +1872,7 @@ body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:last-child:hover
   background-color: transparent;
 }
 
-body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a.btnMaxActive svg {
+body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a svg {
   fill: #fff;
 }
 
@@ -1975,25 +2010,38 @@ body {
   background-color: #eee;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a img {
-  width: 18px;
-  height: 18px;
+.ctnMax > div .gifCardInfo div:first-child a svg {
+  height: 17px;
+  width: 17px;
+  fill: #572ee5;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
+}
+
+.ctnMax > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
 }
 
 .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
@@ -2003,14 +2051,8 @@ body {
   border: 0px solid transparent;
 }
 
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive img {
+.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive svg:first-child {
   display: none;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive svg {
-  height: 20px;
-  width: 20px;
-  fill: #572ee5;
 }
 
 .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover {

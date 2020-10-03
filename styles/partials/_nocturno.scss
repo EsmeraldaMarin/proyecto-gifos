@@ -155,15 +155,17 @@ body.body_nocturno {
         background-color: #222326;
         > div .gifCardInfo div:first-child a {
             background-color: transparent;
+            border-color: #fff;
             &:hover{
                 background-color: #5b6169;
             }
             &:last-child:hover{
                 background-color: transparent;
             }
-            &.btnMaxActive svg{
+            svg{
                 fill: #fff;
             }
+
         }
     }
     .diurno {

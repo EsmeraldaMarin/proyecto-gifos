@@ -61,15 +61,26 @@ function createInfoCards(gifCreated, info) {
     gifInfoCard.innerHTML = `
                             <div> 
                                 <a class= "favorito_btn">
-                                <img src= "../assets/icon-fav-hover.svg" class= "fav_active">
-                                <img src= "../assets/icon-fav-active.svg">
+                                    <svg role="img" alt="favorito">
+                                        <use href="assets/icon-fav-hover.svg#path-1">
+                                    </svg>
+                                    <svg role="img" alt="favorito-agregado">
+                                        <use href="assets/icon-fav-active.svg#icon-favactive">
+                                    </svg>
                                 </a>
-                                <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
+                                <a href= "${gifToDownload}" download>
+                                    <svg role="img" alt="descargar">
+                                        <use href="assets/icon-download.svg#icon-download">
+                                    </svg>
+                                </a>
                                 <a class= "max_btn">
-                                <img src= "../assets/icon-max.svg">
-                                <svg role="img" alt="closeMax">
-                                <use href="assets/close.svg#close-svg">
-                                </svg>
+                                    <svg role="img" alt="maximizar">
+                                        <use href="assets/icon-max.svg#icon-max">
+                                    </svg>
+
+                                    <svg role="img" alt="closeMax">
+                                        <use href="assets/close.svg#close-svg">
+                                    </svg>
                                 </a>
                             </div>
                             <div> 
