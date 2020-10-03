@@ -8,6 +8,7 @@ let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
 let offset = 0;
 let seeMoreBtn = document.getElementById("seeMoreResults")
+let trendingTerms = document.querySelectorAll("p.trendingTerms span")
 
 
 btnSearch.addEventListener("click", newSearch);
@@ -173,3 +174,24 @@ btnClose.addEventListener("click", () => {
 
 })
 
+//Trending Terminos
+
+function trenTerms(){
+    let urlTerms = `https://api.giphy.com/v1/trending/searches?api_key=${apiKeyGiphy}`;
+    fetch(urlTerms)
+    .then(resp => resp.json())
+    .then(info =>{
+
+        for(let i = 0; i <= trendingTerms.length - 1; i++){
+            trendingTerms[i].textContent = info.data[i]
+
+            trendingTerms[i].addEventListener("click", ()=>{
+                inputSearch.value = trendingTerms[i].textContent;
+                newSearch()
+            })
+        }
+
+    })
+    .catch(err => console.log(err))
+}
+trenTerms()

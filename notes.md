@@ -8,7 +8,6 @@
 
 * Investigar scrollX para carrusel
 * Que aparezcan de a doce gifs en mis favoritos
-* Trendings linkeables (ENDPOINT GIPHY)
 * Hacer la funcionalidad de descargar cada Gif
     * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
@@ -25,6 +24,7 @@
 ## HECHO
 
 * JAVASCRIPT
+    * Trendings linkeables (ENDPOINT GIPHY)
     * Cards para gifs de busqueda
     * Trending Gifos
     * Carrusel 
@@ -48,13 +48,13 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Mostrar de a 12 gifs en la seccion de busqueda
+* Trending terms likeables
 
 ### hacer
 * add favorite from max
 * agregar clase a input del header para funcion search
 * hr debajo del input cuando está el ul activo
-* Trendings linkeables (ENDPOINT GIPHY)
+* Termino buscado 
 * Hacer la funcionalidad de descargar cada Gif
 
 

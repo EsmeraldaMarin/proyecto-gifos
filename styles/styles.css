@@ -905,6 +905,11 @@ main .section_buscador article.trending h3 {
   margin-bottom: 5px;
 }
 
+main .section_buscador article.trending p span {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
 main #searchResults.searchActive div {
   position: relative;
 }

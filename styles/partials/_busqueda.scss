@@ -156,6 +156,12 @@ main {
                 font-size: 1em;
                 margin-bottom: 5px;
             }
+            p{
+                span{
+                    text-transform: capitalize;
+                    cursor: pointer;
+                }
+            }
         }
         button {
             @extend %btnSeeMore;
