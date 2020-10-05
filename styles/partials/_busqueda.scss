@@ -201,6 +201,9 @@ main {
                 }
                 &:hover {
                     opacity: 1;
+                    @media (max-width: $bp-1) {
+                        opacity: 0;
+                    }
                 }
                 div {
                     width: 100%;
@@ -261,6 +264,13 @@ main {
                                 }
                             }
                             &.max_btn {
+                                @media (max-width: $bp-1) {
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                }
                                 svg:first-child {
                                     display: block;
                                 }

@@ -7,7 +7,6 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* carrusel en celulares, funcion de click a cada gif
 * Que aparezcan de a doce gifs en mis favoritos
 * Agregar section cuando no aparezca algun resultado en la busqueda
 
@@ -25,8 +24,8 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* funcion de descarga de gifs
-* carrusel funcional
+* maximizar desde el celular cada gif del trending y buscador
+* correcciones de estilos en crear gifos y header
 
 
 
@@ -56,6 +55,8 @@
     * Cards de cada gif ( JS , **CSS** );
     * Tags de autocompletar
     * Maximizar cada gifo seleccionado
+    * funcion de descarga de gifs
+    * carrusel funcional
 
 
 * HTML

@@ -138,6 +138,9 @@ body {
                                     right: -80px;
                                     top: -300px;
                                 }
+                                @media (max-width: $bp-1) {
+                                    right: -15px;
+                                }
                             }
                         }
                     }
