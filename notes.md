@@ -24,8 +24,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* maximizar desde el celular cada gif del trending y buscador
-* correcciones de estilos en crear gifos y header
+* correcciones de max en celular
 
 
 
