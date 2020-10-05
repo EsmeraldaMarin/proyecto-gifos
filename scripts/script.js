@@ -57,7 +57,8 @@ showGifs()
 function createInfoCards(gifCreated, info) {
 
     let gifInfoCard = document.createElement("div");
-    let gifToDownload = info.images.original.mp4;
+    let urlDownload = info.images.downsized.url;
+
     gifInfoCard.innerHTML = `
                             <div> 
                                 <a class= "favorito_btn">
@@ -68,7 +69,7 @@ function createInfoCards(gifCreated, info) {
                                         <use href="assets/icon-fav-active.svg#icon-favactive">
                                     </svg>
                                 </a>
-                                <a href= "${gifToDownload}" download>
+                                <a href= "" download id= "downloadBtn">
                                     <svg role="img" alt="descargar">
                                         <use href="assets/icon-download.svg#icon-download">
                                     </svg>
@@ -90,7 +91,26 @@ function createInfoCards(gifCreated, info) {
                         `
     gifInfoCard.className = "gifCardInfo";
     gifCreated.before(gifInfoCard);
+    downloadGif(urlDownload)
 }
+
+//Crear un blob para descargaarr el gif
+
+function downloadGif(urlDownload){
+
+    let dwnBtn = document.querySelectorAll("#downloadBtn")
+
+    fetch(urlDownload)
+    .then(res => res.blob())
+    .then(data=>{
+        
+        dwnBtn.forEach(element =>{
+            element.href = URL.createObjectURL(data)
+        })
+
+    })
+}
+
 
 //Funcion agregar a favorito
 

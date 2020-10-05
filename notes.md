@@ -7,10 +7,8 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Investigar scrollX para carrusel
+* carrusel en celulares, funcion de click a cada gif
 * Que aparezcan de a doce gifs en mis favoritos
-* Hacer la funcionalidad de descargar cada Gif
-    * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
 
 ### (Con mayor grado de dificultad)
@@ -27,9 +25,8 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correccion de html
-* correccion footer
-* linea debajo del input
+* funcion de descarga de gifs
+* carrusel funcional
 
 
 
