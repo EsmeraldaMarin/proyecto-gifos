@@ -9,6 +9,8 @@ let limitSGifos = 12;
 let offset = 0;
 let seeMoreBtn = document.getElementById("seeMoreResults")
 let trendingTerms = document.querySelectorAll("p.trendingTerms span")
+let spanTerm = document.getElementById("termBuscado")
+let infoSearch= document.querySelector(".infoSearch")
 
 
 btnSearch.addEventListener("click", newSearch);
@@ -29,12 +31,13 @@ function newSearch() {
     while (searchResultCtn.firstChild) {
         searchResultCtn.removeChild(searchResultCtn.firstChild)
         searchResultCtn.classList.remove("searchActive")
+        infoSearch.style.display = "none"
+        seeMoreBtn.classList.remove("seeMoreActive")
     }
     searchGif()
 }
 
 function searchGif() {
-
 
     //nueva busqueda
     let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}&offset=${offset}`;
@@ -45,6 +48,7 @@ function searchGif() {
     fetch(newUrlSearch)
         .then(resp => resp.json())
         .then(content => {
+            
             createCtnGifs(content.data);
         })
         .catch(err => console.log(err))
@@ -54,6 +58,8 @@ function searchGif() {
 function createCtnGifs(arrayGifs) {
 
     seeMoreBtn.classList.add("seeMoreActive")
+    infoSearch.style.display = "block"
+    spanTerm.textContent = inputSearch.value;
 
     for (let i = 0; i <= limitSGifos - 1; i++) {
 
@@ -130,18 +136,16 @@ function autocomplete(e) {
     }
     inputSearch.value.trim()
 
-    searchResultCtn.before(ulAutocomplete);
-    inputSearch.classList.add("autocompleteActive");//corregir con el otro input
-
-    ulAutocomplete.className = "ulActive"
+    formularioCtn.after(ulAutocomplete);
 
     let busqueda = inputSearch.value
 
     let newUrlAutocomplete = urlAutocomplete + busqueda;
-
     fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
+            inputSearch.classList.add("autocompleteActive");//corregir con el otro input
+            ulAutocomplete.className = "ulActive"
             for (let i = 0; i <= liArray.length - 1; i++) {
 
                 liArray[i].textContent = content.data[i].name;
@@ -166,7 +170,7 @@ ulAutocomplete.addEventListener("click", (e) => {
 })
 
 //AGREGAR BOTON CLOSE
-let btnClose = document.querySelector(".formularios svg")
+let btnClose = document.querySelector(".formularios.active svg.closeSearch")
 btnClose.addEventListener("click", () => {
     inputSearch.value = "";
     ulAutocomplete.classList.add("removeElement");

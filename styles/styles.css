@@ -2,7 +2,7 @@
 /*colores*/
 /*Breakpoints*/
 /*extends*/
-main #searchResults.searchActive {
+main .section_buscador #searchResults.searchActive {
   margin: 50px 0;
   width: 80%;
   display: flex;
@@ -12,19 +12,19 @@ main #searchResults.searchActive {
 }
 
 @media (max-width: 768px) {
-  main #searchResults.searchActive {
+  main .section_buscador #searchResults.searchActive {
     width: 100%;
   }
 }
 
-main #searchResults.searchActive div .gifCard, main #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
   min-width: 260px;
   max-width: 260px;
   height: 200px;
 }
 
 @media (max-width: 768px) {
-  main #searchResults.searchActive div .gifCard, main #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+  main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -935,15 +935,43 @@ main .section_buscador article.trending p span {
   cursor: pointer;
 }
 
-main #searchResults.searchActive div {
+main .section_buscador button {
+  margin-bottom: 0;
+}
+
+main .section_buscador .infoSearch {
+  display: none;
+}
+
+main .section_buscador .infoSearch div.lineaDiv {
+  margin: 55px 0 80px;
+  width: 340px;
+  height: 0.5px;
+  background-color: #9cafc3;
+}
+
+@media (max-width: 768px) {
+  main .section_buscador .infoSearch div.lineaDiv {
+    width: 160px;
+  }
+}
+
+main .section_buscador .infoSearch span#termBuscado {
+  color: #572ee5;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+main .section_buscador #searchResults.searchActive div {
   position: relative;
 }
 
-main #searchResults.searchActive div .gifCard {
+main .section_buscador #searchResults.searchActive div .gifCard {
   margin: 10px;
 }
 
-main #searchResults.searchActive div .gifCardInfo {
+main .section_buscador #searchResults.searchActive div .gifCardInfo {
   padding: 15px 15px 20px 15px;
   margin: 10px;
   position: absolute;
@@ -956,34 +984,34 @@ main #searchResults.searchActive div .gifCardInfo {
 }
 
 @media (max-width: 768px) {
-  main #searchResults.searchActive div .gifCardInfo {
+  main .section_buscador #searchResults.searchActive div .gifCardInfo {
     margin: 0 10px;
   }
 }
 
-main #searchResults.searchActive div .gifCardInfo:hover {
+main .section_buscador #searchResults.searchActive div .gifCardInfo:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  main #searchResults.searchActive div .gifCardInfo:hover {
+  main .section_buscador #searchResults.searchActive div .gifCardInfo:hover {
     opacity: 0;
   }
 }
 
-main #searchResults.searchActive div .gifCardInfo div {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -998,46 +1026,46 @@ main #searchResults.searchActive div .gifCardInfo div:first-child a {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a:hover {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a svg {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a svg {
   height: 17px;
   width: 17px;
   fill: #572ee5;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
   transform: scale(0.95) translate(-865px, -2784px);
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
   transform: scale(0.85) translate(-261px, -426px);
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a:nth-child(2) svg use {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a:nth-child(2) svg use {
   transform: translateY(-8px) translateX(-7px);
 }
 
 @media (max-width: 768px) {
-  main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn {
+  main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn {
     width: 156px;
     height: 120px;
     position: absolute;
@@ -1047,22 +1075,26 @@ main #searchResults.searchActive div .gifCardInfo div:first-child a:nth-child(2)
   }
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:first-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:first-child {
   display: block;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:last-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:last-child {
   display: none;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:last-child span {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:last-child span {
   display: block;
   font-size: 16px;
 }
 
-main #searchResults.searchActive div .gifCardInfo div:last-child span:last-child {
+main .section_buscador #searchResults.searchActive div .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
+}
+
+main .section_buscador #searchResults.searchActive ~ article.trending {
+  display: none;
 }
 
 main .titulo_favoritos {

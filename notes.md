@@ -12,7 +12,6 @@
 
 ### (Con mayor grado de dificultad)
 
-* Flechas left and right inactive
 * Subir gifo creado a Giphy
 * Agregar gifo creado en la seccion mis gifos
 
@@ -20,11 +19,11 @@
 
 * add favorite from max
 * agregar clase a input del header para funcion search
-* Termino buscado 
 
 ## HECHO EN ESTE COMMIT ##
 
-* correcciones de max en celular
+* termino buscado
+* correcciones en styles del buscador
 
 
 

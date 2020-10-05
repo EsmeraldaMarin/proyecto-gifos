@@ -1,24 +1,11 @@
 //Agregar Gifs a favoritos
 
-
-/* let btnFavActive = document.querySelector(".cardBtnActive");
-console.log(btnFavActive)
-
-btnFavActive.addEventListener("click", () => {
-    localStorage.removeItem(gifFav)
-})  */
-
 let favoritosCtn = document.getElementById("favoritos_con_resultados");
 let gifsCtn = document.getElementById("flex_gifs");
 
 let btnVerMas = document.querySelector("#favoritos_con_resultados button")
 
 let bodyFavorite = document.getElementById("bodyFav")
-
-
-/* bodyFavorite.addEventListener("click", ()=>{
-    //console.log(localStorage.getItem("gif0"))
-}) */
 
 function createGiphysCards() {
     for (let i = 0; i <= giphysGrid.length - 1; i++) {
@@ -58,10 +45,3 @@ function createGiphysCards() {
     }
 
 }
-
-
-/* let deleteFav = document.querySelectorAll(".gifCardInfo div a")
-
-deleteFav[i].addEventListener("click", (e) => {
-    gifCardCtn.remove()
-}) */
