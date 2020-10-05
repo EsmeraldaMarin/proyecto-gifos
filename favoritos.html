@@ -13,30 +13,25 @@
     <header>
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
-
-
-        <div class="formulario">
-            <form action="" class="formularios">
-                <input type="search" id="buscador_header" placeholder="Busca GIFOS y más">
-                <label for="buscador_header">
-                    <img src="assets/icon-search.svg" alt="icono_search" class="search diurno">
-                    <img src="assets/icon-search-mod-noc.svg" alt="icono_search" class="search nocturno">
-                </label>
-            </form>
-        </div>
         <div class="iconosMenu">
-            <img src="assets/burger.svg" alt="menu hamburguesa" id="bars">
-            <img src="assets/close.svg" alt="close menu" id="cruz">
+            <svg role="img" alt="menu hamburguesa" id="bars">
+                <use href="assets/burger.svg#burger-svg">
+            </svg>
+            <svg role="img" alt="close menu" id="cruz">
+                <use href="assets/close.svg#close-svg">
+            </svg>
         </div>
         <nav class="defaultMenu">
             <ul>
                 <li class="modos m_noc">MODO NOCTURNO</li>
                 <li class="modos m_di">MODO DIURNO</li>
-                <li><a href="favoritos.html" id="selected">FAVORITOS</a></li>
+                <li><a href="favoritos.html">FAVORITOS</a></li>
                 <li><a href="misgifos.html">MIS GIFOS</a></li>
                 <li>
                     <a href="creargifo.html" class="nuevo_gifo">
-                        +
+                        <svg role="img" alt="crear gifo">
+                            <use href="assets/button-crear-gifo.svg#crear-gifo">
+                        </svg>
                     </a>
                 </li>
             </ul>
@@ -77,9 +72,23 @@
     <footer>
         <div>
             <span>Compartir en:</span>
-            <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+            <div>
+                <a href="https://www.facebook.com/" target="blank">
+                    <svg role="img" class="facebook">
+                        <use href="assets/icon_facebook.svg#Clip-facebook">
+                    </svg>
+                </a>
+                <a href="https://www.twitter.com/" target="blank">
+                    <svg role="img" class="twitter">
+                        <use href="assets/icon-twitter.svg#Clip-Twitter">
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" target="blank">
+                    <svg role="img" class="instagram">
+                        <use href="assets/icon_instagram.svg#Clip-instagram">
+                    </svg>
+                </a>
+            </div>
         </div>
         <span class="copyright">© GIFOS 2020 All Rights Reserved</span>
     </footer>

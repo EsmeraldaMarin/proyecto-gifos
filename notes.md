@@ -2,6 +2,7 @@
 
 ## CONSULTAS
 
+* Recarga constante de la seccion favoritos
 
 ## POR HACER 
 ### (Segun orden recomendado)
@@ -11,15 +12,38 @@
 * Hacer la funcionalidad de descargar cada Gif
     * Usar endpoint para descargar Gifo !!!!
 * Agregar section cuando no aparezca algun resultado en la busqueda
-* Duplicar html del index a todas las otras paginas segun corresponda
-
-
 
 ### (Con mayor grado de dificultad)
 
 * Flechas left and right inactive
 * Subir gifo creado a Giphy
 * Agregar gifo creado en la seccion mis gifos
+
+### especificaciones y detalles
+
+* add favorite from max
+* agregar clase a input del header para funcion search
+* Termino buscado 
+
+## HECHO EN ESTE COMMIT ##
+
+* correccion de html
+* correccion footer
+* linea debajo del input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## HECHO
 
@@ -39,6 +63,7 @@
 
 * HTML
     * Maquetado completo de: index, favoritos, mis gifos, crear gifo
+    * Duplicar html del index a todas las otras paginas segun corresponda
 
 * CSS
     * Estilos en index,
@@ -46,16 +71,6 @@
     * Favoritos
     * Crear Gifo
 
-## HECHO EN ESTE COMMIT ##
-
-* Trending terms likeables
-
-### hacer
-* add favorite from max
-* agregar clase a input del header para funcion search
-* hr debajo del input cuando está el ul activo
-* Termino buscado 
-* Hacer la funcionalidad de descargar cada Gif
 
 
 

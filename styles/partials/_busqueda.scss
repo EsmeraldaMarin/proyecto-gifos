@@ -65,16 +65,14 @@ main {
                         ~ label {
                             left: 0px;
                             right: auto;
-                            svg{
+                            svg {
                                 fill: $gris;
                             }
                         }
-                        ~ svg{
+                        ~ svg {
                             opacity: 1;
                         }
                     }
-
-                    
                 }
                 input[type="search" i]::-webkit-search-cancel-button {
                     display: none;
@@ -99,7 +97,7 @@ main {
                         height: 20px;
                     }
                 }
-                >svg{
+                > svg {
                     height: 15px;
                     width: 30px;
                     position: absolute;
@@ -135,14 +133,26 @@ main {
                 text-align: left;
                 display: flex;
                 align-items: center;
-                &:hover{
+                &:hover {
                     background-color: #eee;
                 }
-                &::before{
+                &::before {
                     content: url(../../assets/search-gray.svg);
                     width: 16px;
-                    margin: 0 25px; 
+                    margin: 0 25px;
                 }
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 90%;
+                height: 1px;
+                background-color: #9cafc3;
+                margin-left: 27px;
+                @media (max-width: $bp-2) {
+                    margin-left: 17px;
+                }
+                
             }
         }
         article.trending {
@@ -156,8 +166,8 @@ main {
                 font-size: 1em;
                 margin-bottom: 5px;
             }
-            p{
-                span{
+            p {
+                span {
                     text-transform: capitalize;
                     cursor: pointer;
                 }
@@ -169,7 +179,7 @@ main {
     }
     #searchResults.searchActive {
         @extend %cardsCtn;
-        div{
+        div {
             position: relative;
             .gifCard {
                 @extend %cardsGif;
@@ -187,7 +197,6 @@ main {
                 background-color: rgba($color: $azul, $alpha: 0.6);
                 opacity: 0;
                 @media (max-width: $bp-1) {
-                    
                     margin: 0 10px;
                 }
                 &:hover {
@@ -225,18 +234,17 @@ main {
                             &.favorito_btn {
                                 svg:first-child {
                                     display: block;
-                                    use{
-                                        transform: scale(.95) translate(-865px, -2784px);
+                                    use {
+                                        transform: scale(0.95) translate(-865px, -2784px);
                                     }
-                                    
                                 }
                                 svg:last-child {
                                     display: none;
-                                    use{
+                                    use {
                                         transform: scale(0.85) translate(-261px, -426px);
                                     }
                                 }
-                                &.cardBtnActive{
+                                &.cardBtnActive {
                                     svg:first-child {
                                         display: none;
                                     }
@@ -245,14 +253,14 @@ main {
                                     }
                                 }
                             }
-                            &:nth-child(2){
-                                svg{
-                                    use{
+                            &:nth-child(2) {
+                                svg {
+                                    use {
                                         transform: translateY(-8px) translateX(-7px);
                                     }
                                 }
                             }
-                            &.max_btn{
+                            &.max_btn {
                                 svg:first-child {
                                     display: block;
                                 }
@@ -260,7 +268,6 @@ main {
                                     display: none;
                                 }
                             }
-                            
                         }
                     }
                     &:last-child {
@@ -276,6 +283,5 @@ main {
                 }
             }
         }
-        
     }
 }
