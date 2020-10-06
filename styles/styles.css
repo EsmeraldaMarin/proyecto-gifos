@@ -1892,6 +1892,10 @@ body.body_nocturno .section_buscador .ulActive li:hover {
   background-color: #5b6169;
 }
 
+body.body_nocturno .section_buscador .infoSearch #termBuscado {
+  color: #fff;
+}
+
 body.body_nocturno .section_buscador button {
   border-color: #fff;
   color: #fff;
@@ -1899,7 +1903,7 @@ body.body_nocturno .section_buscador button {
 
 body.body_nocturno .section_buscador button:hover {
   background-color: #fff;
-  color: transparent;
+  color: #2f3236;
 }
 
 body.body_nocturno .trending_gifos {

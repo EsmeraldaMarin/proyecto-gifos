@@ -45,6 +45,13 @@ function showGifs() {
                     maxFuncion(i, btnMax[i], gifsCtnTrending)
                 })
 
+                //Download Function 
+
+                let dwnBtn = document.querySelectorAll("#downloadBtn")
+                downloadGif(urlImg, dwnBtn[i])
+
+
+
             }
         })
 
@@ -52,13 +59,26 @@ function showGifs() {
 }
 showGifs()
 
+
+//Crear un blob para descargaarr el gif
+
+function downloadGif(urlDownload, btn) {
+
+    fetch(urlDownload)
+        .then(res => res.blob())
+        .then(data => {
+
+            btn.href = URL.createObjectURL(data);
+
+        })
+}
+
+
 //Create info cards
 
 function createInfoCards(gifCreated, info) {
 
     let gifInfoCard = document.createElement("div");
-    let urlDownload = info.images.downsized.url;
-
     gifInfoCard.innerHTML = `
                             <div> 
                                 <a class= "favorito_btn">
@@ -91,24 +111,6 @@ function createInfoCards(gifCreated, info) {
                         `
     gifInfoCard.className = "gifCardInfo";
     gifCreated.before(gifInfoCard);
-    downloadGif(urlDownload)
-}
-
-//Crear un blob para descargaarr el gif
-
-function downloadGif(urlDownload){
-
-    let dwnBtn = document.querySelectorAll("#downloadBtn")
-
-    fetch(urlDownload)
-    .then(res => res.blob())
-    .then(data=>{
-        
-        dwnBtn.forEach(element =>{
-            element.href = URL.createObjectURL(data)
-        })
-
-    })
 }
 
 

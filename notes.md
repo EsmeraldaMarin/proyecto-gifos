@@ -22,9 +22,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correcciones en codigo search
-* correcciones style search
-* correcciones style (con classlist) en crear gifo
+* correccion download function
 
 
 

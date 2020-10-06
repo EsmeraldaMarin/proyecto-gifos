@@ -108,12 +108,17 @@ body.body_nocturno {
                 }
             }
         }
+        .infoSearch {
+            #termBuscado {
+                color: #fff;
+            }
+        }
         button {
             border-color: #fff;
             color: #fff;
             &:hover {
                 background-color: #fff;
-                color: transparent;
+                color: #2f3236;
             }
         }
     }
@@ -192,16 +197,16 @@ body.body_nocturno {
                 li.contador_pasos {
                     border-color: #fff;
                     color: #fff;
-                    &.contador_activo{
+                    &.contador_activo {
                         background-color: #fff;
                         color: #2f3236;
                     }
                 }
             }
-            &::after{
+            &::after {
                 background-color: #fff;
             }
-            div#aditionaltext{
+            div#aditionaltext {
                 color: #fff;
             }
         }
