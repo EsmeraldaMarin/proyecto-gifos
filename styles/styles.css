@@ -45,7 +45,7 @@ main .section_buscador button, main .favoritos_con_resultados button {
   font-size: 13px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  background-color: #fff;
+  background-color: transparent;
   color: #572ee5;
 }
 
@@ -835,11 +835,6 @@ main .section_buscador div.formulario div label {
   width: 50px;
 }
 
-main .section_buscador div.formulario div label:active {
-  left: 0px;
-  right: auto;
-}
-
 main .section_buscador div.formulario div label svg {
   fill: #572ee5;
   width: 20px;
@@ -1565,6 +1560,11 @@ main .misgifos_sin_resultados span {
   text-align: center;
 }
 
+.main_creargifo div.contenedor_contador_pasos ul .contador_pasos.contador_activo {
+  background-color: #572ee5;
+  color: #fff;
+}
+
 .main_creargifo div.contenedor_contador_pasos::after {
   content: "";
   margin-top: 20px;
@@ -1892,6 +1892,16 @@ body.body_nocturno .section_buscador .ulActive li:hover {
   background-color: #5b6169;
 }
 
+body.body_nocturno .section_buscador button {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.body_nocturno .section_buscador button:hover {
+  background-color: #fff;
+  color: transparent;
+}
+
 body.body_nocturno .trending_gifos {
   background-color: #2f3236;
 }
@@ -1973,9 +1983,36 @@ body.body_nocturno .nocturno {
   display: block;
 }
 
-body.body_nocturno ul.ul_creargifos li.contador_pasos {
-  border-color: #50e3c2;
-  color: #50e3c2;
+body.body_nocturno .main_creargifo .contenedor_video {
+  border-color: #fff;
+}
+
+body.body_nocturno .main_creargifo div.contenedor_contador_pasos ul.ul_creargifos li.contador_pasos {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.body_nocturno .main_creargifo div.contenedor_contador_pasos ul.ul_creargifos li.contador_pasos.contador_activo {
+  background-color: #fff;
+  color: #2f3236;
+}
+
+body.body_nocturno .main_creargifo div.contenedor_contador_pasos::after {
+  background-color: #fff;
+}
+
+body.body_nocturno .main_creargifo div.contenedor_contador_pasos div#aditionaltext {
+  color: #fff;
+}
+
+body.body_nocturno .main_creargifo button {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.body_nocturno .main_creargifo button:hover {
+  background-color: #fff;
+  color: #2f3236;
 }
 
 body.body_nocturno footer svg:hover {

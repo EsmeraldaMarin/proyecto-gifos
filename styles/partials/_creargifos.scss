@@ -166,6 +166,10 @@
                 color: $azul;
                 font-weight: bold;
                 text-align: center;
+                &.contador_activo{
+                    background-color: $azul;
+                    color: #fff;
+                }
             }
         }
         &::after {

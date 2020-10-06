@@ -9,13 +9,16 @@ let ctnVideo = document.getElementById("contenedorVideo");
 let video = document.querySelector("video");
 let urlUpload = `https://upload.giphy.com/v1/gifs?api_key=${apiKeyGiphy}`
 let timerGif = document.getElementById("aditionaltext")
+let contadores = document.querySelectorAll(".ul_creargifos .contador_pasos")
 
-btnStart.addEventListener("click", getStreamAndRecord);
+btnStart.addEventListener("click", ()=>{
+    contadores[0].classList.add("contador_activo")
+    getStreamAndRecord()
+});
 
 function getStreamAndRecord() {
 
     btnStart.classList.remove("activo");
-    btnRecord.classList.add("activo");
 
     navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -26,9 +29,13 @@ function getStreamAndRecord() {
         .then(function (stream) {
 
             ctnVideo.innerHTML = ""
+            btnRecord.classList.add("activo");
 
             video.srcObject = stream;
             video.play()
+
+            contadores[0].classList.remove("contador_activo")
+            contadores[1].classList.add("contador_activo")
 
             btnRecord.addEventListener("click", () => {
                 recorder = RecordRTC(stream, {
@@ -95,8 +102,10 @@ function pararGrabacion() {
     btnUpload.classList.add("activo");
 
     timerGif.addEventListener("click", () => {
-        getStreamAndRecord();
+        contadores[2].classList.remove("contador_activo")
         btnUpload.classList.remove("activo");
+
+        getStreamAndRecord();
 
     })
 
@@ -104,6 +113,9 @@ function pararGrabacion() {
 btnUpload.addEventListener("click", uploadGif)
 
 function uploadGif() {
+    contadores[1].classList.remove("contador_activo")
+    contadores[2].classList.add("contador_activo")
+    
     fetch(urlUpload)
         .then(data => data.json())
         .then(() => {
@@ -112,4 +124,5 @@ function uploadGif() {
             console.log(form.get('file'))
         }
         )
+        .catch(err => console.log(err))
 }

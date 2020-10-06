@@ -102,7 +102,7 @@ function createCtnGifs(arrayGifs) {
 
 seeMoreBtn.addEventListener("click", () => {
     limitGifos = limitTGifos + 12;
-    offset = offset + 11
+    offset = offset + 12;
     searchGif(limitTGifos, offset)
 
 })

@@ -22,8 +22,9 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* termino buscado
-* correcciones en styles del buscador
+* correcciones en codigo search
+* correcciones style search
+* correcciones style (con classlist) en crear gifo
 
 
 

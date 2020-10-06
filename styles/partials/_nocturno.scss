@@ -12,14 +12,14 @@ body.body_nocturno {
         &.onScroll {
             box-shadow: 0 2px 10px 1px rgba(156, 175, 195, 0.2);
         }
-        .iconosMenu{
+        .iconosMenu {
             @media (max-width: $bp-1) {
-                svg{
+                svg {
                     fill: #fff;
                 }
             }
         }
-        .formularios input{
+        .formularios input {
             border-color: #fff;
             color: #fff;
         }
@@ -56,12 +56,12 @@ body.body_nocturno {
                             }
                         }
                     }
-                    .nuevo_gifo{
-                        svg{
+                    .nuevo_gifo {
+                        svg {
                             fill: #fff;
                         }
-                        &:hover{
-                            svg{
+                        &:hover {
+                            svg {
                                 fill: #222326;
                             }
                         }
@@ -98,30 +98,37 @@ body.body_nocturno {
             }
         }
     }
-    .section_buscador{
-        .ulActive{
+    .section_buscador {
+        .ulActive {
             border-color: #fff;
-            li{
+            li {
                 color: $gris;
-                &:hover{
+                &:hover {
                     background-color: #5b6169;
                 }
+            }
+        }
+        button {
+            border-color: #fff;
+            color: #fff;
+            &:hover {
+                background-color: #fff;
+                color: transparent;
             }
         }
     }
     .trending_gifos {
         background-color: #2f3236;
-        #gifsCtn{
-            button{
+        #gifsCtn {
+            button {
                 background-color: transparent;
                 border-color: #fff;
-                svg{
+                svg {
                     fill: #fff;
-                    
                 }
-                &:hover{
+                &:hover {
                     background-color: #fff;
-                    svg{
+                    svg {
                         fill: #222326;
                     }
                 }
@@ -132,11 +139,11 @@ body.body_nocturno {
                 cursor: default;
                 &:hover {
                     background-color: $gris;
-                    svg{
+                    svg {
                         fill: #fff;
                     }
                 }
-                svg{
+                svg {
                     fill: #fff;
                 }
             }
@@ -146,29 +153,28 @@ body.body_nocturno {
         border-color: #fff;
         color: #fff;
     }
-    div.formularios{
-        svg.closeSearch{
+    div.formularios {
+        svg.closeSearch {
             fill: #fff;
         }
-        svg.searchbtn{
+        svg.searchbtn {
             fill: #fff;
         }
     }
-    .ctnMax{
+    .ctnMax {
         background-color: #222326;
         > div .gifCardInfo div:first-child a {
             background-color: transparent;
             border-color: #fff;
-            &:hover{
+            &:hover {
                 background-color: #5b6169;
             }
-            &:last-child:hover{
+            &:last-child:hover {
                 background-color: transparent;
             }
-            svg{
+            svg {
                 fill: #fff;
             }
-
         }
     }
     .diurno {
@@ -177,15 +183,39 @@ body.body_nocturno {
     .nocturno {
         display: block;
     }
-    ul.ul_creargifos {
-        li.contador_pasos {
-            border-color: $celeste;
-            color: $celeste;
+    .main_creargifo {
+        .contenedor_video {
+            border-color: #fff;
+        }
+        div.contenedor_contador_pasos {
+            ul.ul_creargifos {
+                li.contador_pasos {
+                    border-color: #fff;
+                    color: #fff;
+                    &.contador_activo{
+                        background-color: #fff;
+                        color: #2f3236;
+                    }
+                }
+            }
+            &::after{
+                background-color: #fff;
+            }
+            div#aditionaltext{
+                color: #fff;
+            }
+        }
+        button {
+            border-color: #fff;
+            color: #fff;
+            &:hover {
+                background-color: #fff;
+                color: #2f3236;
+            }
         }
     }
     footer {
-        svg{
-        
+        svg {
             &:hover {
                 fill: #fff;
             }

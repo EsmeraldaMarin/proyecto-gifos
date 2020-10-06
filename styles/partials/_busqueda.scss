@@ -87,10 +87,6 @@ main {
                     align-items: center;
                     height: 100%;
                     width: 50px;
-                    &:active {
-                        left: 0px;
-                        right: auto;
-                    }
                     svg {
                         fill: $azul;
                         width: 20px;
