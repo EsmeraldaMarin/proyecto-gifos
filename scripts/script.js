@@ -42,7 +42,7 @@ function showGifs() {
                 let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
 
-                    maxFuncion(i, btnMax[i], gifsCtnTrending)
+                    maxFuncion(i, btnMax[i], gifsCtnTrending, content.data)
                 })
 
                 //Download Function 
@@ -132,7 +132,7 @@ function addFavoriteGif(i, info, btn) {
 
 //Funcion maximizar
 
-function maxFuncion(i, btnMax, ctn) {
+function maxFuncion(i, btnMax, ctn, info) {
     let ctnGifsMax = ctn.childNodes;
     btnMax.classList.add("btnMaxActive")
     let gifMax = ctnGifsMax[i].cloneNode(true);
@@ -148,6 +148,14 @@ function maxFuncion(i, btnMax, ctn) {
 
         closeMax.classList.remove("btnMaxActive")
         document.body.removeChild(newCtn)
+    })
+    //agregar a favorito
+
+    let btnFav = document.querySelector(".ctnMax .favorito_btn");
+    console.log(btnFav)
+
+    btnFav.addEventListener("click", () => {
+        addFavoriteGif(i, info, btnFav)
     })
 
 }

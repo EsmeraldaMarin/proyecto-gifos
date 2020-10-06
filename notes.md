@@ -17,12 +17,11 @@
 
 ### especificaciones y detalles
 
-* add favorite from max
 * agregar clase a input del header para funcion search
 
 ## HECHO EN ESTE COMMIT ##
 
-* correccion download function
+* add favorite from max
 
 
 
