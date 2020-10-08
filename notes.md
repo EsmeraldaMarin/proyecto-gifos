@@ -21,7 +21,9 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correccion ul autocomplete minima
+* download desde search
+* quitar de favoritos
+* funciones en favoritos 
 
 
 

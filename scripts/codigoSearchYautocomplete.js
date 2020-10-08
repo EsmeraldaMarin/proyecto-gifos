@@ -10,7 +10,7 @@ let offset = 0;
 let seeMoreBtn = document.getElementById("seeMoreResults")
 let trendingTerms = document.querySelectorAll("p.trendingTerms span")
 let spanTerm = document.getElementById("termBuscado")
-let infoSearch= document.querySelector(".infoSearch")
+let infoSearch = document.querySelector(".infoSearch")
 
 
 btnSearch.addEventListener("click", newSearch);
@@ -48,7 +48,7 @@ function searchGif() {
     fetch(newUrlSearch)
         .then(resp => resp.json())
         .then(content => {
-            
+
             createCtnGifs(content.data);
         })
         .catch(err => console.log(err))
@@ -76,7 +76,11 @@ function createCtnGifs(arrayGifs) {
         //crear info cards
 
         createInfoCards(gifSearched, arrayGifs[i])
+        
+        //Download Function 
 
+        let dwnBtn = document.querySelectorAll("#searchResults #downloadBtn")
+        downloadGif(urlImg, dwnBtn[i])
 
         //Agregar a favorito
 
@@ -90,10 +94,8 @@ function createCtnGifs(arrayGifs) {
         let btnMax = document.querySelectorAll("#searchResults .max_btn");
         btnMax[i].addEventListener("click", () => {
 
-            maxFuncion(i, btnMax[i], searchResultCtn)
+            maxFuncion(i, btnMax[i], searchResultCtn, arrayGifs)
         })
-
-
     }
 }
 
@@ -181,22 +183,22 @@ btnClose.addEventListener("click", () => {
 
 //Trending Terminos
 
-function trenTerms(){
+function trenTerms() {
     let urlTerms = `https://api.giphy.com/v1/trending/searches?api_key=${apiKeyGiphy}`;
     fetch(urlTerms)
-    .then(resp => resp.json())
-    .then(info =>{
+        .then(resp => resp.json())
+        .then(info => {
 
-        for(let i = 0; i <= trendingTerms.length - 1; i++){
-            trendingTerms[i].textContent = info.data[i]
+            for (let i = 0; i <= trendingTerms.length - 1; i++) {
+                trendingTerms[i].textContent = info.data[i]
 
-            trendingTerms[i].addEventListener("click", ()=>{
-                inputSearch.value = trendingTerms[i].textContent;
-                newSearch()
-            })
-        }
+                trendingTerms[i].addEventListener("click", () => {
+                    inputSearch.value = trendingTerms[i].textContent;
+                    newSearch()
+                })
+            }
 
-    })
-    .catch(err => console.log(err))
+        })
+        .catch(err => console.log(err))
 }
 trenTerms()

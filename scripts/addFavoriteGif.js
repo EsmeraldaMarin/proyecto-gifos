@@ -11,10 +11,6 @@ function createGiphysCards() {
     for (let i = 0; i <= giphysGrid.length - 1; i++) {
 
         let urlImg = giphysGrid[i].images.downsized.url;
-        let username = giphysGrid[i].username
-        let title = giphysGrid[i].title
-        let gifToDownload = giphysGrid[i].images.original.mp4;
-
 
         let gifCardCtn = document.createElement("div");
         let gifCreated = document.createElement("img");
@@ -26,22 +22,32 @@ function createGiphysCards() {
 
         //create info gifs card
 
-        let gifInfoCard = document.createElement("div");
-        gifInfoCard.innerHTML = `
-                        <div> 
-                            <a>
-                            <img src= "../assets/icon-fav-active.svg">
-                            </a>
-                            <a href= "${gifToDownload}" download><img src= "../assets/icon-download.svg"></a>
-                            <a class= "max_btn"><img src= "../assets/icon-max.svg"></a>
-                        </div>
-                        <div> 
-                            <span>${username}</span>
-                            <span>${title}</span>
-                        </div>
-                    `
-        gifInfoCard.className = "gifCardInfo";
-        gifCreated.before(gifInfoCard);
+        createInfoCards(gifCreated, giphysGrid[i])
+
+        //Download Function 
+
+        let dwnBtn = document.querySelectorAll("#flex_gifs #downloadBtn")
+        downloadGif(urlImg, dwnBtn[i])
+
+        //MAXIMIZAR FUNCION
+
+        let btnMax = document.querySelectorAll("#flex_gifs .max_btn");
+        btnMax[i].addEventListener("click", () => {
+
+            maxFuncion(i, btnMax[i], gifsCtn, giphysGrid)
+        })
+
+
+        //add favorite function
+
+        let btnFav = document.querySelectorAll("#flex_gifs .favorito_btn");
+        btnFav[i].classList.add("cardBtnActive")
+        btnFav[i].addEventListener("click", ()=>{
+            let item = giphysGrid[i].title
+            localStorage.removeItem(item)
+            gifCardCtn.remove()
+        })
+
     }
 
 }

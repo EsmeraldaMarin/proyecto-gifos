@@ -28,6 +28,12 @@ function showGifs() {
 
                 createInfoCards(gifCreated, content.data[i])
 
+                
+                //Download Function 
+
+                let dwnBtn = document.querySelectorAll("#gifsTrending #downloadBtn")
+                downloadGif(urlImg, dwnBtn[i])
+
                 //add favorite function
 
                 let btnFav = document.querySelectorAll("#gifsTrending .favorito_btn");
@@ -44,14 +50,6 @@ function showGifs() {
 
                     maxFuncion(i, btnMax[i], gifsCtnTrending, content.data)
                 })
-
-                //Download Function 
-
-                let dwnBtn = document.querySelectorAll("#downloadBtn")
-                downloadGif(urlImg, dwnBtn[i])
-
-
-
             }
         })
 
@@ -71,6 +69,7 @@ function downloadGif(urlDownload, btn) {
             btn.href = URL.createObjectURL(data);
 
         })
+        return
 }
 
 

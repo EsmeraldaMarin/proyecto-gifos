@@ -1173,6 +1173,12 @@ main .favoritos_con_resultados .flex_gifs > div .gifCardInfo:hover {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  main .favoritos_con_resultados .flex_gifs > div .gifCardInfo:hover {
+    opacity: 0;
+  }
+}
+
 main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div {
   width: 100%;
   color: #fff;
@@ -1204,25 +1210,57 @@ main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a:h
   background-color: white;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a img {
-  width: 18px;
-  height: 18px;
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a svg {
+  height: 17px;
+  width: 17px;
+  fill: #572ee5;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn img:first-child {
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn img:last-child {
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:first-child {
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive img:last-child {
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
+}
+
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
+}
+
+@media (max-width: 768px) {
+  main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn {
+    width: 156px;
+    height: 120px;
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    z-index: 5;
+  }
+}
+
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn svg:first-child {
+  display: block;
+}
+
+main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn svg:last-child {
+  display: none;
 }
 
 main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:last-child span {
@@ -1908,7 +1946,7 @@ body.body_nocturno .section_buscador button:hover {
 }
 
 body.body_nocturno .trending_gifos {
-  background-color: #2f3236;
+  background-color: #222326;
 }
 
 body.body_nocturno .trending_gifos #gifsCtn button {

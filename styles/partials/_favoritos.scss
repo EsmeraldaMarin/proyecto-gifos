@@ -64,6 +64,9 @@ main {
                     }
                     &:hover {
                         opacity: 1;
+                        @media (max-width: $bp-1) {
+                            opacity: 0;
+                        }
                     }
                     div {
                         width: 100%;
@@ -89,27 +92,56 @@ main {
                                 &:hover {
                                     background-color: rgba($color: #fff, $alpha: 1);
                                 }
-                                img {
-                                    width: 18px;
-                                    height: 18px;
+                                svg {
+                                    height: 17px;
+                                    width: 17px;
+                                    fill: $azul;
                                 }
                                 &.favorito_btn {
-                                    img:first-child {
+                                    svg:first-child {
                                         display: block;
+                                        use {
+                                            transform: scale(0.95) translate(-865px, -2784px);
+                                        }
                                     }
-                                    img:last-child {
+                                    svg:last-child {
                                         display: none;
+                                        use {
+                                            transform: scale(0.85) translate(-261px, -426px);
+                                        }
                                     }
-                                    &.cardBtnActive{
-                                        img:first-child {
+                                    &.cardBtnActive {
+                                        svg:first-child {
                                             display: none;
                                         }
-                                        img:last-child {
+                                        svg:last-child {
                                             display: block;
                                         }
                                     }
                                 }
-                                
+                                &:nth-child(2) {
+                                    svg {
+                                        use {
+                                            transform: translateY(-8px) translateX(-7px);
+                                        }
+                                    }
+                                }
+                                &.max_btn {
+                                    @media (max-width: $bp-1) {
+                                        width: 156px;
+                                        height: 120px;
+                                        position: absolute;
+                                        top: -5px;
+                                        right: -20px;
+                                        z-index: 5;
+                                    }
+                                    svg:first-child {
+                                        display: block;
+                                    }
+                                    svg:last-child {
+                                        display: none;
+                                    }
+                                }
                             }
                         }
                         &:last-child {
