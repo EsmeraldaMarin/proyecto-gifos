@@ -135,17 +135,18 @@ function autocomplete(e) {
 
     }
     inputSearch.value.trim()
+    inputSearch.classList.add("autocompleteActive");//corregir con el otro input
+    ulAutocomplete.className = "ulActive"
 
     formularioCtn.after(ulAutocomplete);
 
     let busqueda = inputSearch.value
 
     let newUrlAutocomplete = urlAutocomplete + busqueda;
+    console.log(newUrlAutocomplete)
     fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
-            inputSearch.classList.add("autocompleteActive");//corregir con el otro input
-            ulAutocomplete.className = "ulActive"
             for (let i = 0; i <= liArray.length - 1; i++) {
 
                 liArray[i].textContent = content.data[i].name;

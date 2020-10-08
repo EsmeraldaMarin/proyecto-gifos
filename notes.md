@@ -21,7 +21,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* add favorite from max
+* correccion ul autocomplete minima
 
 
 

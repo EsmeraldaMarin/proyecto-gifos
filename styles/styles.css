@@ -857,6 +857,7 @@ main .section_buscador div.formulario div > svg {
 
 main .section_buscador .ulActive {
   width: 550px;
+  min-height: 165px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: #572ee5;
