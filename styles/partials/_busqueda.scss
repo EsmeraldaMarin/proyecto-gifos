@@ -308,10 +308,19 @@ main {
                     }
                 }
             }
-
-            ~ article.trending {
-                display: none;
-            } 
+        }
+        #searchResults.sinResultados{
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            img{
+                margin-bottom: 30px;
+            }
+            span{
+                color: $celeste;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
         }
     }
 }

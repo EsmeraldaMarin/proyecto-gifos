@@ -8,7 +8,6 @@
 ### (Segun orden recomendado)
 
 * Que aparezcan de a doce gifs en mis favoritos
-* Agregar section cuando no aparezca algun resultado en la busqueda
 
 ### (Con mayor grado de dificultad)
 
@@ -21,9 +20,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* download desde search
-* quitar de favoritos
-* funciones en favoritos 
+* Agregar section cuando no aparezca algun resultado en la busqueda
 
 
 

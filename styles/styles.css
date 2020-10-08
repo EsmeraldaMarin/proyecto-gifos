@@ -1089,8 +1089,20 @@ main .section_buscador #searchResults.searchActive div .gifCardInfo div:last-chi
   font-weight: bold;
 }
 
-main .section_buscador #searchResults.searchActive ~ article.trending {
-  display: none;
+main .section_buscador #searchResults.sinResultados {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+main .section_buscador #searchResults.sinResultados img {
+  margin-bottom: 30px;
+}
+
+main .section_buscador #searchResults.sinResultados span {
+  color: #50e3c2;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 main .titulo_favoritos {

@@ -11,6 +11,9 @@ let seeMoreBtn = document.getElementById("seeMoreResults")
 let trendingTerms = document.querySelectorAll("p.trendingTerms span")
 let spanTerm = document.getElementById("termBuscado")
 let infoSearch = document.querySelector(".infoSearch")
+let sectionBuscador = document.querySelector(".section_buscador")
+let articleTrending = document.querySelector("article.trending")
+
 
 
 btnSearch.addEventListener("click", newSearch);
@@ -38,7 +41,7 @@ function newSearch() {
 }
 
 function searchGif() {
-
+    console.log("funcion buscar iniciada")
     //nueva busqueda
     let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}&offset=${offset}`;
 
@@ -49,6 +52,10 @@ function searchGif() {
         .then(resp => resp.json())
         .then(content => {
 
+            if (content.data[0] == undefined) {
+                sinResultados()
+                return
+            }
             createCtnGifs(content.data);
         })
         .catch(err => console.log(err))
@@ -57,9 +64,13 @@ function searchGif() {
 
 function createCtnGifs(arrayGifs) {
 
+    if (searchResultCtn.className = "sinResultados") {
+        searchResultCtn.classList.remove("sinResultados")
+    }
     seeMoreBtn.classList.add("seeMoreActive")
     infoSearch.style.display = "block"
     spanTerm.textContent = inputSearch.value;
+    articleTrending.style.display = "none"
 
     for (let i = 0; i <= limitSGifos - 1; i++) {
 
@@ -76,7 +87,7 @@ function createCtnGifs(arrayGifs) {
         //crear info cards
 
         createInfoCards(gifSearched, arrayGifs[i])
-        
+
         //Download Function 
 
         let dwnBtn = document.querySelectorAll("#searchResults #downloadBtn")
@@ -145,11 +156,14 @@ function autocomplete(e) {
     let busqueda = inputSearch.value
 
     let newUrlAutocomplete = urlAutocomplete + busqueda;
-    console.log(newUrlAutocomplete)
     fetch(newUrlAutocomplete)
         .then(resp => resp.json())
         .then(content => {
             for (let i = 0; i <= liArray.length - 1; i++) {
+
+                if (content.data[i] == undefined) {
+                    return false
+                }
 
                 liArray[i].textContent = content.data[i].name;
                 ulAutocomplete.appendChild(liArray[i]);
@@ -202,3 +216,18 @@ function trenTerms() {
         .catch(err => console.log(err))
 }
 trenTerms()
+
+//function sin resultados
+
+function sinResultados() {
+    console.log("sin resultados")
+    infoSearch.style.display = "block"
+    spanTerm.textContent = inputSearch.value;
+    searchResultCtn.classList.add("sinResultados")
+    searchResultCtn.innerHTML = `
+    <img src="assets/icon-busqueda-sin-resultado.svg" alt="busqueda sin resultado">
+    <span class="sinRtados">Intenta con otra búsqueda.</span>
+    `
+    articleTrending.style.display = "block"
+    sectionBuscador.insertBefore(articleTrending, infoSearch)
+}
