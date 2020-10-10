@@ -17,21 +17,21 @@ main .section_buscador #searchResults.searchActive {
   }
 }
 
-main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard, main .misgifos_con_resultados .flex_misgifs > div .gifcard {
   min-width: 260px;
   max-width: 260px;
   height: 200px;
 }
 
 @media (max-width: 768px) {
-  main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard {
+  main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard, main .misgifos_con_resultados .flex_misgifs > div .gifcard {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
   }
 }
 
-main .section_buscador button, main .favoritos_con_resultados button {
+main .section_buscador button, main .favoritos_con_resultados button, main .misgifos_con_resultados button {
   display: none;
   width: 125px;
   height: 50px;
@@ -49,12 +49,12 @@ main .section_buscador button, main .favoritos_con_resultados button {
   color: #572ee5;
 }
 
-main .section_buscador button:hover, main .favoritos_con_resultados button:hover {
+main .section_buscador button:hover, main .favoritos_con_resultados button:hover, main .misgifos_con_resultados button:hover {
   background-color: #572ee5;
   color: #fff;
 }
 
-main .section_buscador button.seeMoreActive, main .favoritos_con_resultados button.seeMoreActive {
+main .section_buscador button.seeMoreActive, main .favoritos_con_resultados button.seeMoreActive, main .misgifos_con_resultados button.seeMoreActive {
   display: block;
 }
 
@@ -1329,38 +1329,166 @@ main .titulo_misgifos h1 {
 }
 
 main .misgifos_con_resultados {
+  width: 100%;
   display: none;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-main .misgifos_con_resultados .flex_gifs {
-  margin: 40px 156px 80px 156px;
-  width: 1130px;
-  height: 660px;
-  border: 2px solid #572ee5;
+main .misgifos_con_resultados .flex_misgifs {
+  margin: 50px 0;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-main .misgifos_con_resultados button {
-  width: 125px;
-  height: 50px;
-  margin-bottom: 80px;
-  border: 1px solid #572ee5;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  font-size: 13px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  background-color: #fff;
-  color: #572ee5;
+@media (max-width: 768px) {
+  main .misgifos_con_resultados .flex_misgifs {
+    width: 100%;
+  }
 }
 
-main .misgifos_con_resultados button:hover {
-  background-color: #572ee5;
+main .misgifos_con_resultados .flex_misgifs > div {
+  position: relative;
+  min-width: 260px;
+  max-width: 260px;
+  height: 200px;
+  margin: 15px;
+}
+
+@media (max-width: 768px) {
+  main .misgifos_con_resultados .flex_misgifs > div {
+    min-width: 156px;
+    max-width: 156px;
+    height: 120px;
+    margin: 10px;
+  }
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo {
+  padding: 15px 15px 20px 15px;
+  position: absolute;
+  top: 0;
+  width: 260px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(87, 46, 229, 0.6);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo {
+    width: 156px;
+    height: 120px;
+  }
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo:hover {
+    opacity: 0;
+  }
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div {
+  width: 100%;
   color: #fff;
+  text-align: left;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a:hover {
+  background-color: white;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a svg {
+  height: 17px;
+  width: 17px;
+  fill: #572ee5;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+  display: block;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+  display: none;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+  display: none;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+  display: block;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
+}
+
+@media (max-width: 768px) {
+  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn {
+    width: 156px;
+    height: 120px;
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    z-index: 5;
+  }
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn svg:first-child {
+  display: block;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn svg:last-child {
+  display: none;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child span {
+  display: block;
+}
+
+main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child span:last-child {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 main .misgifos_sin_resultados {

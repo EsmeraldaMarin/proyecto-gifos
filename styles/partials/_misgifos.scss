@@ -15,49 +15,163 @@ main {
 
     //CAMBIAR DISPLAY NONE POR DISPLAY FLEX EN MIS GIFOS C/RESULTADOS CUANDO PONGAN UN GIF EN MISGIFOS
 
-    .misgifos_con_resultados{
+    .misgifos_con_resultados {
+        width: 100%;
         display: none;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        .flex_gifs {
-            margin: 40px 156px 80px 156px;
-            width: 1130px;
-            height: 660px;
-            border: 2px solid $azul;
+        .flex_misgifs {
+            margin: 50px 0;
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: $bp-1) {
+                width: 100%;
+            }
+            > div {
+                position: relative;
+                min-width: 260px;
+                max-width: 260px;
+                height: 200px;
+                margin: 15px;
+                @media (max-width: $bp-1) {
+                    min-width: 156px;
+                    max-width: 156px;
+                    height: 120px;
+                    margin: 10px;
+                }
+                .gifcard {
+                    @extend %cardsGif;
+                }
+
+                .gifCardInfo {
+                    padding: 15px 15px 20px 15px;
+                    position: absolute;
+                    top: 0;
+                    width: 260px;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    background-color: rgba($color: $azul, $alpha: 0.6);
+                    opacity: 0;
+                    @media (max-width: $bp-1) {
+                        width: 156px;
+                        height: 120px;
+                    }
+                    &:hover {
+                        opacity: 1;
+                        @media (max-width: $bp-1) {
+                            opacity: 0;
+                        }
+                    }
+                    div {
+                        width: 100%;
+                        color: #fff;
+                        text-align: left;
+                        &:first-child {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            a {
+                                width: 32px;
+                                height: 32px;
+                                margin: 0px 5px;
+                                border-radius: 6px;
+                                -webkit-border-radius: 6px;
+                                -moz-border-radius: 6px;
+                                -ms-border-radius: 6px;
+                                -o-border-radius: 6px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: rgba($color: #fff, $alpha: 0.7);
+                                &:hover {
+                                    background-color: rgba($color: #fff, $alpha: 1);
+                                }
+                                svg {
+                                    height: 17px;
+                                    width: 17px;
+                                    fill: $azul;
+                                }
+                                &.favorito_btn {
+                                    svg:first-child {
+                                        display: block;
+                                        use {
+                                            transform: scale(0.95) translate(-865px, -2784px);
+                                        }
+                                    }
+                                    svg:last-child {
+                                        display: none;
+                                        use {
+                                            transform: scale(0.85) translate(-261px, -426px);
+                                        }
+                                    }
+                                    &.cardBtnActive {
+                                        svg:first-child {
+                                            display: none;
+                                        }
+                                        svg:last-child {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    svg {
+                                        use {
+                                            transform: translateY(-8px) translateX(-7px);
+                                        }
+                                    }
+                                }
+                                &.max_btn {
+                                    @media (max-width: $bp-1) {
+                                        width: 156px;
+                                        height: 120px;
+                                        position: absolute;
+                                        top: -5px;
+                                        right: -20px;
+                                        z-index: 5;
+                                    }
+                                    svg:first-child {
+                                        display: block;
+                                    }
+                                    svg:last-child {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        &:last-child {
+                            span {
+                                display: block;
+                                &:last-child {
+                                    margin-top: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         button {
-            width: 125px;
-            height: 50px;
-            margin-bottom: 80px;
-            border: 1px solid $azul;
-            border-radius: 25px;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
-            -ms-border-radius: 25px;
-            -o-border-radius: 25px;
-            font-size: 13px;
-            font-family: $fuente;
-            font-weight: bold;
-            background-color: #fff;
-            color: $azul;
-            &:hover{
-                background-color: $azul;
-                color:#fff;
-            }
-            
+            @extend %btnSeeMore;
         }
     }
-    .misgifos_sin_resultados{
+    .misgifos_sin_resultados {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        img{
+        img {
             width: 150px;
             margin-top: 110px;
             margin-bottom: 25px;
         }
-        span{
+        span {
             width: 427px;
             margin-bottom: 140px;
             color: $celeste;

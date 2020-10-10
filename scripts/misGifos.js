@@ -1,128 +1,62 @@
-// CREAR GIFOS
-const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 
-let btnStart = document.getElementById("comenzar");
-let btnRecord = document.getElementById("grabar");
-let btnStop = document.getElementById("finalizar");
-let btnUpload = document.getElementById("subir");
-let ctnVideo = document.getElementById("contenedorVideo");
-let video = document.querySelector("video");
-let urlUpload = `https://upload.giphy.com/v1/gifs?api_key=${apiKeyGiphy}`
-let timerGif = document.getElementById("aditionaltext")
-let contadores = document.querySelectorAll(".ul_creargifos .contador_pasos")
+function misGifos() {
+    let newGif = localStorage.getItem("TMBXnMR1VSOP4UUCtB")
+    console.log(newGif)
+    let urlSearchId = `https://api.giphy.com/v1/gifs/${newGif}?api_key=${apiKeyGiphy}`
+    fetch(urlSearchId)
+        .then(res => res.json())
+        .then(content => {
+            console.log(content)
+            createMyGifo(content.data)
+        })
 
-btnStart.addEventListener("click", ()=>{
-    contadores[0].classList.add("contador_activo")
-    getStreamAndRecord()
-});
+}
+misGifos()
 
-function getStreamAndRecord() {
+let misGifsCtn = document.querySelector(".flex_misgifs");
+let misGifosMaxCtn = document.getElementById("misgifos_con_resultados")
+function createMyGifo(info) {
+    misGifosMaxCtn.style.display="block"
+    let urlImg = info.images.downsized.url;
 
-    btnStart.classList.remove("activo");
+    let gifCardCtn = document.createElement("div");
+    let gifCreated = document.createElement("img");
+    gifCreated.src = urlImg;
+    gifCreated.className = "gifcard";
+    gifCardCtn.appendChild(gifCreated)
+    misGifsCtn.appendChild(gifCardCtn);
 
-    navigator.mediaDevices.getUserMedia({
-        audio: false,
-        video: {
-            height: { max: 480 }
-        }
-    })
-        .then(function (stream) {
+    createInfoCards(gifCreated, info)
+    allMyGifs(info, urlImg, misGifsCtn)
+}
 
-            ctnVideo.innerHTML = ""
-            btnRecord.classList.add("activo");
+function allMyGifs(info, urlImg, ctn){
+    let allGifs = document.querySelectorAll(".flex_misgifs>div")
+    for(let i = 0; i<=allGifs.length - 1; i++){
+        
+        //downloadGif
 
-            video.srcObject = stream;
-            video.play()
+        let dwnBtn = document.querySelectorAll("#misgifos_con_resultados #downloadBtn")
+        downloadGif(urlImg, dwnBtn[i])
+        console.log(dwnBtn[i])
 
-            contadores[0].classList.remove("contador_activo")
-            contadores[1].classList.add("contador_activo")
 
-            btnRecord.addEventListener("click", () => {
-                recorder = RecordRTC(stream, {
-                    type: 'gif',
-                    frameRate: 1,
-                    quality: 10,
-                    width: 360,
-                    hidden: 240,
-                    onGifRecordingStarted: function () {
-                        console.log('started')
-                    },
-                });
-                recorder.startRecording();
+        //add favorite function
 
-                btnRecord.classList.remove("activo");
-                btnStop.classList.add("activo");
+        let btnFav = document.querySelectorAll("#misgifos_con_resultados .favorito_btn");
 
-                function timer() {
-                    var tope = 0;
-                    var intervalo;
-
-                    function seconds() {
-                        tope++;
-                        timerGif.textContent = `00:00:0${tope}`
-
-                        if (tope >= 9) {
-                            clearInterval(intervalo);
-                            pararGrabacion();
-                        }
-                    }
-
-                    function intervalo() {
-                        intervalo = setInterval(seconds, 1000);
-                    }
-                    intervalo();
-                    btnStop.addEventListener("click", () => {
-                        clearInterval(intervalo);
-                        pararGrabacion()
-
-                    })
-                }
-                timer();
-            })
-
+        btnFav[i].addEventListener("click", () => {
+            addFavoriteGif(i, info, btnFav[i])
         })
 
 
-    ctnVideo.innerHTML = `<h2><span>¿Nos das acceso</span><span>a tu cámara?</span></h2>
-        <p>
-        <span>El acceso de tu cámara será válido solo</span>
-        <span>Por el tiempo en el que estés creando el GIFO</span></p>`
+        //MAXIMIZAR FUNCION
 
-}
+        let btnMax = document.querySelectorAll("#misgifos_con_resultados .max_btn");
+        btnMax[i].addEventListener("click", () => {
 
-function pararGrabacion() {
-    recorder.stopRecording(function () {
-        let blob = recorder.getBlob();
-        invokeSaveAsDialog(blob);
-    });
+            maxFuncion(i, btnMax[i], ctn, info)
+        })
 
-    timerGif.textContent = `REPETIR CAPTURA`;
-
-    btnStop.classList.remove("activo");
-    btnUpload.classList.add("activo");
-
-    timerGif.addEventListener("click", () => {
-        contadores[2].classList.remove("contador_activo")
-        btnUpload.classList.remove("activo");
-
-        getStreamAndRecord();
-
-    })
-
-}
-btnUpload.addEventListener("click", uploadGif)
-
-function uploadGif() {
-    contadores[1].classList.remove("contador_activo")
-    contadores[2].classList.add("contador_activo")
-    
-    fetch(urlUpload)
-        .then(data => data.json())
-        .then(() => {
-            let form = new FormData()
-            form.append('file', recorder.getBlob(), 'myGif.gif')
-            console.log(form.get('file'))
-        }
-        )
-        .catch(err => console.log(err))
+    }
 }
