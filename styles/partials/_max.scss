@@ -85,7 +85,7 @@ body {
                             background-color: #eee;
                         }
                         svg {
-                            height: 17px;
+                            height: 19px;
                             width: 17px;
                             fill: $azul;
                         }
@@ -110,6 +110,11 @@ body {
                                 svg:last-child {
                                     display: block;
                                 }
+                            }
+                        }
+                        &.trash{
+                            use{
+                                transform: translateY(-1px);
                             }
                         }
                         &:nth-child(2){

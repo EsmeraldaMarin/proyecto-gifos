@@ -93,30 +93,13 @@ main {
                                     background-color: rgba($color: #fff, $alpha: 1);
                                 }
                                 svg {
-                                    height: 17px;
+                                    height: 20px;
                                     width: 17px;
                                     fill: $azul;
                                 }
-                                &.favorito_btn {
-                                    svg:first-child {
-                                        display: block;
-                                        use {
-                                            transform: scale(0.95) translate(-865px, -2784px);
-                                        }
-                                    }
-                                    svg:last-child {
-                                        display: none;
-                                        use {
-                                            transform: scale(0.85) translate(-261px, -426px);
-                                        }
-                                    }
-                                    &.cardBtnActive {
-                                        svg:first-child {
-                                            display: none;
-                                        }
-                                        svg:last-child {
-                                            display: block;
-                                        }
+                                &.trash{
+                                    use{
+                                        transform: translateY(-1px);
                                     }
                                 }
                                 &:nth-child(2) {

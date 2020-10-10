@@ -151,8 +151,6 @@ function maxFuncion(i, btnMax, ctn, info) {
     //agregar a favorito
 
     let btnFav = document.querySelector(".ctnMax .favorito_btn");
-    console.log(btnFav)
-
     btnFav.addEventListener("click", () => {
         addFavoriteGif(i, info, btnFav)
     })

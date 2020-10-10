@@ -8,20 +8,17 @@
 ### (Segun orden recomendado)
 
 * Load Card en Crear Gifo
-* Corregir funciones de mis favoritos
 * Que aparezcan de a doce gifs en mis favoritos
 * agregar clase a input del header para funcion search
 
 ## HECHO EN ESTE COMMIT ##
 
-* Subir gifo creado a Giphy
-* Agregar gifo creado en la seccion mis gifos
-
+* Correccion de funciones en mis gifos
 
 # Hacer en el prox commit (recomendado)
 
 * Load Card en Crear Gifo
-* Corregir funciones de mis favoritos
+
 
 
 
