@@ -2,7 +2,7 @@ let ctnSinResultados = document.getElementById("misgifos_sin_resultados")
 let ctnConResultados = document.getElementById("misgifos_con_resultados")
 
 function misGifos() {
-    localStorage.setItem("TMBXnMR1VSOP4UUCtB","TMBXnMR1VSOP4UUCtB")
+    localStorage.setItem("TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB")
     let newGif = localStorage.getItem("TMBXnMR1VSOP4UUCtB")
     console.log(newGif)
     let urlSearchId = `https://api.giphy.com/v1/gifs/${newGif}?api_key=${apiKeyGiphy}`
@@ -10,11 +10,11 @@ function misGifos() {
         .then(res => res.json())
         .then(content => {
             console.log(content)
+            loadedCardF(content.data.url)
             createMyGifo(content.data)
         })
 
 }
-misGifos()
 
 let misGifsCtn = document.querySelector(".flex_misgifs");
 let misGifosMaxCtn = document.getElementById("misgifos_con_resultados")
@@ -108,10 +108,44 @@ function resultados() {
     if (allGifos.length != 0) {
         console.log("hay gifs")
         ctnSinResultados.style.display = "none"
-        ctnConResultados.style.display = "block"
+        ctnConResultados.style.display = "flex"
     } else {
         console.log("no hay gifs")
         ctnSinResultados.style.display = "flex"
         ctnConResultados.style.display = "none"
     }
+}
+function loadedCardF(url) {
+    loadCard.className = "loadedCard"
+    loadCard.innerHTML = `
+    <div class="btnsLoadedCard">
+        <a href= "" download id= "downloadBtn">
+            <svg role="img">
+                <use href="assets/icon-download.svg#icon-download">
+            </svg>
+        </a>
+        <a id="linkBtn">
+            <input id="urlToCopy" type="text" value="${url}">
+            <svg role="img">
+                <use href="assets/icon-link.svg#path-1">
+            </svg>
+        </a>
+    </div>
+        <svg role="img" class="check">
+            <use href="assets/check.svg#path-1">
+        </svg>
+        <span>GIFO subido con éxito</span>
+    `
+    maxCtn.insertBefore(loadCard, video)
+    let inputUrl = document.getElementById("urlToCopy")
+    let linkBtn = document.getElementById("linkBtn")
+    linkBtn.addEventListener("click", ()=>{
+        copyUrl(inputUrl)
+    })
+
+}
+function copyUrl(inputUrl){
+    let url = inputUrl.select()
+    document.execCommand('copy')
+    alert('listo')
 }

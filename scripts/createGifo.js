@@ -11,7 +11,7 @@ let urlUpload = `https://upload.giphy.com/v1/gifs?api_key=${apiKeyGiphy}`
 let timerGif = document.getElementById("aditionaltext")
 let contadores = document.querySelectorAll(".ul_creargifos .contador_pasos")
 
-btnStart.addEventListener("click", ()=>{
+btnStart.addEventListener("click", () => {
     contadores[0].classList.add("contador_activo")
     getStreamAndRecord()
 });
@@ -125,7 +125,9 @@ function uploadGif() {
         body: form,
         type: 'no-cors'
     }
-    
+
+    loadCardF()
+
     fetch(urlUpload, parametros)
         .then(data => data.json())
         .then(info => {
@@ -135,4 +137,18 @@ function uploadGif() {
         }
         )
         .catch(err => console.log(err))
+}
+let maxCtn = document.querySelector(".contenedor_video")
+let loadCard = document.createElement("div")
+
+function loadCardF() {
+    loadCard.className = "loadCard"
+    loadCard.innerHTML = `
+        <svg role="img">
+            <use href="assets/loader.svg#path-1">
+        </svg>
+        <span>Estamos subiendo tu GIFO</span>
+     `
+    maxCtn.insertBefore(loadCard, video)
+
 }

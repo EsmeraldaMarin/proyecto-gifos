@@ -1568,7 +1568,7 @@ main .misgifos_sin_resultados span {
 
 .main_creargifo .contenedor_video video {
   position: absolute;
-  width: 480px;
+  width: 425px;
   height: 320px;
 }
 
@@ -1577,6 +1577,112 @@ main .misgifos_sin_resultados span {
     width: 265px;
     height: 200px;
   }
+}
+
+.main_creargifo .contenedor_video .loadCard {
+  position: absolute;
+  width: 425px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(87, 46, 229, 0.6);
+  z-index: 2;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .main_creargifo .contenedor_video .loadCard {
+    width: 265px;
+    height: 200px;
+  }
+}
+
+.main_creargifo .contenedor_video .loadCard svg {
+  height: 25px;
+  width: 25px;
+  fill: #50e3c2;
+  margin-bottom: 10px;
+  animation: rodar 5s linear infinite;
+  -webkit-animation: rodar 5s linear infinite;
+}
+
+.main_creargifo .contenedor_video .loadedCard {
+  position: absolute;
+  width: 425px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(87, 46, 229, 0.6);
+  z-index: 2;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .main_creargifo .contenedor_video .loadedCard {
+    width: 265px;
+    height: 200px;
+  }
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  padding: 10px;
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a:hover {
+  background-color: white;
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a svg {
+  height: 25px;
+  width: 25px;
+  fill: #572ee5;
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a:first-child use {
+  transform: translateX(-3px);
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a:last-child input {
+  position: absolute;
+  opacity: 0;
+}
+
+.main_creargifo .contenedor_video .loadedCard > div.btnsLoadedCard a:last-child use {
+  transform: translate(2.5px, 7px);
+}
+
+.main_creargifo .contenedor_video .loadedCard svg.check {
+  height: 25px;
+  width: 25px;
+  fill: #50e3c2;
+  margin-bottom: 10px;
 }
 
 .main_creargifo .contenedor_video .marcos {

@@ -7,17 +7,16 @@
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Load Card en Crear Gifo
 * Que aparezcan de a doce gifs en mis favoritos
 * agregar clase a input del header para funcion search
 
 ## HECHO EN ESTE COMMIT ##
 
-* Correccion de funciones en mis gifos
+* cards loaded, function copy url
 
 # Hacer en el prox commit (recomendado)
 
-* Load Card en Crear Gifo
+* Correccion de pasar un gif creado a mis gifos
 
 
 
