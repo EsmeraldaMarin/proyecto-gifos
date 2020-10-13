@@ -1,9 +1,5 @@
 # NOTAS DEL PROYECTO GIFOS - ESMERALDA MARIN
 
-## CONSULTAS
-
-* Recarga constante de la seccion favoritos
-
 ## POR HACER 
 ### (Segun orden recomendado)
 
@@ -12,11 +8,11 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* cards loaded, function copy url
+* aparicion de a doce gifs en mis gifos
 
 # Hacer en el prox commit (recomendado)
 
-* Correccion de pasar un gif creado a mis gifos
+* Correccion de maximizar gifo (y close)en mis gifos
 
 
 

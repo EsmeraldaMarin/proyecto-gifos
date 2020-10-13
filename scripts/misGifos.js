@@ -1,25 +1,56 @@
 let ctnSinResultados = document.getElementById("misgifos_sin_resultados")
 let ctnConResultados = document.getElementById("misgifos_con_resultados")
+let misGifsCtn = document.querySelector(".flex_misgifs");
+let btnVerMas = document.querySelector("#misgifos_con_resultados button")
+let xx = JSON.stringify(["TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB"])
+localStorage.setItem("myGifos", xx)
+let limitGifos = 12;
+let indexArray = 0;
+let newGif = localStorage.getItem("myGifos")
+let myGifosOnStorage = JSON.parse(newGif)
 
-function misGifos() {
-    localStorage.setItem("TMBXnMR1VSOP4UUCtB", "TMBXnMR1VSOP4UUCtB")
-    let newGif = localStorage.getItem("TMBXnMR1VSOP4UUCtB")
-    console.log(newGif)
-    let urlSearchId = `https://api.giphy.com/v1/gifs/${newGif}?api_key=${apiKeyGiphy}`
-    fetch(urlSearchId)
-        .then(res => res.json())
-        .then(content => {
-            console.log(content)
-            loadedCardF(content.data.url)
-            createMyGifo(content.data)
-        })
+function misGifos(limitGifos, indexArray) {
+    console.log(limitGifos)
+    let newGif = localStorage.getItem("myGifos")
+    let myGifosOnStorage = JSON.parse(newGif)
 
+    if (!myGifosOnStorage) {
+        console.log("NO HAY GIFOS")
+        return false
+    }
+
+    for (let i = indexArray; i <= limitGifos - 1; i++) {
+        if(!myGifosOnStorage[i]){
+            return false
+        }
+
+        let urlSearchId = `https://api.giphy.com/v1/gifs/${myGifosOnStorage[i]}?api_key=${apiKeyGiphy}`
+        fetch(urlSearchId)
+            .then(res => res.json())
+            .then(content => {
+                createMyGifo(content.data)
+            })
+    }
+}
+misGifos(limitGifos, indexArray)
+
+if (myGifosOnStorage.length > 12) {
+    btnVerMas.style.display = "block"
+    btnVerMas.addEventListener("click", () => {
+        if(myGifosOnStorage.length % limitGifos > 12){
+            btnVerMas.style.display = "none"
+            return 
+        }
+        limitGifos = limitGifos + 12
+        indexArray = indexArray + 11
+        misGifos(limitGifos, indexArray)
+    })
+
+    console.log("mas de 12")
 }
 
-let misGifsCtn = document.querySelector(".flex_misgifs");
-let misGifosMaxCtn = document.getElementById("misgifos_con_resultados")
 function createMyGifo(info) {
-    misGifosMaxCtn.style.display = "block"
+    ctnConResultados.style.display = "block"
     let urlImg = info.images.downsized.url;
 
     let gifCardCtn = document.createElement("div");
@@ -44,22 +75,19 @@ function allMyGifs(info, urlImg) {
 
         let dwnBtn = document.querySelectorAll("#misgifos_con_resultados #downloadBtn")
         downloadGif(urlImg, dwnBtn[i])
-        console.log(dwnBtn[i])
-
 
         //Delete gifo function
 
-        let btnTrash = document.querySelectorAll("#misgifos_con_resultados .favorito_btn");
+        let btnTrash = document.querySelectorAll("#misgifos_con_resultados a:first-child");
         btnTrash[i].innerHTML = `
         <svg role="img" alt="favorito">
             <use href="assets/icon_trash.svg#path-1">
         </svg>
         `
-        btnTrash[i].className = "trash"
         btnTrash[i].addEventListener("click", () => {
             deleteMyGifo(allGifs[i], info.id)
         })
-
+        btnTrash[i].className = "trash";
 
         //MAXIMIZAR FUNCION
 
@@ -90,8 +118,6 @@ function maxMisGifos(btnMax, gif, info) {
     })
 
     let btnTrash = document.querySelector(".ctnMax .trash");
-    console.log(btnTrash)
-
     btnTrash.addEventListener("click", () => {
         deleteMyGifo(gif, info.id)
     })
@@ -106,7 +132,7 @@ function deleteMyGifo(gifToDelete, id) {
 function resultados() {
     let allGifos = document.querySelectorAll(".flex_misgifs>div")
     if (allGifos.length != 0) {
-        console.log("hay gifs")
+        // console.log("hay gifs")
         ctnSinResultados.style.display = "none"
         ctnConResultados.style.display = "flex"
     } else {
@@ -114,38 +140,4 @@ function resultados() {
         ctnSinResultados.style.display = "flex"
         ctnConResultados.style.display = "none"
     }
-}
-function loadedCardF(url) {
-    loadCard.className = "loadedCard"
-    loadCard.innerHTML = `
-    <div class="btnsLoadedCard">
-        <a href= "" download id= "downloadBtn">
-            <svg role="img">
-                <use href="assets/icon-download.svg#icon-download">
-            </svg>
-        </a>
-        <a id="linkBtn">
-            <input id="urlToCopy" type="text" value="${url}">
-            <svg role="img">
-                <use href="assets/icon-link.svg#path-1">
-            </svg>
-        </a>
-    </div>
-        <svg role="img" class="check">
-            <use href="assets/check.svg#path-1">
-        </svg>
-        <span>GIFO subido con éxito</span>
-    `
-    maxCtn.insertBefore(loadCard, video)
-    let inputUrl = document.getElementById("urlToCopy")
-    let linkBtn = document.getElementById("linkBtn")
-    linkBtn.addEventListener("click", ()=>{
-        copyUrl(inputUrl)
-    })
-
-}
-function copyUrl(inputUrl){
-    let url = inputUrl.select()
-    document.execCommand('copy')
-    alert('listo')
 }

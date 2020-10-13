@@ -1343,6 +1343,7 @@ main .misgifos_con_resultados .flex_misgifs {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {

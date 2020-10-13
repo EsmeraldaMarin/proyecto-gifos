@@ -110,9 +110,14 @@ function pararGrabacion() {
     })
 
 }
+let myGifosArray = [];
 btnUpload.addEventListener("click", uploadGif)
 
 function uploadGif() {
+
+    btnUpload.classList.remove("activo");
+    timerGif.remove()
+
     contadores[1].classList.remove("contador_activo")
     contadores[2].classList.add("contador_activo")
 
@@ -131,9 +136,11 @@ function uploadGif() {
     fetch(urlUpload, parametros)
         .then(data => data.json())
         .then(info => {
-            localStorage.setItem(info.data.id, info.data.id)
-            misGifos(info.data.id)
-            console.log(info.data.id)
+            myGifosArray.push(info.data.id)
+            let mygifos = JSON.stringify(myGifosArray)
+            localStorage.setItem("myGifos", mygifos)
+            console.log(myGifosArray)
+            loadedCardF(content.data.url)
         }
         )
         .catch(err => console.log(err))
@@ -151,4 +158,53 @@ function loadCardF() {
      `
     maxCtn.insertBefore(loadCard, video)
 
+}
+function loadedCardF(url) {
+    loadCard.className = "loadedCard"
+    loadCard.innerHTML = `
+    <div class="btnsLoadedCard">
+        <a href= "" download id= "downloadBtn">
+            <svg role="img">
+                <use href="assets/icon-download.svg#icon-download">
+            </svg>
+        </a>
+        <a id="linkBtn">
+            <input id="urlToCopy" type="text" value="${url}">
+            <svg role="img">
+                <use href="assets/icon-link.svg#path-1">
+            </svg>
+        </a>
+    </div>
+        <svg role="img" class="check">
+            <use href="assets/check.svg#path-1">
+        </svg>
+        <span>GIFO subido con éxito</span>
+    `
+    maxCtn.insertBefore(loadCard, video)
+    let inputUrl = document.getElementById("urlToCopy")
+    let linkBtn = document.getElementById("linkBtn")
+    linkBtn.addEventListener("click", () => {
+        copyUrl(inputUrl)
+    })
+    //downloadGif
+
+    let dwnBtn = document.querySelector(".btnsLoadedCard #downloadBtn")
+    downloadGif(urlImg, dwnBtn)
+
+}
+function copyUrl(inputUrl) {
+    let url = inputUrl.select()
+    document.execCommand('copy')
+}
+
+function downloadGif(urlDownload, btn) {
+
+    fetch(urlDownload)
+        .then(res => res.blob())
+        .then(data => {
+
+            btn.href = URL.createObjectURL(data);
+
+        })
+        return
 }
