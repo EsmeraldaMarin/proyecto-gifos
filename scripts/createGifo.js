@@ -140,7 +140,7 @@ function uploadGif() {
             let mygifos = JSON.stringify(myGifosArray)
             localStorage.setItem("myGifos", mygifos)
             console.log(myGifosArray)
-            loadedCardF(content.data.url)
+            loadedCardF(info.data.url)
         }
         )
         .catch(err => console.log(err))

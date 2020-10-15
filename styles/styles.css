@@ -1472,6 +1472,19 @@ main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child sp
   font-weight: bold;
 }
 
+main .misgifos_con_resultados button svg {
+  margin-top: 2px;
+  fill: #572ee5;
+  width: 25px;
+  height: 25px;
+  animation: rodar 5s linear infinite;
+  -webkit-animation: rodar 5s linear infinite;
+}
+
+main .misgifos_con_resultados button:hover svg {
+  fill: #fff;
+}
+
 main .misgifos_sin_resultados {
   display: flex;
   flex-direction: column;

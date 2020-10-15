@@ -8,11 +8,11 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* aparicion de a doce gifs en mis gifos
+* Correccion de maximizar gifo (y close)en mis gifos
 
 # Hacer en el prox commit (recomendado)
 
-* Correccion de maximizar gifo (y close)en mis gifos
+* aparicion de 12 gifs en mis favoritos
 
 
 

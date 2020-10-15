@@ -65,11 +65,9 @@ function downloadGif(urlDownload, btn) {
     fetch(urlDownload)
         .then(res => res.blob())
         .then(data => {
-
             btn.href = URL.createObjectURL(data);
-
         })
-        return
+        .catch(err=> console.log(err + " on downloadGif function"))
 }
 
 
