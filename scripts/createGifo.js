@@ -136,17 +136,34 @@ function uploadGif() {
     fetch(urlUpload, parametros)
         .then(data => data.json())
         .then(info => {
+            //corregir push en el array, guarda el ultimo resultado unicamente
             myGifosArray.push(info.data.id)
+            console.log(myGifosArray)
             let mygifos = JSON.stringify(myGifosArray)
             localStorage.setItem("myGifos", mygifos)
-            console.log(myGifosArray)
-            loadedCardF(info.data.url)
+
+            console.log(info)
+            letUrlNewGif(info.data.id)
         }
         )
         .catch(err => console.log(err))
 }
 let maxCtn = document.querySelector(".contenedor_video")
 let loadCard = document.createElement("div")
+
+function letUrlNewGif(id) {
+    let urlSearchId = `https://api.giphy.com/v1/gifs/${id}?api_key=${apiKeyGiphy}`
+    console.log(urlSearchId)
+
+    fetch(urlSearchId)
+        .then(res => res.json())
+        .then(content => {
+            console.log(content)
+            loadedCardF(content.data.url, content)
+        })
+        .catch(err => console.log(err))
+
+}
 
 function loadCardF() {
     loadCard.className = "loadCard"
@@ -159,10 +176,11 @@ function loadCardF() {
     maxCtn.insertBefore(loadCard, video)
 
 }
-function loadedCardF(url) {
+function loadedCardF(url, info) {
     loadCard.className = "loadedCard"
     loadCard.innerHTML = `
     <div class="btnsLoadedCard">
+        <div>Copiado</div>
         <a href= "" download id= "downloadBtn">
             <svg role="img">
                 <use href="assets/icon-download.svg#icon-download">
@@ -183,13 +201,16 @@ function loadedCardF(url) {
     maxCtn.insertBefore(loadCard, video)
     let inputUrl = document.getElementById("urlToCopy")
     let linkBtn = document.getElementById("linkBtn")
+    let copiedText = document.querySelector(".btnsLoadedCard >div")
     linkBtn.addEventListener("click", () => {
         copyUrl(inputUrl)
+        copiedText.className = "active"
+        setTimeout(()=>{copiedText.classList.remove("active");}, 500)
     })
     //downloadGif
 
     let dwnBtn = document.querySelector(".btnsLoadedCard #downloadBtn")
-    downloadGif(urlImg, dwnBtn)
+    downloadGif(info.data.images.downsized.url, dwnBtn)
 
 }
 function copyUrl(inputUrl) {
@@ -206,5 +227,5 @@ function downloadGif(urlDownload, btn) {
             btn.href = URL.createObjectURL(data);
 
         })
-        return
+    return
 }

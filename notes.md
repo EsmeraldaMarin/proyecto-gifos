@@ -8,11 +8,12 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Correccion de maximizar gifo (y close)en mis gifos
+* Correccion de copiar y download en crear gifos 
 
 # Hacer en el prox commit (recomendado)
 
 * aparicion de 12 gifs en mis favoritos
+* correccion de el array de gifs creados en el local storage
 
 
 
