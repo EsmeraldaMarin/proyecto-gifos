@@ -1,19 +1,22 @@
 # NOTAS DEL PROYECTO GIFOS - ESMERALDA MARIN
 
+## DETALLES A PULIR
+
+* Array de gifos on favorite se actualiza cuando se refresca la pagina y se agg a fav otro gif
+    * soluciones: poner un id a los gifs en favorito y no guardarlos por su titulo 
+
 ## POR HACER 
 ### (Segun orden recomendado)
 
-* Que aparezcan de a doce gifs en mis favoritos
 * agregar clase a input del header para funcion search
 
 ## HECHO EN ESTE COMMIT ##
 
-* Correccion de copiar y download en crear gifos 
+* Que aparezcan de a doce gifs en mis favoritos
 
 # Hacer en el prox commit (recomendado)
 
-* aparicion de 12 gifs en mis favoritos
-* correccion de el array de gifs creados en el local storage
+* correccion de el array de gifs creados y mis favoritos en el local storage
 
 
 

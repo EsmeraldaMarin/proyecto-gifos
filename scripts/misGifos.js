@@ -2,36 +2,6 @@ let ctnSinResultados = document.getElementById("misgifos_sin_resultados")
 let ctnConResultados = document.getElementById("misgifos_con_resultados")
 let misGifsCtn = document.querySelector(".flex_misgifs");
 let btnVerMas = document.querySelector("#misgifos_con_resultados button")
-let xx = JSON.stringify([
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB",
-    "TMBXnMR1VSOP4UUCtB"])
-localStorage.setItem("myGifos", xx)
 let limitGifos = 12;
 let indexArray = 0;
 let newGif = localStorage.getItem("myGifos")

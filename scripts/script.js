@@ -204,53 +204,6 @@ function myFunction() {
     }
 }
 
-//add to favorite
-
-let giphysGrid = []
-
-window.ondblclick = () => {
-    let favoriteOnStorage = localStorage.getItem("gifos")
-    let favoriteOnStorage2 = JSON.parse(favoriteOnStorage)
-    console.log("pagina cargada")
-    favoriteOnStorage2.forEach(
-        element => {
-
-            //corregir para que no solo aparezca el ultimo
-            console.log(element)
-
-            let giphyFav = localStorage.getItem(element);
-            let giphyJson = JSON.parse(giphyFav);
-
-            giphysGrid.push(giphyJson);
-            console.log(giphysGrid);
-        }
-    )
-    //quitar el Favoritos sin contenido
-    let favoritosSinRtados = document.getElementById("favoritos_sin_resultados");
-    console.log(giphysGrid.length)
-    if (giphysGrid.length != 0) {
-
-        favoritosSinRtados.style.display = "none"
-
-    }
-
-    createGiphysCards()
-};
-
-function addToFavorite() {
-    let num = favGifos.length - 1
-    let favorite = favGifos[num];
-    console.log(favorite)
-
-    let giphyFav = localStorage.getItem(favorite)
-    let giphyJson = JSON.parse(giphyFav);
-
-    giphysGrid.push(giphyJson);
-    console.log(giphysGrid);
-    createGiphysCards()
-}
-
-
 
 
 
