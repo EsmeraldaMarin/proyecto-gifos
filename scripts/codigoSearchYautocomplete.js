@@ -76,6 +76,7 @@ function createCtnGifs(arrayGifs) {
 
     for (let i = 0; i <= limitSGifos - 1; i++) {
 
+        let index = i + offset
         let urlImg = arrayGifs[i].images.downsized.url;
 
         let gifCardCtn = document.createElement("div");
@@ -93,21 +94,21 @@ function createCtnGifs(arrayGifs) {
         //Download Function 
 
         let dwnBtn = document.querySelectorAll("#searchResults #downloadBtn")
-        downloadGif(urlImg, dwnBtn[i])
+        downloadGif(urlImg, dwnBtn[index])
 
         //Agregar a favorito
 
         let btnFav = document.querySelectorAll("#searchResults .favorito_btn");
-        btnFav[i].addEventListener("click", () => {
-            addFavoriteGif(i, arrayGifs, btnFav[i])
+        btnFav[index].addEventListener("click", () => {
+            addFavoriteGif(i, arrayGifs, btnFav[index])
         })
 
         //maximizar gifo
 
         let btnMax = document.querySelectorAll("#searchResults .max_btn");
-        btnMax[i].addEventListener("click", () => {
+        btnMax[index].addEventListener("click", () => {
 
-            maxFuncion(i, btnMax[i], searchResultCtn, arrayGifs)
+            maxFuncion(i, btnMax[index], searchResultCtn, arrayGifs, index)
         })
     }
 }
@@ -116,14 +117,13 @@ function createCtnGifs(arrayGifs) {
 
 
 seeMoreBtn.addEventListener("click", () => {
-    limitGifos = limitTGifos + 12;
     offset = offset + 12;
     seeMoreBtn.innerHTML = `
     <svg role="img" class = "loadSvg">
         <use href="assets/loader.svg#path-1">
     </svg>
     `
-    searchGif(limitTGifos, offset)
+    searchGif(offset)
 })
 
 //AUTOCOMPLETAR

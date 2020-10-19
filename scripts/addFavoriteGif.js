@@ -69,7 +69,7 @@ function createGiphysCards(i) {
     let btnMax = document.querySelectorAll("#flex_gifs .max_btn");
     btnMax[i].addEventListener("click", () => {
 
-        maxFuncion(i, btnMax[i], gifsCtn, giphysGrid)
+        maxFuncion(i, btnMax[i], gifsCtn, giphysGrid, i)
     })
 
 

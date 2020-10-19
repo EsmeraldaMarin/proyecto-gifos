@@ -48,7 +48,7 @@ function showGifs() {
                 let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
 
-                    maxFuncion(i, btnMax[i], gifsCtnTrending, content.data)
+                    maxFuncion(i, btnMax[i], gifsCtnTrending, content.data, i)
                 })
             }
         })
@@ -129,10 +129,10 @@ function addFavoriteGif(i, info, btn) {
 
 //Funcion maximizar
 
-function maxFuncion(i, btnMax, ctn, info) {
+function maxFuncion(i, btnMax, ctn, info, index) {
     let ctnGifsMax = ctn.childNodes;
     btnMax.classList.add("btnMaxActive")
-    let gifMax = ctnGifsMax[i].cloneNode(true);
+    let gifMax = ctnGifsMax[index].cloneNode(true);
     let newCtn = document.createElement("div")
 
     newCtn.classList.add("ctnMax")

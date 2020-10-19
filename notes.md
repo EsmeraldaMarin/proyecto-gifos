@@ -9,15 +9,15 @@
 ### (Segun orden recomendado)
 
 * agregar clase a input del header para funcion search
+* correccion del array de gifs creados y mis favoritos en el local storage
 
 ## HECHO EN ESTE COMMIT ##
 
-* Correccion styles
+* correccion de funciones en nuevos gifs creados en la funcion de busqueda
 
 # Hacer en el prox commit (recomendado)
 
-* correccion del array de gifs creados y mis favoritos en el local storage
-* correccion de funciones en nuevos gifs creados en la funcion de busqueda
+* correccion total de la funcion de maximizar
 
 
 
