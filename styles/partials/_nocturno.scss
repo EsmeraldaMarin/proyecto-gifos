@@ -119,6 +119,12 @@ body.body_nocturno {
             &:hover {
                 background-color: #fff;
                 color: #2f3236;
+                svg {
+                    fill: #2f3236;
+                }
+            }
+            svg {
+                fill: #fff;
             }
         }
     }
@@ -164,6 +170,38 @@ body.body_nocturno {
         }
         svg.searchbtn {
             fill: #fff;
+        }
+    }
+    .favoritos_con_resultados {
+        button {
+            border-color: #fff;
+            color: #fff;
+            &:hover {
+                background-color: #fff;
+                color: #2f3236;
+                svg {
+                    fill: #2f3236;
+                }
+            }
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+    .misgifos_con_resultados {
+        button {
+            border-color: #fff;
+            color: #fff;
+            &:hover {
+                background-color: #fff;
+                color: #2f3236;
+                svg {
+                    fill: #2f3236;
+                }
+            }
+            svg {
+                fill: #fff;
+            }
         }
     }
     .ctnMax {

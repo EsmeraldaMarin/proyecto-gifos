@@ -55,8 +55,19 @@ $bp-2: 1024px;
     &:hover{
         background-color: $azul;
         color:#fff;
+        svg{
+            fill: #fff;
+        }
     }
     &.seeMoreActive{
         display: block;
+    }
+    svg{
+        margin-top: 2px;
+        fill: $azul;
+        width: 25px;
+        height: 25px;
+        animation: rodar 5s linear infinite;
+        -webkit-animation: rodar 5s linear infinite;
     }
 }

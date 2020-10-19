@@ -12,11 +12,12 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* Que aparezcan de a doce gifs en mis favoritos
+* Correccion styles
 
 # Hacer en el prox commit (recomendado)
 
-* correccion de el array de gifs creados y mis favoritos en el local storage
+* correccion del array de gifs creados y mis favoritos en el local storage
+* correccion de funciones en nuevos gifs creados en la funcion de busqueda
 
 
 

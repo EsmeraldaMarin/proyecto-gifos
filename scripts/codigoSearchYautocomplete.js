@@ -64,6 +64,8 @@ function searchGif() {
 
 function createCtnGifs(arrayGifs) {
 
+    seeMoreBtn.innerHTML = `VER MÁS`
+
     if (searchResultCtn.className = "sinResultados") {
         searchResultCtn.classList.remove("sinResultados")
     }
@@ -116,8 +118,12 @@ function createCtnGifs(arrayGifs) {
 seeMoreBtn.addEventListener("click", () => {
     limitGifos = limitTGifos + 12;
     offset = offset + 12;
+    seeMoreBtn.innerHTML = `
+    <svg role="img" class = "loadSvg">
+        <use href="assets/loader.svg#path-1">
+    </svg>
+    `
     searchGif(limitTGifos, offset)
-
 })
 
 //AUTOCOMPLETAR

@@ -118,3 +118,4 @@ if (favoriteOnStorage2.length > 12) {
     })
 }
 
+resultados()

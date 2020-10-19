@@ -36,23 +36,25 @@ function misGifos(limitGifos, indexArray) {
 }
 misGifos(limitGifos, indexArray)
 
-if (myGifosOnStorage.length > 12) {
-    btnVerMas.style.display = "block"
-    btnVerMas.addEventListener("click", () => {
-        btnVerMas.innerHTML = `
-        <svg role="img" class = "loadSvg">
-            <use href="assets/loader.svg#path-1">
-        </svg>
-        `
-        if (myGifosOnStorage.length % limitGifos > 12) {
-            btnVerMas.style.display = "none"
-            return
-        }
-        limitGifos = limitGifos + 12
-        indexArray = indexArray + 12
-        misGifos(limitGifos, indexArray)
-    })
-}
+try{
+    if (myGifosOnStorage.length > 12) {
+        btnVerMas.style.display = "block"
+        btnVerMas.addEventListener("click", () => {
+            btnVerMas.innerHTML = `
+            <svg role="img" class = "loadSvg">
+                <use href="assets/loader.svg#path-1">
+            </svg>
+            `
+            if (myGifosOnStorage.length % limitGifos > 12) {
+                btnVerMas.style.display = "none"
+                return
+            }
+            limitGifos = limitGifos + 12
+            indexArray = indexArray + 12
+            misGifos(limitGifos, indexArray)
+        })
+    }
+} catch (err){console.log(err, "No hay gifos creados para mostrar")}
 
 function createMyGifo(info) {
     btnVerMas.innerHTML = `VER MÁS`

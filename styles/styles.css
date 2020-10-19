@@ -54,8 +54,21 @@ main .section_buscador button:hover, main .favoritos_con_resultados button:hover
   color: #fff;
 }
 
+main .section_buscador button:hover svg, main .favoritos_con_resultados button:hover svg, main .misgifos_con_resultados button:hover svg {
+  fill: #fff;
+}
+
 main .section_buscador button.seeMoreActive, main .favoritos_con_resultados button.seeMoreActive, main .misgifos_con_resultados button.seeMoreActive {
   display: block;
+}
+
+main .section_buscador button svg, main .favoritos_con_resultados button svg, main .misgifos_con_resultados button svg {
+  margin-top: 2px;
+  fill: #572ee5;
+  width: 25px;
+  height: 25px;
+  animation: rodar 5s linear infinite;
+  -webkit-animation: rodar 5s linear infinite;
 }
 
 * {
@@ -883,6 +896,7 @@ main .section_buscador .ulActive li {
   text-align: left;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 main .section_buscador .ulActive li:hover {
@@ -1471,19 +1485,6 @@ main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child sp
 main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
-}
-
-main .misgifos_con_resultados button svg {
-  margin-top: 2px;
-  fill: #572ee5;
-  width: 25px;
-  height: 25px;
-  animation: rodar 5s linear infinite;
-  -webkit-animation: rodar 5s linear infinite;
-}
-
-main .misgifos_con_resultados button:hover svg {
-  fill: #fff;
 }
 
 main .misgifos_sin_resultados {
@@ -2211,6 +2212,14 @@ body.body_nocturno .section_buscador button:hover {
   color: #2f3236;
 }
 
+body.body_nocturno .section_buscador button:hover svg {
+  fill: #2f3236;
+}
+
+body.body_nocturno .section_buscador button svg {
+  fill: #fff;
+}
+
 body.body_nocturno .trending_gifos {
   background-color: #222326;
 }
@@ -2260,6 +2269,42 @@ body.body_nocturno div.formularios svg.closeSearch {
 }
 
 body.body_nocturno div.formularios svg.searchbtn {
+  fill: #fff;
+}
+
+body.body_nocturno .favoritos_con_resultados button {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.body_nocturno .favoritos_con_resultados button:hover {
+  background-color: #fff;
+  color: #2f3236;
+}
+
+body.body_nocturno .favoritos_con_resultados button:hover svg {
+  fill: #2f3236;
+}
+
+body.body_nocturno .favoritos_con_resultados button svg {
+  fill: #fff;
+}
+
+body.body_nocturno .misgifos_con_resultados button {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.body_nocturno .misgifos_con_resultados button:hover {
+  background-color: #fff;
+  color: #2f3236;
+}
+
+body.body_nocturno .misgifos_con_resultados button:hover svg {
+  fill: #2f3236;
+}
+
+body.body_nocturno .misgifos_con_resultados button svg {
   fill: #fff;
 }
 
