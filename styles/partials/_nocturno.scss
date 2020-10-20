@@ -24,6 +24,13 @@ body.body_nocturno {
                 border-color: #fff;
                 color: #fff;
             }
+            ul{
+                border-color: #Fff;
+                background-color: #2f3236;
+                &::before{
+                    margin-left: 17px;
+                }
+            }
         }
         nav {
             ul {
@@ -205,6 +212,19 @@ body.body_nocturno {
             }
             svg {
                 fill: #fff;
+            }
+        }
+    }
+    div.maxActive{
+        background-color: #2f3236 !important;
+        a{
+            background-color: inherit !important;
+            border-color: #fff !important;
+            &:hover{
+                background-color: inherit !important;
+            }
+            svg{
+                fill: #fff !important;
             }
         }
     }

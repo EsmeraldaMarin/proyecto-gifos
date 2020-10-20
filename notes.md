@@ -12,11 +12,10 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correciones de ambos inputs search
+* nuevas correcciones input search
 
 # Hacer en el prox commit (recomendado)
 
-* load img en search ctn
 * correccion del array de gifs creados y mis favoritos en el local storage
 
 
