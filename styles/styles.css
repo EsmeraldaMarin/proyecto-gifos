@@ -675,12 +675,12 @@ header nav ul .modos:active {
 
 .onScroll {
   box-shadow: 0 2px 10px 1px rgba(156, 175, 195, 0.55);
-  /* div.formularios {
-        display: block;
-        @media (max-width: $bp-1) {
-            display: none;
-        }
-    } */
+}
+
+@media (max-width: 768px) {
+  .onScroll div.formularios {
+    display: none;
+  }
 }
 
 .trending_gifos {

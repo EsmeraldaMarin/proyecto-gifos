@@ -1,11 +1,19 @@
+// ** FUNCIONES GENERALES **//
+
+//VARIABLES
+
 const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
-
-//Giphy Trendings
-
 let gifsCtnTrending = document.getElementById("gifsTrending");
 let limitTGifos = 28;
 const giphys = [];
 let favGifos = [];
+let btnLeft = document.getElementById("btnLeft");
+let btnRight = document.getElementById("btnRight");
+let index = 0;
+
+//FUNCIONES
+
+//Giphy Trendings
 
 function showGifs() {
     let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKeyGiphy}&limit=${limitTGifos}`;
@@ -113,7 +121,6 @@ function addFavoriteGif(i, info, btn) {
     gifFavInfo = info[i];
     gifFav = gifFavInfo.title;
     localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
-    //console.log(localStorage.getItem(gifFav))
 
     favGifos.push(gifFav)
 
@@ -147,15 +154,7 @@ function maxFuncion(btnMax) {
 
 }
 
-//CARRUSEL TRENDING
-
-let btnLeft = document.getElementById("btnLeft");
-let btnRight = document.getElementById("btnRight");
-
-
-btnLeft.addEventListener("click", () => show(-1));
-btnRight.addEventListener("click", () => show(+1));
-let index = 0;
+//Carrusel trending
 
 function show(increase) {
 
@@ -183,6 +182,12 @@ function show(increase) {
     });
 }
 
+//EVENT LISTENERS
+
+//carrusel
+
+btnLeft.addEventListener("click", () => show(-1));
+btnRight.addEventListener("click", () => show(+1));
 
 
 

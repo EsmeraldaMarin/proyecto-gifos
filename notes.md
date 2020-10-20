@@ -12,7 +12,7 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* nuevas correcciones input search
+* ORGANIZACION CODIGO
 
 # Hacer en el prox commit (recomendado)
 

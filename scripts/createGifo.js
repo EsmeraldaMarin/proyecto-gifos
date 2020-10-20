@@ -1,25 +1,32 @@
-// CREAR GIFOS
-const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
+//**CREAR GIFOS**//
 
+//VARIABLES
+
+const apiKeyGiphy = "v6GX2EfRqxwiexQZkHhYu6ZrteDkFt6Z";
 let btnStart = document.getElementById("comenzar");
 let btnRecord = document.getElementById("grabar");
 let btnStop = document.getElementById("finalizar");
 let btnUpload = document.getElementById("subir");
 let ctnVideo = document.getElementById("contenedorVideo");
 let video = document.querySelector("video");
-let urlUpload = `https://upload.giphy.com/v1/gifs?api_key=${apiKeyGiphy}`
-let timerGif = document.getElementById("aditionaltext")
-let contadores = document.querySelectorAll(".ul_creargifos .contador_pasos")
+let urlUpload = `https://upload.giphy.com/v1/gifs?api_key=${apiKeyGiphy}`;
+let timerGif = document.getElementById("aditionaltext");
+let contadores = document.querySelectorAll(".ul_creargifos .contador_pasos");
 
-btnStart.addEventListener("click", () => {
-    contadores[0].classList.add("contador_activo")
-    getStreamAndRecord()
-});
+let myGifosArray = [];
+
+let maxCtn = document.querySelector(".contenedor_video");
+let loadCard = document.createElement("div");
+
+//FUNCIONES
+
+//record function
 
 function getStreamAndRecord() {
 
     btnStart.classList.remove("activo");
 
+    //permiso de acceso
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
@@ -37,6 +44,7 @@ function getStreamAndRecord() {
             contadores[0].classList.remove("contador_activo")
             contadores[1].classList.add("contador_activo")
 
+            //grabar gif
             btnRecord.addEventListener("click", () => {
                 recorder = RecordRTC(stream, {
                     type: 'gif',
@@ -71,6 +79,9 @@ function getStreamAndRecord() {
                         intervalo = setInterval(seconds, 1000);
                     }
                     intervalo();
+
+                    //parar grabacion (mediante callback)
+
                     btnStop.addEventListener("click", () => {
                         clearInterval(intervalo);
                         pararGrabacion()
@@ -89,6 +100,7 @@ function getStreamAndRecord() {
         <span>Por el tiempo en el que estés creando el GIFO</span></p>`
 
 }
+
 
 function pararGrabacion() {
     recorder.stopRecording(function () {
@@ -110,9 +122,6 @@ function pararGrabacion() {
     })
 
 }
-let myGifosArray = [];
-btnUpload.addEventListener("click", uploadGif)
-
 function uploadGif() {
 
     btnUpload.classList.remove("activo");
@@ -148,8 +157,7 @@ function uploadGif() {
         )
         .catch(err => console.log(err))
 }
-let maxCtn = document.querySelector(".contenedor_video")
-let loadCard = document.createElement("div")
+
 
 function letUrlNewGif(id) {
     let urlSearchId = `https://api.giphy.com/v1/gifs/${id}?api_key=${apiKeyGiphy}`
@@ -205,7 +213,7 @@ function loadedCardF(url, info) {
     linkBtn.addEventListener("click", () => {
         copyUrl(inputUrl)
         copiedText.className = "active"
-        setTimeout(()=>{copiedText.classList.remove("active");}, 500)
+        setTimeout(() => { copiedText.classList.remove("active"); }, 500)
     })
     //downloadGif
 
@@ -229,3 +237,16 @@ function downloadGif(urlDownload, btn) {
         })
     return
 }
+
+//EVENT LISTENERS
+
+//Comenzar grabacion
+
+btnStart.addEventListener("click", () => {
+    contadores[0].classList.add("contador_activo")
+    getStreamAndRecord()
+});
+
+//subir gif
+
+btnUpload.addEventListener("click", uploadGif)

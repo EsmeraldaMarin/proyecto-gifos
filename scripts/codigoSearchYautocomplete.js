@@ -1,5 +1,7 @@
 
-//SEARCH GIFOS
+//**SEARCH GIFOS**//
+
+//VARIABLES
 
 let formularioCtn = document.querySelector(".formulario.mainForm");
 let inputSearch = document.querySelector(".mainSearch input");
@@ -16,6 +18,8 @@ let infoSearch = document.querySelector(".infoSearch")
 let sectionBuscador = document.querySelector(".section_buscador")
 let articleTrending = document.querySelector("article.trending")
 
+
+//FUNCIONES
 
 function newSearch() {
 
@@ -106,8 +110,7 @@ function createCtnGifs(arrayGifs) {
     }
 }
 
-//AUTOCOMPLETAR
-
+//Autocompletar
 
 let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
 let ulAutocomplete = document.createElement("ul");
@@ -217,7 +220,7 @@ ulAutocomplete.addEventListener("click", (e) => {
     newSearch()
 })
 
-//AGREGAR BOTON CLOSE
+//btn close
 btnClose.addEventListener("click", () => {
     inputSearch.value = "";
     ulAutocomplete.classList.add("removeElement");
@@ -225,7 +228,7 @@ btnClose.addEventListener("click", () => {
 })
 
 
-//SEE MORE GIFOS 
+//See more gifos
 
 seeMoreBtn.addEventListener("click", () => {
     offset = offset + 12;

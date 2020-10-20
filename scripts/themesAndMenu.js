@@ -1,3 +1,5 @@
+//**ESTILOS GENERALES**//
+
 //MODO NOCTURNO
 
 let body = document.querySelector("body");
