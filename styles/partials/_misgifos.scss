@@ -32,7 +32,7 @@ main {
             @media (max-width: $bp-1) {
                 width: 100%;
             }
-            > div {
+            > div.gif {
                 position: relative;
                 min-width: 260px;
                 max-width: 260px;
@@ -119,12 +119,6 @@ main {
                                         right: -20px;
                                         z-index: 5;
                                     }
-                                    svg:first-child {
-                                        display: block;
-                                    }
-                                    svg:last-child {
-                                        display: none;
-                                    }
                                 }
                             }
                         }
@@ -139,6 +133,9 @@ main {
                         }
                     }
                 }
+            }
+            >div.maxActive{
+                @extend %maxCtn
             }
         }
         button {

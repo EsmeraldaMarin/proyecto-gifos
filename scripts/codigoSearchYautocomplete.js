@@ -81,6 +81,7 @@ function createCtnGifs(arrayGifs) {
 
         let gifCardCtn = document.createElement("div");
         let gifSearched = document.createElement("img");
+        gifCardCtn.className = "gif"
         gifSearched.className = "gifCard";
         gifSearched.src = urlImg
         searchResultCtn.classList.add("searchActive")
@@ -108,7 +109,7 @@ function createCtnGifs(arrayGifs) {
         let btnMax = document.querySelectorAll("#searchResults .max_btn");
         btnMax[index].addEventListener("click", () => {
 
-            maxFuncion(i, btnMax[index], searchResultCtn, arrayGifs, index)
+            maxFuncion(btnMax[index])
         })
     }
 }

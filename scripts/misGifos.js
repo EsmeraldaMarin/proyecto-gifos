@@ -64,6 +64,7 @@ function createMyGifo(info) {
 
     let gifCardCtn = document.createElement("div");
     let gifCreated = document.createElement("img");
+    gifCardCtn.className = "gif"
     gifCreated.src = urlImg;
     gifCreated.className = "gifcard";
     gifCardCtn.appendChild(gifCreated)
@@ -99,32 +100,19 @@ function allMyGifs(info, i) {
 
     let btnMax = document.querySelectorAll("#misgifos_con_resultados .max_btn");
     btnMax[i].addEventListener("click", () => {
-        maxMisGifos(btnMax[i], allGifs[i], info)
+        maxMisGifos(btnMax[i], info)
     })
 
 }
 
-function maxMisGifos(btnMax, gif, info) {
+function maxMisGifos(btnMax, info) {
 
-    btnMax.classList.add("btnMaxActive")
-    let gifMax = gif.cloneNode(true);
-    let newCtn = document.createElement("div")
+    maxFuncion(btnMax)
 
-    newCtn.classList.add("ctnMax")
-    gifMax.classList.add("gifMaximized")
-    newCtn.appendChild(gifMax)
-    document.body.insertBefore(newCtn, header)
-
-    let closeMax = document.querySelector(".btnMaxActive")
-    closeMax.addEventListener("click", () => {
-
-        closeMax.classList.remove("btnMaxActive")
-        document.body.removeChild(newCtn)
-    })
-
-    let btnTrash = document.querySelector(".ctnMax .trash");
+    let btnTrash = document.querySelector(".trash");
     btnTrash.addEventListener("click", () => {
-        deleteMyGifo(gif, info.id)
+        let gifDeleted = btnMax.parentNode.parentNode.parentNode
+        deleteMyGifo(gifDeleted, info.id)
     })
 }
 

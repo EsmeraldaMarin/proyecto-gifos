@@ -36,7 +36,7 @@ $bp-2: 1024px;
     }
 }
 
-%btnSeeMore{
+%btnSeeMore {
     display: none;
     width: 125px;
     height: 50px;
@@ -52,22 +52,168 @@ $bp-2: 1024px;
     font-weight: bold;
     background-color: transparent;
     color: $azul;
-    &:hover{
+    &:hover {
         background-color: $azul;
-        color:#fff;
-        svg{
+        color: #fff;
+        svg {
             fill: #fff;
         }
     }
-    &.seeMoreActive{
+    &.seeMoreActive {
         display: block;
     }
-    svg{
+    svg {
         margin-top: 2px;
         fill: $azul;
         width: 25px;
         height: 25px;
         animation: rodar 5s linear infinite;
         -webkit-animation: rodar 5s linear infinite;
+    }
+}
+%maxCtn {
+    position: fixed;
+    margin: 0;
+    max-width: inherit;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    img {
+        min-width: 695px;
+        max-width: 695px;
+        height: 385px;
+        @media (max-width: $bp-2) {
+            min-width: 495px;
+            max-width: 495px;
+            height: 285px;
+        }
+        @media (max-width: $bp-1) {
+            min-width: 320px;
+            max-width: 320px;
+            height: 245px;
+        }
+    }
+    .gifCardInfo {
+        position: absolute;
+        bottom: 85px;
+        width: 695px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        @media (max-width: $bp-2) {
+            bottom: 40px;
+            width: 495px;
+            height: 300px;
+        }
+        @media (max-width: $bp-1) {
+            bottom: inherit;
+            top: 60%;
+            width: 320px;
+            height: 200px;
+        }
+        div {
+            color: #000;
+            text-align: left;
+            &:first-child {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                a {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0px 5px;
+                    border-radius: 6px;
+                    -webkit-border-radius: 6px;
+                    -moz-border-radius: 6px;
+                    -ms-border-radius: 6px;
+                    -o-border-radius: 6px;
+                    border: 1px solid $azul;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba($color: #fff, $alpha: 0.7);
+                    &:hover {
+                        background-color: #eee;
+                    }
+                    svg {
+                        height: 19px;
+                        width: 17px;
+                        fill: $azul;
+                    }
+                    &.favorito_btn {
+                        svg:first-child {
+                            display: block;
+                            use {
+                                transform: scale(0.95) translate(-865px, -2784px);
+                            }
+                        }
+                        svg:last-child {
+                            display: none;
+                            use {
+                                transform: scale(0.85) translate(-261px, -426px);
+                            }
+                        }
+                        &.cardBtnActive {
+                            svg:first-child {
+                                display: none;
+                            }
+                            svg:last-child {
+                                display: block;
+                            }
+                        }
+                    }
+                    &.trash {
+                        use {
+                            transform: translateY(-1px);
+                        }
+                    }
+                    &:nth-child(2) {
+                        svg {
+                            use {
+                                transform: translateY(-8px) translateX(-7px);
+                            }
+                        }
+                    }
+                    &:last-child {
+                        position: absolute;
+                        top: -500px;
+                        right: -150px;
+                        border: 0px solid transparent;
+
+                        &:hover {
+                            background-color: transparent;
+                            svg {
+                                fill: $gris;
+                            }
+                        }
+                        @media (max-width: $bp-2) {
+                            right: -80px;
+                            top: -300px;
+                        }
+                        @media (max-width: $bp-1) {
+                            right: -15px;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                span {
+                    display: block;
+                    font-size: 16px;
+                    &:last-child {
+                        margin-top: 10px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
     }
 }

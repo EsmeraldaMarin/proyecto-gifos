@@ -194,7 +194,7 @@ main {
         }
         #searchResults.searchActive {
             @extend %cardsCtn;
-            div {
+            div.gif {
                 position: relative;
                 .gifCard {
                     @extend %cardsGif;
@@ -287,12 +287,6 @@ main {
                                         right: -20px;
                                         z-index: 5;
                                     }
-                                    svg:first-child {
-                                        display: block;
-                                    }
-                                    svg:last-child {
-                                        display: none;
-                                    }
                                 }
                             }
                         }
@@ -308,6 +302,9 @@ main {
                         }
                     }
                 }
+            }
+            >div.maxActive{
+                @extend %maxCtn
             }
         }
         #searchResults.sinResultados{

@@ -49,6 +49,7 @@ function createGiphysCards(i) {
 
     let gifCardCtn = document.createElement("div");
     let gifCreated = document.createElement("img");
+    gifCardCtn.className = "gif"
     gifCreated.src = urlImg;
     gifCreated.className = "gifcard";
     gifCardCtn.appendChild(gifCreated);
@@ -69,7 +70,7 @@ function createGiphysCards(i) {
     let btnMax = document.querySelectorAll("#flex_gifs .max_btn");
     btnMax[i].addEventListener("click", () => {
 
-        maxFuncion(i, btnMax[i], gifsCtn, giphysGrid, i)
+        maxFuncion(btnMax[i])
     })
 
 

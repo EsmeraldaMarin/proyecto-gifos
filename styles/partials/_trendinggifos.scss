@@ -24,7 +24,6 @@
         display: flex;
         align-items: center;
         width: 100%;
-        overflow: hidden;
         position: relative;
         @media (max-width: $bp-1) {
             width: 100%;
@@ -69,14 +68,17 @@
         #gifsTrending {
             display: flex;
             width: 90%;
-            overflow: hidden;
+            overflow: auto;
             margin: 0 10px;
             @media (max-width: $bp-1) {
                 width: 100%;
                 justify-content: space-between;
                 overflow: auto;
             }
-            > div {
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            > div.gif {
                 position: relative;
                 min-width: 370px;
                 max-width: 370px;
@@ -190,12 +192,6 @@
                                         top: 0;
                                         right: 0;
                                     }
-                                    svg:first-child {
-                                        display: block;
-                                    }
-                                    svg:last-child {
-                                        display: none;
-                                    }
                                 }
                                 
                             }
@@ -212,6 +208,9 @@
                         }
                     }
                 }
+            }
+            >div.maxActive{
+                @extend %maxCtn
             }
         }
     }

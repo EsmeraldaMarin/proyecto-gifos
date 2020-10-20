@@ -17,14 +17,14 @@ main .section_buscador #searchResults.searchActive {
   }
 }
 
-main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard, main .misgifos_con_resultados .flex_misgifs > div .gifcard {
+main .section_buscador #searchResults.searchActive div.gif .gifCard, main .section_buscador #searchResults.searchActive div.gif .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div.gif .gifcard, main .misgifos_con_resultados .flex_misgifs > div.gif .gifcard {
   min-width: 260px;
   max-width: 260px;
   height: 200px;
 }
 
 @media (max-width: 768px) {
-  main .section_buscador #searchResults.searchActive div .gifCard, main .section_buscador #searchResults.searchActive div .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div .gifcard, main .misgifos_con_resultados .flex_misgifs > div .gifcard {
+  main .section_buscador #searchResults.searchActive div.gif .gifCard, main .section_buscador #searchResults.searchActive div.gif .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div.gif .gifcard, main .misgifos_con_resultados .flex_misgifs > div.gif .gifcard {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -69,6 +69,178 @@ main .section_buscador button svg, main .favoritos_con_resultados button svg, ma
   height: 25px;
   animation: rodar 5s linear infinite;
   -webkit-animation: rodar 5s linear infinite;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive, main .section_buscador #searchResults.searchActive > div.maxActive, main .favoritos_con_resultados .flex_gifs > div.maxActive, main .misgifos_con_resultados .flex_misgifs > div.maxActive {
+  position: fixed;
+  margin: 0;
+  max-width: inherit;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive img, main .section_buscador #searchResults.searchActive > div.maxActive img, main .favoritos_con_resultados .flex_gifs > div.maxActive img, main .misgifos_con_resultados .flex_misgifs > div.maxActive img {
+  min-width: 695px;
+  max-width: 695px;
+  height: 385px;
+}
+
+@media (max-width: 1024px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive img, main .section_buscador #searchResults.searchActive > div.maxActive img, main .favoritos_con_resultados .flex_gifs > div.maxActive img, main .misgifos_con_resultados .flex_misgifs > div.maxActive img {
+    min-width: 495px;
+    max-width: 495px;
+    height: 285px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive img, main .section_buscador #searchResults.searchActive > div.maxActive img, main .favoritos_con_resultados .flex_gifs > div.maxActive img, main .misgifos_con_resultados .flex_misgifs > div.maxActive img {
+    min-width: 320px;
+    max-width: 320px;
+    height: 245px;
+  }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo {
+  position: absolute;
+  bottom: 85px;
+  width: 695px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1024px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo {
+    bottom: 40px;
+    width: 495px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo {
+    bottom: inherit;
+    top: 60%;
+    width: 320px;
+    height: 200px;
+  }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div {
+  color: #000;
+  text-align: left;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a {
+  width: 32px;
+  height: 32px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border: 1px solid #572ee5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:hover, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:hover, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:hover, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:hover {
+  background-color: #eee;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a svg, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a svg, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a svg, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a svg {
+  height: 19px;
+  width: 17px;
+  fill: #572ee5;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+  display: block;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child use, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child use, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child use, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+  transform: scale(0.95) translate(-865px, -2784px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+  display: none;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child use, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child use, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child use, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+  transform: scale(0.85) translate(-261px, -426px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+  display: none;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+  display: block;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a.trash use, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a.trash use, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a.trash use, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a.trash use {
+  transform: translateY(-1px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:nth-child(2) svg use, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:nth-child(2) svg use, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:nth-child(2) svg use, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:nth-child(2) svg use {
+  transform: translateY(-8px) translateX(-7px);
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:last-child {
+  position: absolute;
+  top: -500px;
+  right: -150px;
+  border: 0px solid transparent;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:last-child:hover, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:last-child:hover, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:last-child:hover, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:last-child:hover {
+  background-color: transparent;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:last-child:hover svg, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:last-child:hover svg, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:last-child:hover svg, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:last-child:hover svg {
+  fill: #9cafc3;
+}
+
+@media (max-width: 1024px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:last-child {
+    right: -80px;
+    top: -300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:first-child a:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:first-child a:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:first-child a:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:first-child a:last-child {
+    right: -15px;
+  }
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:last-child span, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:last-child span, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:last-child span, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:last-child span {
+  display: block;
+  font-size: 16px;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.maxActive .gifCardInfo div:last-child span:last-child, main .section_buscador #searchResults.searchActive > div.maxActive .gifCardInfo div:last-child span:last-child, main .favoritos_con_resultados .flex_gifs > div.maxActive .gifCardInfo div:last-child span:last-child, main .misgifos_con_resultados .flex_misgifs > div.maxActive .gifCardInfo div:last-child span:last-child {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 * {
@@ -503,7 +675,6 @@ header nav ul .modos:active {
   display: flex;
   align-items: center;
   width: 100%;
-  overflow: hidden;
   position: relative;
 }
 
@@ -562,7 +733,7 @@ header nav ul .modos:active {
 .trending_gifos #gifsCtn #gifsTrending {
   display: flex;
   width: 90%;
-  overflow: hidden;
+  overflow: auto;
   margin: 0 10px;
 }
 
@@ -574,7 +745,11 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div {
+.trending_gifos #gifsCtn #gifsTrending::-webkit-scrollbar {
+  display: none;
+}
+
+.trending_gifos #gifsCtn #gifsTrending > div.gif {
   position: relative;
   min-width: 370px;
   max-width: 370px;
@@ -583,7 +758,7 @@ header nav ul .modos:active {
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending > div {
+  .trending_gifos #gifsCtn #gifsTrending > div.gif {
     min-width: 243px;
     max-width: 243px;
     height: 187px;
@@ -591,7 +766,7 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div > img {
+.trending_gifos #gifsCtn #gifsTrending > div.gif > img {
   min-width: 370px;
   max-width: 370px;
   height: 275px;
@@ -599,7 +774,7 @@ header nav ul .modos:active {
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending > div > img {
+  .trending_gifos #gifsCtn #gifsTrending > div.gif > img {
     min-width: 243px;
     max-width: 243px;
     height: 187px;
@@ -607,7 +782,7 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo {
   padding: 15px 15px 50px 15px;
   position: absolute;
   top: 0;
@@ -622,36 +797,36 @@ header nav ul .modos:active {
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo {
+  .trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo {
     width: 243px;
     height: 187px;
     margin: 0 10px;
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo:hover {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo:hover {
+  .trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo:hover {
     opacity: 0;
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -666,46 +841,46 @@ header nav ul .modos:active {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a:hover {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a svg {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a svg {
   height: 17px;
   width: 17px;
   fill: #572ee5;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
   transform: scale(0.95) translate(-865px, -2784px);
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
   transform: scale(0.85) translate(-261px, -426px);
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a:nth-child(2) svg use {
   transform: translateY(-8px) translateX(-7px);
 }
 
 @media (max-width: 768px) {
-  .trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn {
+  .trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:first-child a.max_btn {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -714,20 +889,12 @@ header nav ul .modos:active {
   }
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg:first-child {
-  display: block;
-}
-
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:first-child a.max_btn svg:last-child {
-  display: none;
-}
-
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:last-child span {
   display: block;
   font-size: 16px;
 }
 
-.trending_gifos #gifsCtn #gifsTrending > div .gifCardInfo div:last-child span:last-child {
+.trending_gifos #gifsCtn #gifsTrending > div.gif .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
 }
@@ -974,15 +1141,15 @@ main .section_buscador .infoSearch span#termBuscado {
   font-weight: bold;
 }
 
-main .section_buscador #searchResults.searchActive div {
+main .section_buscador #searchResults.searchActive div.gif {
   position: relative;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCard {
+main .section_buscador #searchResults.searchActive div.gif .gifCard {
   margin: 10px;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo {
   padding: 15px 15px 20px 15px;
   margin: 10px;
   position: absolute;
@@ -995,34 +1162,34 @@ main .section_buscador #searchResults.searchActive div .gifCardInfo {
 }
 
 @media (max-width: 768px) {
-  main .section_buscador #searchResults.searchActive div .gifCardInfo {
+  main .section_buscador #searchResults.searchActive div.gif .gifCardInfo {
     margin: 0 10px;
   }
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo:hover {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  main .section_buscador #searchResults.searchActive div .gifCardInfo:hover {
+  main .section_buscador #searchResults.searchActive div.gif .gifCardInfo:hover {
     opacity: 0;
   }
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -1037,46 +1204,46 @@ main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-ch
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a:hover {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a svg {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a svg {
   height: 17px;
   width: 17px;
   fill: #572ee5;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
   transform: scale(0.95) translate(-865px, -2784px);
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
   transform: scale(0.85) translate(-261px, -426px);
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a:nth-child(2) svg use {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a:nth-child(2) svg use {
   transform: translateY(-8px) translateX(-7px);
 }
 
 @media (max-width: 768px) {
-  main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn {
+  main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:first-child a.max_btn {
     width: 156px;
     height: 120px;
     position: absolute;
@@ -1086,20 +1253,12 @@ main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-ch
   }
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:first-child {
-  display: block;
-}
-
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:first-child a.max_btn svg:last-child {
-  display: none;
-}
-
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:last-child span {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:last-child span {
   display: block;
   font-size: 16px;
 }
 
-main .section_buscador #searchResults.searchActive div .gifCardInfo div:last-child span:last-child {
+main .section_buscador #searchResults.searchActive div.gif .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
 }
@@ -1159,7 +1318,7 @@ main .favoritos_con_resultados .flex_gifs {
   }
 }
 
-main .favoritos_con_resultados .flex_gifs > div {
+main .favoritos_con_resultados .flex_gifs > div.gif {
   position: relative;
   min-width: 260px;
   max-width: 260px;
@@ -1168,7 +1327,7 @@ main .favoritos_con_resultados .flex_gifs > div {
 }
 
 @media (max-width: 768px) {
-  main .favoritos_con_resultados .flex_gifs > div {
+  main .favoritos_con_resultados .flex_gifs > div.gif {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -1176,7 +1335,7 @@ main .favoritos_con_resultados .flex_gifs > div {
   }
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo {
   padding: 15px 15px 20px 15px;
   position: absolute;
   top: 0;
@@ -1190,35 +1349,35 @@ main .favoritos_con_resultados .flex_gifs > div .gifCardInfo {
 }
 
 @media (max-width: 768px) {
-  main .favoritos_con_resultados .flex_gifs > div .gifCardInfo {
+  main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo {
     width: 156px;
     height: 120px;
   }
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo:hover {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  main .favoritos_con_resultados .flex_gifs > div .gifCardInfo:hover {
+  main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo:hover {
     opacity: 0;
   }
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -1233,46 +1392,46 @@ main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a:hover {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a svg {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a svg {
   height: 17px;
   width: 17px;
   fill: #572ee5;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child {
   display: block;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
   transform: scale(0.95) translate(-865px, -2784px);
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child {
   display: none;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
   transform: scale(0.85) translate(-261px, -426px);
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
   display: none;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
   display: block;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a:nth-child(2) svg use {
   transform: translateY(-8px) translateX(-7px);
 }
 
 @media (max-width: 768px) {
-  main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn {
+  main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:first-child a.max_btn {
     width: 156px;
     height: 120px;
     position: absolute;
@@ -1282,19 +1441,11 @@ main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a:n
   }
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn svg:first-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:last-child span {
   display: block;
 }
 
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:first-child a.max_btn svg:last-child {
-  display: none;
-}
-
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:last-child span {
-  display: block;
-}
-
-main .favoritos_con_resultados .flex_gifs > div .gifCardInfo div:last-child span:last-child {
+main .favoritos_con_resultados .flex_gifs > div.gif .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
 }
@@ -1367,7 +1518,7 @@ main .misgifos_con_resultados .flex_misgifs {
   }
 }
 
-main .misgifos_con_resultados .flex_misgifs > div {
+main .misgifos_con_resultados .flex_misgifs > div.gif {
   position: relative;
   min-width: 260px;
   max-width: 260px;
@@ -1376,7 +1527,7 @@ main .misgifos_con_resultados .flex_misgifs > div {
 }
 
 @media (max-width: 768px) {
-  main .misgifos_con_resultados .flex_misgifs > div {
+  main .misgifos_con_resultados .flex_misgifs > div.gif {
     min-width: 156px;
     max-width: 156px;
     height: 120px;
@@ -1384,7 +1535,7 @@ main .misgifos_con_resultados .flex_misgifs > div {
   }
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo {
   padding: 15px 15px 20px 15px;
   position: absolute;
   top: 0;
@@ -1398,35 +1549,35 @@ main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo {
 }
 
 @media (max-width: 768px) {
-  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo {
+  main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo {
     width: 156px;
     height: 120px;
   }
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo:hover {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo:hover {
+  main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo:hover {
     opacity: 0;
   }
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div {
   width: 100%;
   color: #fff;
   text-align: left;
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a {
   width: 32px;
   height: 32px;
   margin: 0px 5px;
@@ -1441,26 +1592,26 @@ main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a:hover {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a:hover {
   background-color: white;
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a svg {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a svg {
   height: 20px;
   width: 17px;
   fill: #572ee5;
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.trash use {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a.trash use {
   transform: translateY(-1px);
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a:nth-child(2) svg use {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a:nth-child(2) svg use {
   transform: translateY(-8px) translateX(-7px);
 }
 
 @media (max-width: 768px) {
-  main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn {
+  main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:first-child a.max_btn {
     width: 156px;
     height: 120px;
     position: absolute;
@@ -1470,19 +1621,11 @@ main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a
   }
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn svg:first-child {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:last-child span {
   display: block;
 }
 
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:first-child a.max_btn svg:last-child {
-  display: none;
-}
-
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child span {
-  display: block;
-}
-
-main .misgifos_con_resultados .flex_misgifs > div .gifCardInfo div:last-child span:last-child {
+main .misgifos_con_resultados .flex_misgifs > div.gif .gifCardInfo div:last-child span:last-child {
   margin-top: 10px;
   font-weight: bold;
 }
@@ -2371,202 +2514,5 @@ body.body_nocturno .main_creargifo button:hover {
 
 body.body_nocturno footer svg:hover {
   fill: #fff;
-}
-
-body {
-  position: relative;
-}
-
-.ctnMax {
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 8000;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ctnMax > div {
-  position: relative;
-  min-width: 695px;
-  max-width: 695px;
-  height: 385px;
-}
-
-@media (max-width: 1024px) {
-  .ctnMax > div {
-    min-width: 495px;
-    max-width: 495px;
-    height: 285px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ctnMax > div {
-    min-width: 243px;
-    max-width: 243px;
-    height: 187px;
-  }
-}
-
-.ctnMax > div > img {
-  min-width: 695px;
-  max-width: 695px;
-  height: 385px;
-}
-
-@media (max-width: 1024px) {
-  .ctnMax > div > img {
-    min-width: 495px;
-    max-width: 495px;
-    height: 285px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ctnMax > div > img {
-    min-width: 243px;
-    max-width: 243px;
-    height: 187px;
-  }
-}
-
-.ctnMax > div .gifCardInfo {
-  position: absolute;
-  bottom: -80px;
-  width: 695px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-}
-
-@media (max-width: 1024px) {
-  .ctnMax > div .gifCardInfo {
-    bottom: -180px;
-    width: 495px;
-    height: 285px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ctnMax > div .gifCardInfo {
-    width: 243px;
-    height: 187px;
-  }
-}
-
-.ctnMax > div .gifCardInfo div {
-  color: #000;
-  text-align: left;
-}
-
-.ctnMax > div .gifCardInfo div:first-child {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a {
-  width: 32px;
-  height: 32px;
-  margin: 0px 5px;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border: 1px solid #572ee5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:hover {
-  background-color: #eee;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a svg {
-  height: 19px;
-  width: 17px;
-  fill: #572ee5;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:first-child {
-  display: block;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:first-child use {
-  transform: scale(0.95) translate(-865px, -2784px);
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:last-child {
-  display: none;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn svg:last-child use {
-  transform: scale(0.85) translate(-261px, -426px);
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:first-child {
-  display: none;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.favorito_btn.cardBtnActive svg:last-child {
-  display: block;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a.trash use {
-  transform: translateY(-1px);
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:nth-child(2) svg use {
-  transform: translateY(-8px) translateX(-7px);
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
-  position: absolute;
-  top: -500px;
-  right: -150px;
-  border: 0px solid transparent;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive svg:first-child {
-  display: none;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover {
-  background-color: transparent;
-}
-
-.ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive:hover svg {
-  fill: #9cafc3;
-}
-
-@media (max-width: 1024px) {
-  .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
-    right: -80px;
-    top: -300px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ctnMax > div .gifCardInfo div:first-child a:last-child.btnMaxActive {
-    right: -15px;
-  }
-}
-
-.ctnMax > div .gifCardInfo div:last-child span {
-  display: block;
-  font-size: 16px;
-}
-
-.ctnMax > div .gifCardInfo div:last-child span:last-child {
-  margin-top: 10px;
-  font-weight: bold;
 }
 /*# sourceMappingURL=styles.css.map */

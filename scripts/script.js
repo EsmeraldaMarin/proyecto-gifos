@@ -21,6 +21,7 @@ function showGifs() {
 
                 let gifCardCtn = document.createElement("div");
                 let gifCreated = document.createElement("img");
+                gifCardCtn.className = "gif"
                 gifCreated.src = giphys[i];
                 gifCreated.className = "gifcard";
                 gifCardCtn.appendChild(gifCreated)
@@ -28,7 +29,7 @@ function showGifs() {
 
                 createInfoCards(gifCreated, content.data[i])
 
-                
+
                 //Download Function 
 
                 let dwnBtn = document.querySelectorAll("#gifsTrending #downloadBtn")
@@ -42,14 +43,12 @@ function showGifs() {
                     addFavoriteGif(i, content.data, btnFav[i])
                 })
 
-
-                //MAXIMIZAR FUNCION
-
                 let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
-
-                    maxFuncion(i, btnMax[i], gifsCtnTrending, content.data, i)
+                    maxFuncion(btnMax[i])
                 })
+
+
             }
         })
 
@@ -67,7 +66,7 @@ function downloadGif(urlDownload, btn) {
         .then(data => {
             btn.href = URL.createObjectURL(data);
         })
-        .catch(err=> console.log(err + " on downloadGif function"))
+        .catch(err => console.log(err + " on downloadGif function"))
 }
 
 
@@ -94,10 +93,6 @@ function createInfoCards(gifCreated, info) {
                                 <a class= "max_btn">
                                     <svg role="img" alt="maximizar">
                                         <use href="assets/icon-max.svg#icon-max">
-                                    </svg>
-
-                                    <svg role="img" alt="closeMax">
-                                        <use href="assets/close.svg#close-svg">
                                     </svg>
                                 </a>
                             </div>
@@ -129,28 +124,25 @@ function addFavoriteGif(i, info, btn) {
 
 //Funcion maximizar
 
-function maxFuncion(i, btnMax, ctn, info, index) {
-    let ctnGifsMax = ctn.childNodes;
-    btnMax.classList.add("btnMaxActive")
-    let gifMax = ctnGifsMax[index].cloneNode(true);
-    let newCtn = document.createElement("div")
+function maxFuncion(btnMax) {
 
-    newCtn.classList.add("ctnMax")
-    gifMax.classList.add("gifMaximized")
-    newCtn.appendChild(gifMax)
-    document.body.insertBefore(newCtn, header)
+    let divCtn = btnMax.parentNode.parentNode.parentNode;
+    divCtn.className = "maxActive"
 
-    let closeMax = document.querySelector(".btnMaxActive")
-    closeMax.addEventListener("click", () => {
+    let clonBtn = btnMax.cloneNode()
+    clonBtn.innerHTML = `
+        <svg role="img" alt="closeMax">
+            <use href="assets/close.svg#close-svg">
+        </svg>`
+    btnMax.parentNode.replaceChild(clonBtn, btnMax)
 
-        closeMax.classList.remove("btnMaxActive")
-        document.body.removeChild(newCtn)
-    })
-    //agregar a favorito
-
-    let btnFav = document.querySelector(".ctnMax .favorito_btn");
-    btnFav.addEventListener("click", () => {
-        addFavoriteGif(i, info, btnFav)
+    clonBtn.addEventListener("click", () => {
+        btnMax.innerHTML = `
+        <svg role="img" alt="maximizar">
+            <use href="assets/icon-max.svg#icon-max">
+        </svg>`
+        clonBtn.parentNode.replaceChild(btnMax, clonBtn)
+        divCtn.className = "gif"
     })
 
 }
