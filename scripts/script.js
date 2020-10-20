@@ -29,40 +29,40 @@ function showGifs() {
 
                 let gifCardCtn = document.createElement("div");
                 let gifCreated = document.createElement("img");
-                gifCardCtn.className = "gif"
+                gifCardCtn.className = "gif";
                 gifCreated.src = giphys[i];
                 gifCreated.className = "gifcard";
-                gifCardCtn.appendChild(gifCreated)
+                gifCardCtn.appendChild(gifCreated);
                 gifsCtnTrending.appendChild(gifCardCtn);
 
-                createInfoCards(gifCreated, content.data[i])
+                createInfoCards(gifCreated, content.data[i]);
 
 
                 //Download Function 
 
-                let dwnBtn = document.querySelectorAll("#gifsTrending #downloadBtn")
-                downloadGif(urlImg, dwnBtn[i])
+                let dwnBtn = document.querySelectorAll("#gifsTrending #downloadBtn");
+                downloadGif(urlImg, dwnBtn[i]);
 
                 //add favorite function
 
                 let btnFav = document.querySelectorAll("#gifsTrending .favorito_btn");
 
                 btnFav[i].addEventListener("click", () => {
-                    addFavoriteGif(i, content.data, btnFav[i])
-                })
+                    addFavoriteGif(i, content.data, btnFav[i]);
+                });
 
                 let btnMax = document.querySelectorAll("#gifsTrending .max_btn");
                 btnMax[i].addEventListener("click", () => {
-                    maxFuncion(btnMax[i])
-                })
+                    maxFuncion(btnMax[i]);
+                });
 
 
             }
         })
 
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 }
-showGifs()
+showGifs();
 
 
 //Crear un blob para descargaarr el gif
@@ -74,7 +74,7 @@ function downloadGif(urlDownload, btn) {
         .then(data => {
             btn.href = URL.createObjectURL(data);
         })
-        .catch(err => console.log(err + " on downloadGif function"))
+        .catch(err => console.log(err + " on downloadGif function"));
 }
 
 
@@ -108,7 +108,7 @@ function createInfoCards(gifCreated, info) {
                                 <span>${info.username}</span>
                                 <span>${info.title}</span>
                             </div>
-                        `
+                        `;
     gifInfoCard.className = "gifCardInfo";
     gifCreated.before(gifInfoCard);
 }
@@ -120,11 +120,11 @@ function addFavoriteGif(i, info, btn) {
 
     gifFavInfo = info[i];
     gifFav = gifFavInfo.title;
-    localStorage.setItem(gifFav, JSON.stringify(gifFavInfo))
+    localStorage.setItem(gifFav, JSON.stringify(gifFavInfo));
 
-    favGifos.push(gifFav)
+    favGifos.push(gifFav);
 
-    favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos))
+    favGifosStore = localStorage.setItem("gifos", JSON.stringify(favGifos));
     btn.classList.add("cardBtnActive");
 
 }
@@ -134,23 +134,23 @@ function addFavoriteGif(i, info, btn) {
 function maxFuncion(btnMax) {
 
     let divCtn = btnMax.parentNode.parentNode.parentNode;
-    divCtn.className = "maxActive"
+    divCtn.className = "maxActive";
 
-    let clonBtn = btnMax.cloneNode()
+    let clonBtn = btnMax.cloneNode();
     clonBtn.innerHTML = `
         <svg role="img" alt="closeMax">
             <use href="assets/close.svg#close-svg">
-        </svg>`
-    btnMax.parentNode.replaceChild(clonBtn, btnMax)
+        </svg>`;
+    btnMax.parentNode.replaceChild(clonBtn, btnMax);
 
     clonBtn.addEventListener("click", () => {
         btnMax.innerHTML = `
         <svg role="img" alt="maximizar">
             <use href="assets/icon-max.svg#icon-max">
-        </svg>`
-        clonBtn.parentNode.replaceChild(btnMax, clonBtn)
-        divCtn.className = "gif"
-    })
+        </svg>`;
+        clonBtn.parentNode.replaceChild(btnMax, clonBtn);
+        divCtn.className = "gif";
+    });
 
 }
 
@@ -167,12 +167,12 @@ function show(increase) {
         imgs.length - 1
     );
 
-    let arr = imgs.length
+    let arr = imgs.length;
 
     btnRight.classList.remove("inactive");
 
     if (arr == index + 1) {
-        btnRight.classList.add("inactive")
+        btnRight.classList.add("inactive");
     }
 
     imgs[index].scrollIntoView({
