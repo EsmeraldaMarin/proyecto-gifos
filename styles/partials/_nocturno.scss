@@ -24,9 +24,6 @@ body.body_nocturno {
                 border-color: #fff;
                 color: #fff;
             }
-            ul{
-                border-color: #fff;
-            }
         }
         nav {
             ul {
@@ -211,22 +208,6 @@ body.body_nocturno {
             }
         }
     }
-    /*     .ctnMax {
-        background-color: #222326;
-        > div .gifCardInfo div:first-child a {
-            background-color: transparent;
-            border-color: #fff;
-            &:hover {
-                background-color: #5b6169;
-            }
-            &:last-child:hover {
-                background-color: transparent;
-            }
-            svg {
-                fill: #fff;
-            }
-        }
-    } */
     .diurno {
         display: none;
     }

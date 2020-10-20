@@ -99,44 +99,6 @@ header {
             opacity: 0;
             fill: $azul;
         }
-        .ulActive {
-            min-height: 165px;
-            border-width: 0 1px 1px 1px;
-            border-style: solid;
-            border-color: $azul;
-            border-radius: 0 0 25px 25px;
-            -webkit-border-radius: 0 0 25px 25px;
-            -moz-border-radius: 0 0 25px 25px;
-            -ms-border-radius: 0 0 25px 25px;
-            -o-border-radius: 0 0 25px 25px;
-            overflow: hidden;
-            background-color: #fff;
-            color: $gris;
-            li {
-                width: 100%;
-                height: 40px;
-                text-align: left;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                &:hover {
-                    background-color: #eee;
-                }
-                &::before {
-                    content: url(../../assets/search-gray.svg);
-                    width: 16px;
-                    margin: 0 25px;
-                }
-            }
-            &::before {
-                content: "";
-                display: block;
-                width: 90%;
-                height: 1px;
-                background-color: #9cafc3;
-                margin-left: 17px;
-            }
-        }
     }
     .iconosMenu {
         display: none;

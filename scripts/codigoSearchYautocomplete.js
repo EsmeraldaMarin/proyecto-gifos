@@ -1,34 +1,15 @@
 
 //SEARCH GIFOS
 
-function elements() {
-    formularioCtn = document.querySelector(".formulario.active");
-    inputSearch = document.querySelector(".formulario.active input");
-    btnSearch = document.querySelector(".formulario.active .searchbtn");
+let formularioCtn = document.querySelector(".formulario.mainForm");
+let inputSearch = document.querySelector(".mainSearch input");
+let btnSearch = document.querySelector(".mainSearch .searchbtn");
+let btnClose = document.querySelector(".mainSearch svg.closeSearch");
 
-    btnSearch.addEventListener("click", newSearch);
-    inputSearch.addEventListener("keyup", (event) => {
+let inputHeader = document.querySelector(".headerForm input");
+let btnSearchHeader = document.querySelector(".headerForm .searchbtn");
+let btnCloseHeader = document.querySelector(".headerForm svg.closeSearch");
 
-        if (event.key == "Enter") {
-
-            event.preventDefault();
-            newSearch(event);
-
-        }
-    })
-    inputSearch.addEventListener("keyup", autocomplete);
-
-    //AGREGAR BOTON CLOSE
-    let btnClose = document.querySelector(".formulario.active svg.closeSearch")
-    btnClose.addEventListener("click", () => {
-        inputSearch.value = "";
-        ulAutocomplete.classList.add("removeElement");
-        inputSearch.classList.remove("autocompleteActive");
-
-    })
-
-}
-elements()
 let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
 let offset = 0;
@@ -40,8 +21,7 @@ let sectionBuscador = document.querySelector(".section_buscador")
 let articleTrending = document.querySelector("article.trending")
 
 
-
-function newSearch() {
+function newSearch(offset, busqueda) {
 
     //eliminar resultados de la busqueda anterior
 
@@ -51,33 +31,34 @@ function newSearch() {
         infoSearch.style.display = "none"
         seeMoreBtn.classList.remove("seeMoreActive")
     }
-    searchGif()
+    searchGif(offset, busqueda)
 }
 
-function searchGif() {
+function searchGif(offset, busqueda) {
     console.log("funcion buscar iniciada")
     //nueva busqueda
     let urlSearch = `https://api.giphy.com/v1/gifs/search?api_key=${apiKeyGiphy}&limit=${limitSGifos}&offset=${offset}`;
-
-    let busqueda = inputSearch.value;
     let newUrlSearch = `${urlSearch}&q=${busqueda}`;
+
+    searchResultCtn.innerHTML =`<div class="loadSearch"></div>`
 
     fetch(newUrlSearch)
         .then(resp => resp.json())
         .then(content => {
 
             if (content.data[0] == undefined) {
-                sinResultados()
+                sinResultados(busqueda)
                 return
             }
-            createCtnGifs(content.data);
+            createCtnGifs(content.data, busqueda);
         })
         .catch(err => console.log(err))
 
 }
 
-function createCtnGifs(arrayGifs) {
+function createCtnGifs(arrayGifs, busqueda) {
 
+    searchResultCtn.innerHTML =``
     seeMoreBtn.innerHTML = `VER MÁS`
 
     if (searchResultCtn.className = "sinResultados") {
@@ -85,10 +66,10 @@ function createCtnGifs(arrayGifs) {
     }
     seeMoreBtn.classList.add("seeMoreActive")
     infoSearch.style.display = "block"
-    spanTerm.textContent = inputSearch.value;
+    spanTerm.textContent = busqueda;
     articleTrending.style.display = "none"
 
-    for (let i = 0; i <= limitSGifos - 1; i++) {
+    for (let i = 0; i <= 11; i++) {
 
         let index = i + offset
         let urlImg = arrayGifs[i].images.downsized.url;
@@ -128,25 +109,11 @@ function createCtnGifs(arrayGifs) {
     }
 }
 
-//SEE MORE GIFOS 
-
-
-seeMoreBtn.addEventListener("click", () => {
-    offset = offset + 12;
-    seeMoreBtn.innerHTML = `
-    <svg role="img" class = "loadSvg">
-        <use href="assets/loader.svg#path-1">
-    </svg>
-    `
-    searchGif(offset)
-})
-
 //AUTOCOMPLETAR
 
 
 let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
 let ulAutocomplete = document.createElement("ul");
-
 let liArray = [];
 for (let i = 0; i <= 3; i++) {
     let liTags = document.createElement("li");
@@ -180,7 +147,6 @@ function autocomplete(e) {
                 if (content.data[i] == undefined) {
                     return false
                 }
-                console.log("Autocomplete cargado")
                 liArray[i].textContent = content.data[i].name;
                 ulAutocomplete.appendChild(liArray[i]);
 
@@ -190,20 +156,6 @@ function autocomplete(e) {
         .catch(err => console.log(err));
 
 }
-
-//evento al seleccionar una opcion del autocompletar
-
-
-ulAutocomplete.addEventListener("click", (e) => {
-
-    inputSearch.value = e.target.textContent
-    ulAutocomplete.remove();
-    inputSearch.classList.remove("autocompleteActive");
-    newSearch()
-})
-
-
-
 //Trending Terminos
 
 function trenTerms() {
@@ -216,8 +168,7 @@ function trenTerms() {
                 trendingTerms[i].textContent = info.data[i]
 
                 trendingTerms[i].addEventListener("click", () => {
-                    inputSearch.value = trendingTerms[i].textContent;
-                    newSearch()
+                    newSearch(offset, trendingTerms[i].textContent)
                 })
             }
 
@@ -228,10 +179,10 @@ trenTerms()
 
 //function sin resultados
 
-function sinResultados() {
+function sinResultados(term) {
     console.log("sin resultados")
     infoSearch.style.display = "block"
-    spanTerm.textContent = inputSearch.value;
+    spanTerm.textContent = term;
     searchResultCtn.classList.add("sinResultados")
     searchResultCtn.innerHTML = `
     <img src="assets/icon-busqueda-sin-resultado.svg" alt="busqueda sin resultado">
@@ -240,3 +191,66 @@ function sinResultados() {
     articleTrending.style.display = "block"
     sectionBuscador.insertBefore(articleTrending, infoSearch)
 }
+
+//EVENT LISTENERS
+
+//busqueda y autocomplete
+
+btnSearch.addEventListener("click", newSearch);
+inputSearch.addEventListener("keyup", (event) => {
+
+    if (event.key == "Enter") {
+
+        event.preventDefault();
+        let busqueda = inputSearch.value;
+        newSearch(offset, busqueda);
+
+    }
+})
+inputSearch.addEventListener("keyup", autocomplete);
+
+btnSearchHeader.addEventListener("click", newSearch);
+inputHeader.addEventListener("keyup", (event) => {
+
+    if (event.key == "Enter") {
+
+        event.preventDefault();
+        let busqueda = inputHeader.value;
+        newSearch(offset, busqueda);
+        window.scroll({
+            top: -300,
+            behavior:"smooth"
+        })
+    }
+})
+
+//evento al seleccionar una opcion del autocompletar
+
+
+ulAutocomplete.addEventListener("click", (e) => {
+
+    inputSearch.value = e.target.textContent
+    ulAutocomplete.remove();
+    inputSearch.classList.remove("autocompleteActive");
+    newSearch(offset, inputSearch.value)
+})
+
+//AGREGAR BOTON CLOSE
+btnClose.addEventListener("click", () => {
+    inputSearch.value = "";
+    ulAutocomplete.classList.add("removeElement");
+    inputSearch.classList.remove("autocompleteActive");
+
+})
+
+//SEE MORE GIFOS 
+
+seeMoreBtn.addEventListener("click", () => {
+    offset = offset + 12;
+    seeMoreBtn.innerHTML = `
+    <svg role="img" class = "loadSvg">
+        <use href="assets/loader.svg#path-1">
+    </svg>
+    `
+    searchGif(offset, spanTerm.textContent)
+})

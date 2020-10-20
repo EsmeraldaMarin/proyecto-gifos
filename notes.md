@@ -12,10 +12,11 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* agregar clase a input del header para funcion search
+* correciones de ambos inputs search
 
 # Hacer en el prox commit (recomendado)
 
+* load img en search ctn
 * correccion del array de gifs creados y mis favoritos en el local storage
 
 
