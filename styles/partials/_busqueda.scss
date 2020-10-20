@@ -34,7 +34,13 @@ main {
             div {
                 position: relative;
                 width: 550px;
-                height: 50px;
+                border: 1px solid $azul;
+                border-radius: 27px;
+                -webkit-border-radius: 27px;
+                -moz-border-radius: 27px;
+                -ms-border-radius: 27px;
+                -o-border-radius: 27px;
+                overflow: hidden;
                 @media (max-width: $bp-1) {
                     width: 335px;
                 }
@@ -43,23 +49,11 @@ main {
                     width: 550px;
                     height: 50px;
                     padding-left: 54px;
-                    border: 1px solid $azul;
-                    border-radius: 27px;
-                    -webkit-border-radius: 27px;
-                    -moz-border-radius: 27px;
-                    -ms-border-radius: 27px;
-                    -o-border-radius: 27px;
                     background-color: transparent;
                     @media (max-width: $bp-1) {
                         width: 335px;
                     }
                     &.autocompleteActive {
-                        border-radius: 25px 25px 0 0;
-                        border-width: 1px 1px 0 1px;
-                        -webkit-border-radius: 25px 25px 0 0;
-                        -moz-border-radius: 25px 25px 0 0;
-                        -ms-border-radius: 25px 25px 0 0;
-                        -o-border-radius: 25px 25px 0 0;
                         outline: none;
                         position: relative;
                         ~ label {
@@ -85,7 +79,7 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 100%;
+                    height: 50px;
                     width: 50px;
                     svg {
                         fill: $azul;
@@ -94,10 +88,10 @@ main {
                     }
                 }
                 > svg {
-                    height: 15px;
+                    height: 30px;
                     width: 30px;
                     position: absolute;
-                    top: 35%;
+                    top: 20px;
                     right: 0px;
                     display: flex;
                     justify-content: center;
@@ -109,21 +103,15 @@ main {
             }
         }
         .ulActive {
-            width: 550px;
+            width: 100%;
             min-height: 165px;
-            border-width: 0 1px 1px 1px;
-            border-style: solid;
-            border-color: $azul;
-            border-radius: 0 0 25px 25px;
-            -webkit-border-radius: 0 0 25px 25px;
-            -moz-border-radius: 0 0 25px 25px;
-            -ms-border-radius: 0 0 25px 25px;
-            -o-border-radius: 0 0 25px 25px;
-            overflow: hidden;
             color: $gris;
-            @media (max-width: $bp-1) {
-                width: 335px;
-            }
+            background-color: #fff;
+            border-radius: 27px;
+            -webkit-border-radius: 27px;
+            -moz-border-radius: 27px;
+            -ms-border-radius: 27px;
+            -o-border-radius: 27px;
             li {
                 width: 100%;
                 height: 40px;
@@ -303,18 +291,18 @@ main {
                     }
                 }
             }
-            >div.maxActive{
-                @extend %maxCtn
+            > div.maxActive {
+                @extend %maxCtn;
             }
         }
-        #searchResults.sinResultados{
+        #searchResults.sinResultados {
             display: flex;
             flex-direction: column;
             margin-top: 100px;
-            img{
+            img {
                 margin-bottom: 30px;
             }
-            span{
+            span {
                 color: $celeste;
                 font-size: 1.1em;
                 font-weight: bold;

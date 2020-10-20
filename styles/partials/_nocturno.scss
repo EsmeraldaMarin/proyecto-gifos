@@ -19,9 +19,14 @@ body.body_nocturno {
                 }
             }
         }
-        .formularios input {
-            border-color: #fff;
-            color: #fff;
+        .formularios {
+            input {
+                border-color: #fff;
+                color: #fff;
+            }
+            ul{
+                border-color: #fff;
+            }
         }
         nav {
             ul {
@@ -99,15 +104,6 @@ body.body_nocturno {
         }
     }
     .section_buscador {
-        .ulActive {
-            border-color: #fff;
-            li {
-                color: $gris;
-                &:hover {
-                    background-color: #5b6169;
-                }
-            }
-        }
         .infoSearch {
             #termBuscado {
                 color: #fff;
@@ -160,9 +156,20 @@ body.body_nocturno {
             }
         }
     }
-    & div.formulario div.formularios input {
+    & div.formulario div.formularios {
         border-color: #fff;
-        color: #fff;
+        input {
+            color: #fff;
+        }
+        ul {
+            background-color: #2f3236;
+            li {
+                color: $gris;
+                &:hover {
+                    background-color: #5b6169;
+                }
+            }
+        }
     }
     div.formularios {
         svg.closeSearch {
@@ -204,7 +211,7 @@ body.body_nocturno {
             }
         }
     }
-    .ctnMax {
+    /*     .ctnMax {
         background-color: #222326;
         > div .gifCardInfo div:first-child a {
             background-color: transparent;
@@ -219,7 +226,7 @@ body.body_nocturno {
                 fill: #fff;
             }
         }
-    }
+    } */
     .diurno {
         display: none;
     }

@@ -12,11 +12,12 @@
 
 ## HECHO EN ESTE COMMIT ##
 
-* correccion total de la funcion de maximizar
+* agregar clase a input del header para funcion search
 
 # Hacer en el prox commit (recomendado)
 
-* agregar clase a input del header para funcion search
+* correccion del array de gifs creados y mis favoritos en el local storage
+
 
 
 

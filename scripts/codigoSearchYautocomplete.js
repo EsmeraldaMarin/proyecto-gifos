@@ -1,9 +1,34 @@
 
 //SEARCH GIFOS
 
-let inputSearch = document.querySelector("#buscador");//corregir esto
-//Cambiar clase en evento scroll
-let btnSearch = document.querySelector(".searchbtn"); //corregir esto
+function elements() {
+    formularioCtn = document.querySelector(".formulario.active");
+    inputSearch = document.querySelector(".formulario.active input");
+    btnSearch = document.querySelector(".formulario.active .searchbtn");
+
+    btnSearch.addEventListener("click", newSearch);
+    inputSearch.addEventListener("keyup", (event) => {
+
+        if (event.key == "Enter") {
+
+            event.preventDefault();
+            newSearch(event);
+
+        }
+    })
+    inputSearch.addEventListener("keyup", autocomplete);
+
+    //AGREGAR BOTON CLOSE
+    let btnClose = document.querySelector(".formulario.active svg.closeSearch")
+    btnClose.addEventListener("click", () => {
+        inputSearch.value = "";
+        ulAutocomplete.classList.add("removeElement");
+        inputSearch.classList.remove("autocompleteActive");
+
+    })
+
+}
+elements()
 let searchResultCtn = document.getElementById("searchResults")
 let limitSGifos = 12;
 let offset = 0;
@@ -15,17 +40,6 @@ let sectionBuscador = document.querySelector(".section_buscador")
 let articleTrending = document.querySelector("article.trending")
 
 
-
-btnSearch.addEventListener("click", newSearch);
-inputSearch.addEventListener("keyup", (event) => {
-
-    if (event.key == "Enter") {
-
-        event.preventDefault();
-        newSearch(event);
-
-    }
-})
 
 function newSearch() {
 
@@ -131,7 +145,6 @@ seeMoreBtn.addEventListener("click", () => {
 
 
 let urlAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKeyGiphy}&limit=4&q=`;
-let formularioCtn = document.querySelector("div.formulario");
 let ulAutocomplete = document.createElement("ul");
 
 let liArray = [];
@@ -140,11 +153,7 @@ for (let i = 0; i <= 3; i++) {
     liArray.push(liTags)
 }
 
-
-inputSearch.addEventListener("keyup", autocomplete);
-
 function autocomplete(e) {
-    e.preventDefault()
 
     if (e.key == "Backspace") {
 
@@ -155,10 +164,10 @@ function autocomplete(e) {
 
     }
     inputSearch.value.trim()
-    inputSearch.classList.add("autocompleteActive");//corregir con el otro input
     ulAutocomplete.className = "ulActive"
+    inputSearch.classList.add("autocompleteActive");
 
-    formularioCtn.after(ulAutocomplete);
+    inputSearch.after(ulAutocomplete);
 
     let busqueda = inputSearch.value
 
@@ -171,7 +180,7 @@ function autocomplete(e) {
                 if (content.data[i] == undefined) {
                     return false
                 }
-
+                console.log("Autocomplete cargado")
                 liArray[i].textContent = content.data[i].name;
                 ulAutocomplete.appendChild(liArray[i]);
 
@@ -193,14 +202,7 @@ ulAutocomplete.addEventListener("click", (e) => {
     newSearch()
 })
 
-//AGREGAR BOTON CLOSE
-let btnClose = document.querySelector(".formularios.active svg.closeSearch")
-btnClose.addEventListener("click", () => {
-    inputSearch.value = "";
-    ulAutocomplete.classList.add("removeElement");
-    inputSearch.classList.remove("autocompleteActive");
 
-})
 
 //Trending Terminos
 

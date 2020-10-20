@@ -410,6 +410,49 @@ header .formularios > svg {
   fill: #572ee5;
 }
 
+header .formularios .ulActive {
+  min-height: 165px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #572ee5;
+  border-radius: 0 0 25px 25px;
+  -webkit-border-radius: 0 0 25px 25px;
+  -moz-border-radius: 0 0 25px 25px;
+  -ms-border-radius: 0 0 25px 25px;
+  -o-border-radius: 0 0 25px 25px;
+  overflow: hidden;
+  background-color: #fff;
+  color: #9cafc3;
+}
+
+header .formularios .ulActive li {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .formularios .ulActive li:hover {
+  background-color: #eee;
+}
+
+header .formularios .ulActive li::before {
+  content: url(../../assets/search-gray.svg);
+  width: 16px;
+  margin: 0 25px;
+}
+
+header .formularios .ulActive::before {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background-color: #9cafc3;
+  margin-left: 17px;
+}
+
 header .iconosMenu {
   display: none;
 }
@@ -947,7 +990,13 @@ main .section_buscador div.formulario img.personas {
 main .section_buscador div.formulario div {
   position: relative;
   width: 550px;
-  height: 50px;
+  border: 1px solid #572ee5;
+  border-radius: 27px;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  -o-border-radius: 27px;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -961,12 +1010,6 @@ main .section_buscador div.formulario div input {
   width: 550px;
   height: 50px;
   padding-left: 54px;
-  border: 1px solid #572ee5;
-  border-radius: 27px;
-  -webkit-border-radius: 27px;
-  -moz-border-radius: 27px;
-  -ms-border-radius: 27px;
-  -o-border-radius: 27px;
   background-color: transparent;
 }
 
@@ -977,12 +1020,6 @@ main .section_buscador div.formulario div input {
 }
 
 main .section_buscador div.formulario div input.autocompleteActive {
-  border-radius: 25px 25px 0 0;
-  border-width: 1px 1px 0 1px;
-  -webkit-border-radius: 25px 25px 0 0;
-  -moz-border-radius: 25px 25px 0 0;
-  -ms-border-radius: 25px 25px 0 0;
-  -o-border-radius: 25px 25px 0 0;
   outline: none;
   position: relative;
 }
@@ -1012,7 +1049,7 @@ main .section_buscador div.formulario div label {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 50px;
   width: 50px;
 }
 
@@ -1023,10 +1060,10 @@ main .section_buscador div.formulario div label svg {
 }
 
 main .section_buscador div.formulario div > svg {
-  height: 15px;
+  height: 30px;
   width: 30px;
   position: absolute;
-  top: 35%;
+  top: 20px;
   right: 0px;
   display: flex;
   justify-content: center;
@@ -1037,24 +1074,15 @@ main .section_buscador div.formulario div > svg {
 }
 
 main .section_buscador .ulActive {
-  width: 550px;
+  width: 100%;
   min-height: 165px;
-  border-width: 0 1px 1px 1px;
-  border-style: solid;
-  border-color: #572ee5;
-  border-radius: 0 0 25px 25px;
-  -webkit-border-radius: 0 0 25px 25px;
-  -moz-border-radius: 0 0 25px 25px;
-  -ms-border-radius: 0 0 25px 25px;
-  -o-border-radius: 0 0 25px 25px;
-  overflow: hidden;
   color: #9cafc3;
-}
-
-@media (max-width: 768px) {
-  main .section_buscador .ulActive {
-    width: 335px;
-  }
+  background-color: #fff;
+  border-radius: 27px;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  -o-border-radius: 27px;
 }
 
 main .section_buscador .ulActive li {
@@ -2227,6 +2255,22 @@ footer > div div a svg:hover {
 body.body_nocturno {
   border-color: #222326;
   background-color: #2f3236;
+  /*     .ctnMax {
+        background-color: #222326;
+        > div .gifCardInfo div:first-child a {
+            background-color: transparent;
+            border-color: #fff;
+            &:hover {
+                background-color: #5b6169;
+            }
+            &:last-child:hover {
+                background-color: transparent;
+            }
+            svg {
+                fill: #fff;
+            }
+        }
+    } */
 }
 
 body.body_nocturno header {
@@ -2246,6 +2290,10 @@ body.body_nocturno header.onScroll {
 body.body_nocturno header .formularios input {
   border-color: #fff;
   color: #fff;
+}
+
+body.body_nocturno header .formularios ul {
+  border-color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -2329,18 +2377,6 @@ body.body_nocturno header nav ul li a.nuevo_gifo:hover i {
   color: #222326;
 }
 
-body.body_nocturno .section_buscador .ulActive {
-  border-color: #fff;
-}
-
-body.body_nocturno .section_buscador .ulActive li {
-  color: #9cafc3;
-}
-
-body.body_nocturno .section_buscador .ulActive li:hover {
-  background-color: #5b6169;
-}
-
 body.body_nocturno .section_buscador .infoSearch #termBuscado {
   color: #fff;
 }
@@ -2402,9 +2438,24 @@ body.body_nocturno .trending_gifos #gifsCtn .inactive svg {
   fill: #fff;
 }
 
-body.body_nocturno div.formulario div.formularios input {
+body.body_nocturno div.formulario div.formularios {
   border-color: #fff;
+}
+
+body.body_nocturno div.formulario div.formularios input {
   color: #fff;
+}
+
+body.body_nocturno div.formulario div.formularios ul {
+  background-color: #2f3236;
+}
+
+body.body_nocturno div.formulario div.formularios ul li {
+  color: #9cafc3;
+}
+
+body.body_nocturno div.formulario div.formularios ul li:hover {
+  background-color: #5b6169;
 }
 
 body.body_nocturno div.formularios svg.closeSearch {
@@ -2448,27 +2499,6 @@ body.body_nocturno .misgifos_con_resultados button:hover svg {
 }
 
 body.body_nocturno .misgifos_con_resultados button svg {
-  fill: #fff;
-}
-
-body.body_nocturno .ctnMax {
-  background-color: #222326;
-}
-
-body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a {
-  background-color: transparent;
-  border-color: #fff;
-}
-
-body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:hover {
-  background-color: #5b6169;
-}
-
-body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a:last-child:hover {
-  background-color: transparent;
-}
-
-body.body_nocturno .ctnMax > div .gifCardInfo div:first-child a svg {
   fill: #fff;
 }
 

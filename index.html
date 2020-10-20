@@ -13,16 +13,18 @@
     <header>
         <a href="index.html" class="logo diurno"><img src="assets/logo-desktop.svg" alt="logo"></a>
         <a href="index.html" class="logo nocturno"><img src="assets/logo-desktop-modo-noc.svg" alt="logo"></a>
-        <div class="formularios" id="buscadorHeader">
-            <input type="search" id="buscador_header" placeholder="Busca GIFOS y más" autocomplete="off">
-            <label for="buscador_header">
-                <svg role="img" class="searchbtn">
-                    <use href="assets/icon-search.svg#search" alt="icono_search" id="searchbtn">
+        <div class="formulario">
+            <div class="formularios" id="buscadorHeader">
+                <input type="search" id="buscador" placeholder="Busca GIFOS y más" autocomplete="off">
+                <label for="buscador">
+                    <svg role="img" class="searchbtn">
+                        <use href="assets/icon-search.svg#search" alt="icono_search" id="searchbtn">
+                    </svg>
+                </label>
+                <svg role="img" class="closeSearch">
+                    <use href="assets/close.svg#close-svg">
                 </svg>
-            </label>
-            <svg role="img" class="closeSearch">
-                <use href="assets/close.svg#close-svg">
-            </svg>
+            </div>
         </div>
         <div class="iconosMenu">
             <svg role="img" alt="menu hamburguesa" id="bars">
@@ -54,9 +56,9 @@
                 Inpírate, busca, guarda, y crea los mejores
                 <span>GIFOS</span>
             </h1>
-            <div class="formulario">
+            <div class="formulario active">
                 <img src="assets/ilustra_header.svg" alt="personas-saludando" class="personas">
-                <div class="formularios active">
+                <div class="formularios mainSearch">
                     <input type="search" id="buscador" placeholder="Busca GIFOS y más" autocomplete="off">
                     <label for="buscador">
                         <svg role="img" class="searchbtn">
@@ -129,6 +131,7 @@
     </footer>
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/scrollTop.js"></script>
     <script src="scripts/themesAndMenu.js"></script>
     <script src="scripts/codigoSearchYautocomplete.js"></script>
 

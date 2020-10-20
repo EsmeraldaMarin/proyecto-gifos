@@ -182,19 +182,7 @@ function show(increase) {
         inline: 'start'
     });
 }
-//SCROLL TOP
 
-let header = document.querySelector("header")
-
-window.addEventListener("scroll", myFunction)
-
-function myFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        header.className = "onScroll"
-    } else {
-        header.classList.remove("onScroll")
-    }
-}
 
 
 
